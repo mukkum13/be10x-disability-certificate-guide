@@ -1,0 +1,6 @@
+
+https://build-for-good-two.vercel.app/#start
+
+
+
+Use /multi-ai-framework and use as less claude code as possible. use codex and antigravity to their fullest capabilities under the already selected models.
