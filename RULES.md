@@ -162,3 +162,10 @@ Gate 0 (documentation baseline) → **CEO approval required** → Gate 1 (vertic
 
 ## 21. Definition of Acceptable Completion
 A task, gate, or the project as a whole is "complete" only when: the relevant acceptance criteria in `PRD.md`/`Phases.md` are met, evidence is recorded in `MEMORY.MD` (and `docs/TESTING.md` where applicable), and — for gates — the CEO has explicitly approved moving to the next gate.
+
+## 26. Hybrid Channel Compliance Rule (CEO Decision, 2026-09-12 16:05:00 Asia/Calcutta)
+- **Hard-gate discipline:** the live Hathcon rules and every instruction in `MustFollowRules` are hard gates. A conflict must be marked Blocked and escalated, never resolved unilaterally.
+- **Resolution — both channels, one shared workflow:** Telegram is a required primary operational entrypoint and the website remains the Product Owner's mandatory public interface. Full detail: `Architecture.md` §28.
+- **No duplicate or contradictory logic.** The five questions, grounding rules, fail-safe text, escalation route, disclosure banner, human-in-the-loop language, and closing line are defined once and consumed identically by both channels.
+- **Telegram must demonstrate the real guide flow**, not reminders alone.
+- **No paid upgrade is required or planned.** Lovable export is not the immediate critical path; D1.1 source collection and the Telegram vertical slice take priority.

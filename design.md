@@ -71,6 +71,13 @@ Persistent, plainly worded disclosure (near the start and again with every guida
 ## Error-Recovery Experience
 Any failure (LLM, log, reminder) shows a calm, specific message and a concrete next action (retry, go back, or contact the district office if known) — never a raw technical error, never a fabricated fallback answer.
 
+## Hybrid Channel Copy Parity (CEO Decision, 2026-09-12 16:05:00 Asia/Calcutta)
+Telegram and the website are two front ends to one shared workflow.
+- **Single copy source:** disclosure, five questions, numbered-step labels, fail-safe sentence, escalation text, and mandatory closing line are defined once and shared by both channels.
+- **Telegram presentation:** plain-text formatting and commands only; wording must match the website.
+- **Website presentation:** visual layout, buttons, and progress bar only; wording must not diverge from Telegram.
+- **Release gate:** run the same test input through both channels and confirm substantively identical guidance. Any mismatch is a defect.
+
 ## Generated-Frontend Review Checklists (CTO-prepared, 2026-09-12 13:56:00 Asia/Calcutta, in place of unavailable Antigravity review capability — see `MEMORY.MD` Entry 006/008)
 These are the concrete checklists against which any Lovable/Emergent-generated frontend must be scored before integration (`RULES.md` §24 Integration Gate). They exist as a specification now so that whoever performs the review (Claude, or a future connected reviewer capability) uses the same bar.
 

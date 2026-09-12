@@ -1,32 +1,34 @@
 # Architecture.md — Technical Architecture Source of Truth
 **Status:** Draft — Gate 0. Version 0.1. Last verified: 2026-09-12.
 
-## 1. Selected Stack & Rationale — **DECIDED by CEO 2026-09-12 13:46:24 Asia/Calcutta**
+## 1. Selected Stack & Rationale — **DECIDED by CEO 2026-09-12 13:46:24 Asia/Calcutta; UPDATED to hybrid channel model 2026-09-12 16:05:00 Asia/Calcutta**
 The CEO approved the Gate 1 minimum production stack and explicitly rejected the custom Claude-API architecture previously proposed by the CTO. This section is updated to match; see `MEMORY.MD` Entry 003 for the decision record.
-- **Frontend:** Responsive website — the primary user-facing product (mandatory; Telegram is not a substitute for it).
+- **Telegram:** A **required primary operational entrypoint**, matching the official Project 14 template exactly — `Telegram → n8n → Gemini/grounded workflow → Google Sheets (anonymised log) → Telegram response`. It must run the actual five-question guide flow end-to-end, not just reminders.
+- **Website:** Remains **mandatory** as the public-accessible web interface the Product Owner separately required. It calls the same shared workflow/grounding rules as Telegram — it is not a second product and must never duplicate or contradict Telegram's logic (see §28).
 - **AI model:** Google Gemini (CEO-approved; not Claude API for the production path).
-- **Orchestration:** n8n (workflow orchestration layer, per the hackathon's own recipe).
-- **Reminder channel:** Telegram — used specifically for verified real reminder delivery and the mandatory two-minute reminder test (Hathcon Test 3).
-- **Log store:** Google Sheets (six-field anonymised log).
+- **Orchestration:** n8n (workflow orchestration layer, per the hackathon's own recipe) — the single shared workflow both channels call into.
+- **Log store:** Google Sheets (six-field anonymised log) — one shared log for both channels.
 - **Grounding store:** The reviewed documents in `docs/SOURCES.md`, supplied as context to the Gemini call via n8n (direct context injection; no vector DB needed at this scale).
-- **Hosting:** Free tier throughout (n8n Cloud trial + free-tier website hosting), per `RULES.md` §1 row 15.
+- **Hosting:** Free tier throughout (n8n Cloud trial + free-tier website hosting), per `RULES.md` §1 row 15. No paid Lovable/Emergent upgrade is required or planned.
 
-Rationale: the hackathon explicitly rewards "small and fully working" over "large and unfinished," free tools, and non-technical operability; the CEO's decision keeps the project on the hackathon's own well-documented recipe (reducing integration risk) while keeping the website as the primary interface, per CEO instruction.
+Rationale: the hackathon explicitly rewards "small and fully working" over "large and unfinished," free tools, and non-technical operability. The hybrid keeps the project on the Project 14 recipe while satisfying the Product Owner's separate website requirement — both backed by one non-duplicated workflow.
 
-## 2. System Context
+## 2. System Context — updated to hybrid channel model, 2026-09-12 16:05:00 Asia/Calcutta
 ```
-[User Browser] --HTTPS--> [Static Frontend]
-                                 |
-                                 v
-                    [Backend Function: /guide]
-                         |         |
-                 [LLM API]   [Anonymised Log Store]
-                         |
-                [Reviewed Source Docs, as context]
-                                 |
-                                 v
-                    [Reminder Channel] (optional, Gate 2)
+[Telegram User] --message--> [Telegram Bot Trigger] ----\
+                                                           \
+[Website User] --HTTPS--> [Static Frontend] --API call--> [n8n: Shared Guide Workflow]
+                                                           /        |            \
+                                                          /   [Gemini + Reviewed  \
+                                                         /     Source Docs as      \
+                                                        /      context (grounding)] \
+                                                       /                             v
+                                            [Google Sheets: one shared          [Response back to
+                                             anonymised log, both channels]      originating channel:
+                                                                                 Telegram message OR
+                                                                                 website JSON payload]
 ```
+Both entrypoints call the **same** n8n workflow, the same grounding rules, and the same fail-safe/escalation/closing-line logic. Neither channel has its own separate copy of the guide logic — see §28.
 
 ## 3. Application Components
 1. **Question Flow Controller** — tracks which of the 5 questions are answered (session state), enforces one-at-a-time ordering, prevents re-asking.
@@ -179,3 +181,27 @@ Transition rule: from state `Qn`, a non-empty `answerText` moves the session to 
 - No document-upload or dynamic ingestion pipeline; sources are manually reviewed and registered.
 - Coverage is limited to whatever states/districts get reviewed sources within the 3-day window.
 - Reminder delivery verification (Hathcon Test 3) depends on which channel, if any, is approved and wired up in Gate 2.
+
+## 28. Hybrid Channel Architecture — Telegram Primary Entrypoint + Website Public Interface (CEO Decision, 2026-09-12 16:05:00 Asia/Calcutta)
+
+### 28.1 Background
+The Project 14 template specifies Telegram as the primary Trigger, while the Product Owner requires a website. This was resolved as a hybrid, not an either/or (`MEMORY.MD` Entries 019–020).
+
+### 28.2 Binding decision
+1. **One shared workflow, not two products.** Five questions, reviewed-source-only numbered guidance, the "could not verify" fail-safe, escalation, disclosure, human-in-the-loop language, and reminder behaviour are defined **once**, in the n8n workflow, and consumed by both channels.
+2. **Telegram is a required primary operational entrypoint**, matching the official template. It must demonstrate the actual five-question guide flow — **not reminder delivery alone**.
+3. **The website remains mandatory** as the Product Owner's required public interface. It calls the same n8n workflow (or an equivalent backend function wrapping identical logic) and must not contain its own separate copy of the grounding rules, fail-safe text, or escalation route.
+4. **Lovable-built website shell** remains allowed, but is not the immediate critical path.
+
+### 28.3 Smallest Telegram-first vertical slice
+1. Telegram Trigger receives a message from the test user.
+2. The workflow tracks which of the 5 questions are answered for that Telegram chat ID; no other identifying data is stored.
+3. Gemini asks the next unanswered question one at a time.
+4. Once all are answered: when a Reviewed source supports the case, Gemini gets only those facts and returns numbered guidance; otherwise the workflow returns the fixed fail-safe without factual generation.
+5. A stuck message interrupts any state and returns only a verified escalation route.
+6. Google Sheets appends only the approved anonymised fields.
+7. A real two-minute test reminder is delivered back through the same Telegram chat.
+8. The website invokes identical workflow logic and must return substantively identical guidance.
+
+### 28.4 Source gaps
+No Maharashtra-specific procedure, pilot certifying-hospital/medical-board list, or pilot district welfare-office source is Reviewed yet. Until sufficient official sources are reviewed, the factual guidance step must use the fixed fail-safe.

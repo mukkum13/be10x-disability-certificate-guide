@@ -18,8 +18,10 @@ Applying for an Indian disability certificate and a UDID (Unique Disability ID) 
 ## 3. Real-World Scenario (per hackathon "finished thing" example)
 > "I need a disability certificate for my son, locomotor disability, in Maharashtra." The guide walks her through the numbered steps from UDID registration to the medical board appointment, and offers a reminder for the next step and a "Stuck?" escalation path.
 
-## 4. Product Objective
-Deliver a small, fully working, production-grade conversational web guide that:
+## 4. Product Objective — updated to hybrid channel model, 2026-09-12 16:05:00 Asia/Calcutta
+**CEO decision (`MEMORY.MD` Entry 020, `Architecture.md` §28):** the product is one shared guide workflow reachable through two mandatory channels — **Telegram** (required primary operational entrypoint, matching the official Project 14 template) and a **public website** (the Product Owner's separate mandatory requirement). Both must run the identical five-question flow, grounding rules, fail-safe, and escalation logic — neither is a fallback or reminder-only channel for the other.
+
+Deliver a small, fully working, production-grade guide, reachable via Telegram and a website, that:
 1. Asks five fixed questions, one at a time.
 2. Returns a numbered, source-grounded action path.
 3. Offers an escalation route when the user is stuck.
@@ -54,7 +56,9 @@ Limited strictly to states/districts and disability types for which an **officia
 - **Maintainability:** smallest stable stack; documented setup reproducible from a clean environment.
 - **Cost:** free-tier tools only unless the CEO (Product Owner) explicitly approves a paid tier.
 
-## 8. User Journey
+## 8. User Journey (either channel — see `Architecture.md` §28 for why both must match exactly)
+**Telegram (primary):** 1. User messages the bot. 2–6. Same five-question, guidance, reminder, and escalation flow as below, entirely inside the Telegram chat. 7. Anonymised log entry written (FR-8 fields only), keyed to chat ID, never phone number or name.
+**Website (mandatory public interface):**
 1. User opens the deployed URL.
 2. Product asks Question 1 (state & district). User answers.
 3. Product asks Questions 2–5 in order, one at a time, never repeating an answered question.
@@ -77,6 +81,7 @@ Numbered list. Each numbered step contains: **what to do**, **where to do it**, 
 - Claude-only mode: draft reminder text; explicitly tell the user no reminder has actually been scheduled.
 - With a verified integration: collect exact date/time/timezone, create the reminder, and only report it as scheduled once delivery is verifiable (see Hathcon Test 3: a real message must arrive).
 - Never claim delivery without verification.
+- **2026-09-12 16:05:00 update:** the verified integration is concretely **Telegram** (n8n delay/wait node → Telegram message back to the same chat) per `Architecture.md` §28.3 item 7 — this is no longer an abstract "if connected" case.
 
 ## 12. Escalation Requirement
 Triggered by user signaling they are stuck. Route: only what is supported by Project Knowledge documents — normally district social welfare office, then State Commissioner for Persons with Disabilities — stated only when a reviewed source confirms it for that state.
