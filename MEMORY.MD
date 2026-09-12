@@ -383,3 +383,43 @@
 - **GitHub status:** **Verified locally and synchronized to GitHub.** Repository URL: `https://github.com/mukkum13/be10x-disability-certificate-guide`.
 - **Known scope limit:** The Lovable project remains hosted in Lovable and has not been exported into this K: repository. Its previously reported frontend walkthrough is documented, but source code/export and a public deployed URL still require a separate verified integration step.
 - **Exact next action:** Export or synchronize the Lovable frontend source into this repository, then run the required independent accessibility and desktop-width verification before treating D1.2 as complete.
+
+---
+
+### Entry 016 — CTO Independent Verification of GitHub Sync; Cloud Session's Parallel History Retired
+- **Timestamp (Asia/Calcutta):** 2026-09-12 15:07:00–15:15:00
+- **Actor:** CTO (cloud session)
+- **Work performed:** On receiving the report of Entry 015's GitHub sync, this session independently re-verified it rather than accepting the report at face value, per `RULES.md` §16 git-truth discipline:
+  1. `git ls-remote https://github.com/mukkum13/be10x-disability-certificate-guide.git` → `refs/heads/main` at `dac1aa4cbfd2cfdf76fdd8fa28f51202631b7c3c`.
+  2. `git clone` (full, unshallowed) of that URL → confirmed **4 commits**: `dafa02d` ("Initial commit") → `239a6d1` ("docs: add project baseline and source materials") → `d7e88c8` ("merge: preserve existing repository README", matches Entry 015's reported hash exactly) → `dac1aa4` ("docs: record verified GitHub synchronization", current `HEAD`/`main`).
+  3. Confirmed all 11 canonical documentation files, `.gitignore`, and the reference images/text present at `HEAD`.
+  4. Scanned the full tree for secret-shaped strings (API keys, private-key headers, inline password/API-key assignments) — **none found**.
+- **CEO decision received and applied:** `https://github.com/mukkum13/be10x-disability-certificate-guide` (`main`) is the sole canonical project history going forward. This session's separate cloud-container git repository (`/home/claude/hackathon`) is retired as a parallel source of truth and retained only as a read-only local reference (it will not be pushed anywhere or extended as canonical history). No merge, rebase, or force-push between the two histories has been or will be performed.
+- **Requirements satisfied:** Verified before reporting "verified"; no credential/token requested or used; no force-push or history rewrite; adopted the CEO's canonical-history decision without argument.
+- **Exact next action:** Investigate Lovable export path for Integration Gate step 1 (see Entry 017).
+- **Commit identifier:** This entry is committed directly to this canonical repository (see repository history after this file is written).
+- **Deployment URL / runtime evidence:** `https://github.com/mukkum13/be10x-disability-certificate-guide` (`main` @ `dac1aa4cbfd2cfdf76fdd8fa28f51202631b7c3c` at verification time).
+
+---
+
+### Entry 017 — Lovable Export Investigated: No Free-Plan Path Matches the Directive As-Given
+- **Timestamp (Asia/Calcutta):** 2026-09-12 15:20:00–15:35:00
+- **Actor:** CTO (cloud session, via the Product-Owner-authenticated Lovable browser session)
+- **Trigger:** CEO directive to prioritize Integration Gate step 1 — export the existing "UDID Guide Shell" Lovable project's source into this canonical repository/K: project.
+- **Investigation performed:**
+  1. Project "..." menu (Lovable dashboard) → options: Open in new tab, View published site, Analytics, Publish to profile, Star, Move to folder, Move to workspace, Remix, Rename, Edit thumbnail, Settings, Delete. **No Download/Export option.**
+  2. Settings → Git (`/projects/c71cccfb-96c0-47be-8d95-bfc159bf99d3/settings/git`): offers GitHub/GitLab/Bitbucket "two-way sync" connect. The page states explicitly: **"Good to know: connecting creates a new repository for this project — importing an existing repo isn't supported."**
+  3. Editor's Code tab: file tree visible (`src/`, `public/`, config files) but panel is labeled **"Read only"** with an **"Upgrade"** prompt — the Free plan has no download/bulk-export from here.
+- **Findings (real platform constraints, not tool failures):**
+  1. Lovable's GitHub sync can only create a **brand-new** repository — it cannot push into this existing canonical repo. Using it as-is would violate `RULES.md` §25's single-authorised-repository rule unless the CEO explicitly authorises a temporary second repo purely as a one-time export source.
+  2. Connecting GitHub is also an **OAuth authorization** grant. This session will not click through that consent without the Product Owner's explicit go-ahead for that specific action — the general "full permissions" authorization already given covers this session's own actions, not a blanket pre-clearance for a third-party OAuth consent screen.
+  3. Free-plan Code view is **read-only**, with no ZIP/download button anywhere found.
+- **Options for the CEO/Product Owner to choose from (none actioned yet):**
+  - **(A)** Product Owner personally completes Lovable's GitHub connect (their own OAuth consent), accepting it creates a new repository; this session then pulls the exported code from that new repo and merges it into the canonical repo as plain files (never kept as a live second remote).
+  - **(B)** Upgrade the Lovable workspace to Pro (a paid decision only the Product Owner can make) to unlock code export.
+  - **(C)** This session manually transcribes the hand-written `src/` files from the read-only Code viewer into the canonical repo via the file bridge — feasible for hand-written source, not reliable for generated/lock files (e.g. `bun.lock`, `routeTree.gen.ts`), which are normally regenerated by tooling rather than transcribed.
+- **Also checked in parallel (per CEO directive item 9 — continue source collection):** Fetched `depwd.maharashtra.gov.in` (Maharashtra State Commissioner for Persons with Disabilities). It links to `www.swavlambancard.gov.in` for disability-certificate/UDID applications but does not itself state the procedure, medical-board composition, or document checklist. **Not registered as a Reviewed source** — it is a pointer, not a procedure page; `swavlambancard.gov.in` itself has not yet been reviewed. `docs/SOURCES.md`'s Maharashtra-procedure gap remains open.
+- **Requirements satisfied:** No OAuth consent clicked without permission; no second repository created; no paid upgrade assumed; no unreviewed source registered as Reviewed; real constraints reported rather than worked around.
+- **Exact next action:** Await CEO/Product-Owner choice of (A), (B), or (C) for the Lovable export; continue official-source review for Maharashtra in parallel if instructed.
+- **Commit identifier:** Committed directly to this canonical repository alongside Entry 016.
+- **Deployment URL / runtime evidence:** None new. Lovable preview unchanged (token-gated preview link only, not a public Publish URL).
