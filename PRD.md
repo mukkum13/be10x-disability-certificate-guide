@@ -57,7 +57,7 @@ Limited strictly to states/districts and disability types for which an **officia
 - **Cost:** free-tier tools only unless the CEO (Product Owner) explicitly approves a paid tier.
 
 ## 8. User Journey (either channel — see `Architecture.md` §28 for why both must match exactly)
-**Telegram (primary):** 1. User messages the bot. 2–6. Same five-question, guidance, reminder, and escalation flow as below, entirely inside the Telegram chat. 7. Anonymised log entry written (FR-8 fields only), keyed to chat ID, never phone number or name.
+**Telegram (primary):** 1. User messages the bot. 2–6. Same five-question, guidance, reminder, and escalation flow as below, entirely inside the Telegram chat. 7. Anonymised log entry written containing only the FR-8 fields; the chat ID is used solely as an in-flight routing key during the conversation and is never included in the log entry itself, and never phone number or name either. *(Corrected 2026-09-12 20:45:00 Asia/Calcutta — the prior wording, "keyed to chat ID," contradicted RULES.md §8's personal-data prohibition; see `docs/automation/REVIEW-FINDINGS.md` item 7.)*
 **Website (mandatory public interface):**
 1. User opens the deployed URL.
 2. Product asks Question 1 (state & district). User answers.

@@ -161,7 +161,7 @@ Response (one of):
 { "type": "question", "questionId": "...", "promptText": "...", "questionNumber": 1-5, "totalQuestions": 5 }
 { "type": "guidance", "steps": [ { "stepNumber": 1, "doText": "...", "whereText": "...", "carryText": "...", "nextText": "..." } ], "sourceIds": ["SRC-001","SRC-002"], "closingLine": "You are doing the right thing. Take it one step at a time.", "reminderOffer": { "mode": "draft" | "real", "draftText": "..." } }
 { "type": "escalation", "routeText": "...", "sourceIds": ["SRC-002"] }
-{ "type": "unsupported", "message": "This could not be verified. Please check the official UDID portal (swavlambancard.gov.in) or your district social welfare office." }
+{ "type": "unsupported", "message": "<exact fail-safe text — see docs/automation/D1.3a-workflow-spec.md §5, the single authoritative source for this string; do not restate a different wording here>" }
 { "type": "error", "message": "Something went wrong. Please try again." }
 ```
 Contract rules binding on both frontend and backend: (a) the frontend never sends or stores anything beyond `sessionId`/`action`/`questionId`/`answerText` — no name/phone/address; (b) every `guidance` response MUST include `sourceIds` (`RULES.md` §5 traceability); (c) the frontend must render `closingLine` verbatim and never let it be omitted or altered; (d) an `unsupported` response must render as a distinct, clearly-styled state, never merged visually with a real `guidance` response.

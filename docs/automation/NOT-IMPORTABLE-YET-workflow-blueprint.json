@@ -1,0 +1,83 @@
+{
+  "_LABEL": "NOT-IMPORTABLE-YET",
+  "_status": "NOT VERIFIED AGAINST A REAL n8n INSTANCE — DO NOT ATTEMPT TO IMPORT THIS FILE INTO n8n",
+  "_why_not_verified": "This session has no local/installed n8n instance, no n8n CLI, and no browser access to the Product Owner's authenticated n8n session (network path to n8n.mukkubuilds.com was unreachable from this shell, and no browser-automation tool is attached). Per the CEO's explicit instruction, no importable n8n JSON export may be fabricated or claimed importable without verifying exact node type strings, version numbers, and parameter schemas against real n8n materials. This file is a structural blueprint only, expressed in JSON for readability, mapping 1:1 to n8n-build-manifest.md — it intentionally omits n8n's actual internal schema fields (e.g. exact 'type' strings like the real 'n8n-nodes-base.telegramTrigger', 'typeVersion' numbers, 'credentials' object shape, 'webhookId', node 'position' arrays) because those cannot be verified from this session.",
+  "_when_this_can_be_upgraded_to_real_importable_json": "Once a session has either (a) a working n8n CLI / local n8n instance to inspect actual node type strings and export format, or (b) authenticated browser access to build one node at a time in the Product Owner's real n8n and export the result, at which point this file should be regenerated from that real export, not edited by hand.",
+  "_do_not": [
+    "Do not rename this file to remove the NOT-IMPORTABLE-YET label.",
+    "Do not attempt to import this file into n8n via the UI or CLI.",
+    "Do not add real credential values, tokens, or API keys to this file at any stage."
+  ],
+  "blueprint_nodes": [
+    {
+      "manifest_ref": "Node 1",
+      "intended_role": "Telegram Trigger",
+      "n8n_node_family_guess_UNVERIFIED": "Telegram Trigger node (exact type string not verified this session)",
+      "credentials_required_later": ["Telegram Bot API token — NOT present, NOT requested"],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 2",
+      "intended_role": "Ephemeral session state keyed on chat ID",
+      "n8n_node_family_guess_UNVERIFIED": "Data Store node or Simple Memory node (Product Owner confirmed one of these is available; exact choice deferred to build time)",
+      "credentials_required_later": [],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 3",
+      "intended_role": "Five-question routing / ask-next-question",
+      "n8n_node_family_guess_UNVERIFIED": "Switch/If node + Set node combination (exact structure deferred to build time)",
+      "credentials_required_later": [],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 4",
+      "intended_role": "Grounding check branch point",
+      "n8n_node_family_guess_UNVERIFIED": "If/Switch node reading docs/SOURCES.md-derived coverage list",
+      "credentials_required_later": [],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 5",
+      "intended_role": "Gemini grounded-response branch",
+      "n8n_node_family_guess_UNVERIFIED": "Google Gemini / Gemini Chat Model node (Product Owner confirmed availability; exact type string not verified this session)",
+      "credentials_required_later": ["Gemini API key — NOT present, NOT requested"],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 6",
+      "intended_role": "Fixed fail-safe branch",
+      "n8n_node_family_guess_UNVERIFIED": "Set node with static text output",
+      "credentials_required_later": [],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 7",
+      "intended_role": "Google Sheets append-row",
+      "n8n_node_family_guess_UNVERIFIED": "Google Sheets node, Append operation (Product Owner confirmed availability; exact type string not verified this session)",
+      "credentials_required_later": ["Google Sheets OAuth2 credential — NOT present, NOT requested"],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 8",
+      "intended_role": "Telegram response",
+      "n8n_node_family_guess_UNVERIFIED": "Telegram node, Send Message operation",
+      "credentials_required_later": ["Telegram Bot API token — NOT present, NOT requested (same credential as Node 1)"],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 9",
+      "intended_role": "Wait / reminder branch",
+      "n8n_node_family_guess_UNVERIFIED": "Wait node (Product Owner confirmed availability)",
+      "credentials_required_later": [],
+      "unpublished": true
+    },
+    {
+      "manifest_ref": "Node 10",
+      "intended_role": "Webhook / shared-workflow entrypoint for the future website",
+      "n8n_node_family_guess_UNVERIFIED": "Webhook node (Product Owner confirmed availability)",
+      "credentials_required_later": [],
+      "unpublished": true
+    }
+  ]
+}
