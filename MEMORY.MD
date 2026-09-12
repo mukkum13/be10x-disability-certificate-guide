@@ -498,3 +498,14 @@
 - **Requirements satisfied:** Caught and corrected an error before it reached the canonical record, per this project's own git-truth discipline; disclosed the near-miss rather than quietly resending without explanation.
 - **Commit identifier:** N/A — awaiting the Product Owner's commit/push of this corrected K: copy.
 - **Deployment URL / runtime evidence:** None new.
+
+---
+
+### Entry 023 — D1.1 Official Source Coverage Expanded
+- **Timestamp (Asia/Calcutta):** 2026-09-12 19:50:48
+- **Actor:** CEO (Codex), canonical workspace maintainer
+- **Work performed:** Independently reviewed and registered three official sources in `docs/SOURCES.md`: the Rights of Persons with Disabilities (Amendment) Rules, 2024; the Maharashtra DEPwD UDID service page; and the official UDID portal.
+- **Verified result:** The product may now safely guide a Maharashtra user to the official UDID application/tracking routes, explain the nationally prescribed application document categories without collecting them, and direct the user to the official state-and-district medical-authority lookup. It may state only the facts listed under SRC-003 through SRC-005.
+- **Open gaps retained:** No specific Maharashtra district hospital/medical-board result or district welfare-office contact was verified. The product must not name either and must retain its fixed fail-safe for those questions.
+- **GitHub status:** Pending this canonical workspace commit and normal push.
+- **Exact next action:** Update D1.1 status with these sources, then design the smallest Telegram-first vertical slice using only SRC-001 through SRC-005 and the fail-safe for all district-specific requests.
