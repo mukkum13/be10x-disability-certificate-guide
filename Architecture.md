@@ -206,10 +206,10 @@ The Project 14 template specifies Telegram as the primary Trigger, while the Pro
 ### 28.4 Source gaps
 No Maharashtra-specific procedure, pilot certifying-hospital/medical-board list, or pilot district welfare-office source is Reviewed yet. Until sufficient official sources are reviewed, the factual guidance step must use the fixed fail-safe.
 
-## 29. Minimal Retrieval Layer ("RAG-adjacent") — Reviewed-Source-Only (CEO Decision, 2026-09-13; environment check same date)
+## 29. Reviewed-Source Retrieval — NOT "production RAG" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)
 
 ### 29.1 Purpose and scope
-Make the Gemini response retrieve only the relevant, human-reviewed excerpts from `docs/SOURCES.md` (SRC-001–SRC-005) instead of sending the full 5-source corpus on every call. **This is not autonomous learning, web crawling, self-training, a broad AI agent, or applicant-data storage** — it is a narrow retrieval-before-generation step over a small, static, human-curated corpus.
+Make the Gemini response retrieve only the relevant, human-reviewed excerpts from `docs/SOURCES.md` (SRC-001–SRC-005) instead of sending the full 5-source corpus on every call. **This is not autonomous learning, web crawling, self-training, a broad AI agent, applicant-data storage, or "production RAG"** — the CEO has explicitly directed this feature be called **"reviewed-source retrieval"** throughout, precisely to avoid overstating it. It is a narrow retrieval-before-generation step over a small, static, human-curated corpus.
 
 ### 29.2 Environment finding (checked 2026-09-13, this session, read-only inspection of the Product Owner's n8n instance)
 - **`Simple Vector Store` node: available** (4 actions — "Get ranked documents from vector store," "Add documents to vector store," "Retrieve documents for Chain/Tool as Vector Store," "Retrieve documents for AI Agent as Tool").
@@ -218,11 +218,41 @@ Make the Gemini response retrieve only the relevant, human-reviewed excerpts fro
 
 ### 29.3 Adopted design: deterministic rule-based retrieval (the "smallest no-cost compliant alternative")
 Because true vector RAG is not buildable here, and because the entire corpus is 5 short, static, curated excerpts (not a large or growing document set), retrieval is implemented **deterministically**, not via embeddings similarity:
-1. **Ingestion path:** `docs/automation/rag-corpus/sources.json` — a hand-authored, version-controlled JSON file containing, per source: `source_id`, `issuing_authority`, `official_url`, `review_status`, `retrieval_date`, `geography`, `allowed_claims`, `excerpt_text`, `limitations`, `match_tags`. This file is manually re-synced whenever `docs/SOURCES.md` changes — it is not auto-generated, and no automated crawler or ingestion job writes to it.
-2. **Retrieval path (n8n):** a new node — `n8n-build-manifest.md` "Node 4.5 — Reviewed-Source Retrieval" — reads `sources.json` (via a Read Binary File / HTTP Request-to-local-file or an inline Code node holding the same JSON, depending on what's simplest to wire in n8n) and deterministically filters entries whose `match_tags`/`geography` match the user's stated state/district/disability-type and the kind of question being asked (state-level portal guidance vs. escalation vs. national process). This is a plain filter/lookup, not a similarity search — for 5 entries, that is both sufficient and far more auditable than embedding-based retrieval would be.
-3. **What reaches Gemini:** only the matched entries' `excerpt_text` (plus their `source_id` for internal traceability) — never the full corpus, never unmatched entries, never raw `docs/SOURCES.md` prose beyond what's already mirrored into the curated JSON.
-4. **Fallback behaviour:** if the filter step matches zero entries, or the user's question requires a district-specific hospital/medical-board/welfare-office fact that no `match_tags` entry supports, the retrieval node routes directly to the existing fixed fail-safe (`D1.3a-workflow-spec.md` §5) — Gemini is never invoked with an empty or forced-guess context. This reuses the branch structure already in `n8n-build-manifest.md` Node 4/5/6, with Node 4.5 sitting between Node 4 and Node 5.
-5. **Privacy boundary:** `sources.json` is a static, CTO-authored file. No node in this design ever **writes** to it. Applicant messages, Telegram chat IDs, Google Sheet rows, reminders, or any free text are never ingested into this file or any retrieval index — there is no ingestion pipeline for user data at all, only a one-time manual authoring step by the CTO from already-Reviewed sources.
+1. **Canonical ingestion path:** `docs/automation/rag-corpus/sources.json` — a hand-authored, version-controlled JSON file (in the GitHub repository) containing, per source: `source_id`, `issuing_authority`, `official_url`, `review_status`, `retrieval_date`, `geography`, `allowed_claims`, `excerpt_text`, `limitations`, `match_tags`, plus a top-level `_corpus_version` stamp. This file is manually re-synced whenever `docs/SOURCES.md` changes — it is not auto-generated, and no automated crawler or ingestion job writes to it.
+2. **Runtime mirror — corrected 2026-09-13:** a **hosted n8n instance cannot read `sources.json` from GitHub/the local workspace at runtime.** The live retrieval step instead reads from an n8n **Data Table** named `UDID_Reviewed_Sources` (§29.5), which is a manually-imported, read-only mirror of the same 5 rows. `sources.json` remains the canonical, version-controlled source of truth; the Data Table is a runtime copy that must be re-imported by hand whenever the canonical file changes (§29.5 reconciliation procedure).
+3. **Retrieval path (n8n):** `n8n-build-manifest.md` "Node 4.5 — Reviewed-Source Retrieval" queries the `UDID_Reviewed_Sources` Data Table (a "Get Row(s)" / filter operation, not a vector search) and deterministically filters rows whose `match_tags`/`geography` match the user's stated state/district/disability-type and the kind of question being asked (state-level portal guidance vs. escalation vs. national process). This is a plain filter/lookup, not a similarity search — for 5 rows, that is both sufficient and far more auditable than embedding-based retrieval would be.
+4. **What reaches Gemini:** only the matched rows' `excerpt_text` (plus their `source_id` for internal traceability) — never the full corpus, never unmatched rows, never raw `docs/SOURCES.md` prose beyond what's already mirrored into the curated Data Table.
+5. **Fallback behaviour:** if the filter step matches zero rows, the Data Table read itself fails (connection/permissions/empty-table error), the Data Table's `corpus_version` column doesn't match the canonical `sources.json`'s `_corpus_version` (stale mirror), or the user's question requires a district-specific hospital/medical-board/welfare-office fact that no row's `allowed_claims` supports, the retrieval node routes directly to the existing fixed fail-safe (`D1.3a-workflow-spec.md` §5) — Gemini is never invoked with an empty, stale, or forced-guess context. This reuses the branch structure already in `n8n-build-manifest.md` Node 4/5/6, with Node 4.5 sitting between Node 4 and Node 5.
+6. **Privacy boundary:** both `sources.json` and the `UDID_Reviewed_Sources` Data Table are static, CTO/Product-Owner-authored content. No node in this design ever **writes** to the Data Table at runtime — only the one-time/per-update manual import writes to it. Applicant messages, Telegram chat IDs, Google Sheet rows, reminders, or any free text are never ingested into either the canonical file or the Data Table — there is no ingestion pipeline for user data at all.
 
 ### 29.4 Explicit non-goals (per CEO boundary)
-No new paid vector database, new SaaS account, web scraper, autonomous agent, or new credential. No embeddings API call added (which would itself require a new outbound HTTP call under a not-yet-approved usage pattern) — this design deliberately avoids needing one. Not self-learning: the corpus only changes when a human edits `docs/SOURCES.md` and then manually re-syncs `rag-corpus/sources.json`.
+No new paid vector database, new SaaS account, web scraper, autonomous agent, or new credential. No embeddings API call added (which would itself require a new outbound HTTP call under a not-yet-approved usage pattern) — this design deliberately avoids needing one. Not self-learning: the corpus only changes when a human edits `docs/SOURCES.md`, then manually re-syncs `rag-corpus/sources.json`, then manually re-imports the `UDID_Reviewed_Sources` Data Table. **This feature is called "reviewed-source retrieval" in every document — never "production RAG" or "self-learning AI."**
+
+### 29.5 Runtime Mirror — n8n Data Table `UDID_Reviewed_Sources` (added 2026-09-13, correcting the runtime-file-access gap)
+
+**Schema (columns, all text/string type unless noted):**
+| Column | Content | Notes |
+|---|---|---|
+| `source_id` | e.g. `SRC-001` | Primary lookup key |
+| `issuing_authority` | exact text from `sources.json` | |
+| `official_url` | exact URL | |
+| `review_status` | always `Reviewed` for any row present here | a row must never exist here unless it is Reviewed in `docs/SOURCES.md` |
+| `retrieval_date` | exact text from `sources.json` | |
+| `geography` | e.g. `National`, `Maharashtra (state-level)` | |
+| `excerpt_text` | the exact `excerpt_text` string from `sources.json` | this is what gets passed to Gemini |
+| `limitations` | exact text from `sources.json` | |
+| `match_tags` | comma-separated string, e.g. `maharashtra,escalation,state-commissioner,stuck` | Node 4.5's filter reads this as a simple comma-split, not JSON, since Data Table cells are flat strings |
+| `corpus_version` | the exact value of `sources.json`'s `_corpus_version` at the time of import, e.g. `2026-09-13-v1` | **every row must carry the same value** — used as the staleness check in item 5 above |
+
+**Five-row import procedure (manual, performed by the Product Owner in their n8n session — not by a live workflow node):**
+1. In n8n, go to **Data tables** → **Create Data Table** → name it exactly `UDID_Reviewed_Sources`.
+2. Add the 10 columns listed above, in any order, all as text-type columns.
+3. For each of the 5 entries in the current `docs/automation/rag-corpus/sources.json` (`sources[0]` through `sources[4]`, i.e. SRC-001 through SRC-005), add one new row, copying each field's value verbatim, and set `corpus_version` to the file's current `_corpus_version` value (`2026-09-13-v1` as of this writing) on every row.
+4. Confirm exactly 5 rows exist, no more, no fewer, and no additional columns beyond the 10 above.
+
+**Version/reconciliation verification (manual, since a live hosted workflow cannot diff against the git file itself):**
+- Whenever `docs/SOURCES.md` changes and `sources.json` is updated by a git-connected session, that session must bump `_corpus_version` to a new value and record the change in `MEMORY.MD`.
+- The Product Owner then manually re-imports/updates all 5 (or more, if sources were added) Data Table rows with the new `corpus_version` value, and records the exact re-import timestamp in `MEMORY.MD`.
+- The live workflow's own check (Node 4.5) is limited to: "do all returned rows show the `corpus_version` I expect?" — where "expect" means a value the workflow is configured with (a Set node constant updated during the same manual reconciliation step). It is **not** a live cryptographic diff against the GitHub file — that is not possible from inside a hosted n8n workflow with no repository access, and this document does not claim otherwise.
+
+**Test proving the Data Table holds no applicant data (added to `docs/TESTING.md`):** see the new "Data Table Content Audit" test — query all rows and columns from `UDID_Reviewed_Sources` and assert the column set is exactly the 10 listed above (no `chat_id`, `message`, `phone`, `address`, or any log-derived field), and that every `source_id` value is one of SRC-001–SRC-005 with `review_status = Reviewed`.

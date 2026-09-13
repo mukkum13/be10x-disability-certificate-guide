@@ -1,7 +1,9 @@
 {
   "_status": "CURATED CORPUS — reviewed sources only. Hand-authored by CTO from docs/SOURCES.md. Never written to by any live workflow node; contains zero applicant/session data.",
+  "_corpus_version": "2026-09-13-v1",
   "_last_synced_with_SOURCES_md": "2026-09-12 19:50:48 Asia/Calcutta (docs/SOURCES.md SRC-001 through SRC-005, all Review status = Reviewed)",
   "_maintenance_rule": "This file must be manually re-synced whenever docs/SOURCES.md changes (a source added, superseded, or its extracted facts edited). It is not auto-generated and does not auto-update.",
+  "_runtime_mirror_rule": "This file is the version-controlled CANONICAL corpus, read by humans and by future git-connected sessions only. A live n8n workflow cannot read this file at runtime (a hosted n8n instance has no access to this GitHub/local workspace). The runtime copy lives in the n8n Data Table 'UDID_Reviewed_Sources' — see Architecture.md SS29.5 for the exact schema and the manual import/reconciliation procedure. Every row in that Data Table must carry this same _corpus_version value; a mismatch (or the value being blank/absent) means the Data Table is stale and must be treated as a corpus-read failure (fail-safe), not used as-is.",
   "sources": [
     {
       "source_id": "SRC-001",
