@@ -11,7 +11,7 @@
 **Track (unresolved — see `RULES.md` §1a, Pending CEO Decision #2):** the Google Form requires selecting exactly one of **AI Automation / AI Agent / Product Build**. Not yet declared for this project. "Those Who Served & Access" is the project's *domain* (theme), not the track field on the form.
 
 ## The Actual Submission Mechanism (per `Project_details.docx`, verified 2026-09-13)
-Two pieces, both mandatory:
+**Unresolved source inconsistency (flagged 2026-09-13, not silently resolved):** the source document's own section heading reads *"The Submission Has Three Pieces"* ("Miss any one of them and your submission is incomplete"), but the body under that heading names only **two** items — "A Google Drive folder with a simple structure" and "A submitted Google Form" — before moving on ("Let's go through each."). No third piece is named anywhere in the section. This is recorded as a genuine inconsistency in the source document itself, not resolved by assuming a missing third item or silently treating it as "two pieces." Both described pieces are detailed below; if a third, unnamed piece exists, it has not been identified from this source.
 
 ### Piece 1 — A Google Drive folder
 Named `"[Your Name] – Build for Good Submission"`, shared with **General access = "Anyone with the link," role = Viewer**, and tested in an incognito window before submitting (the document calls this "the #1 failure point"). Contains:
@@ -51,7 +51,7 @@ Applying for a disability certificate and UDID card in India spans specific hosp
 - **Q3:** _To be finalized — must name the exact AI step (Gemini grounded-response), the specific reviewed sources it's restricted to (SRC-001–SRC-005), and why a non-AI/rule-based version would fall short (varying state procedures, natural-language follow-up questions)._
 
 ## Who Was Consulted
-**None yet, as of 2026-09-13.** This is disclosed honestly rather than fabricated (root instructions explicitly forbid inventing consultation evidence; the source document's own FAQ states real personal data / fabricated evidence risks a 10-point penalty and possible disqualification). See `RULES.md` §1 row 9 and `MEMORY.MD` Pending CEO Decision #1 for the plan to close or knowingly accept this gap before 19 Sep 2026.
+**None yet, as of 2026-09-13.** This is disclosed honestly rather than fabricated — that requirement comes from this project's own root instructions/`RULES.md`, **not from the handbook**. **Correction (2026-09-13):** the earlier version of this line falsely attributed a "10-point penalty ... for fabricated evidence" to the source document's FAQ. The handbook's actual −10 penalties are for (a) real personal data in the demo and (b) an unapproved final health/money/legal decision — it does **not** separately state a penalty for fabricated consultation evidence. That prohibition is this project's own discipline, not a quoted Hathcon rule, and must not be presented as one. See `RULES.md` §1 row 9 and `MEMORY.MD` Pending CEO Decision #1 for the plan to close or knowingly accept the consultation gap before 19 Sep 2026.
 
 ## What Was Built
 _To be completed at Gate 4 once the vertical slice exists._
@@ -75,7 +75,8 @@ Mukesh Saxena (Product Owner), following `README.md` and `docs/OPERATIONS.md` no
 ## LinkedIn Post (encouraged, per source document — not scored, but "recruiters search for this stuff")
 Not yet drafted. Source document's suggested structure: short intro naming the hackathon, the specific problem solved (one sentence), what was built and the tools used, one challenge + one thing learned, a screenshot/demo link, and the tag `@Be10X`.
 
-## Final Mandatory Checklist (verbatim source document's "7 non-negotiables")
+## Final Mandatory Checklist
+**Unresolved source inconsistency (flagged 2026-09-13, not silently resolved):** the source document labels this section *"The 7 non-negotiables. Screenshot this:"* but visibly lists only **six** checkbox items beneath that heading (quoted below in full, none omitted or merged). No seventh item appears anywhere near this list in the document. Recorded as a genuine inconsistency in the source, not corrected by inventing a seventh item or silently renumbering it as six.
 - [ ] Video recording (5–10 min, in the folder)
 - [ ] Problem & solution document (in the folder)
 - [ ] Drive folder shared as "Anyone with link → Viewer" and tested in incognito
@@ -92,4 +93,4 @@ Not yet drafted. Source document's suggested structure: short intro naming the h
 - [ ] CEO has accepted the consolidated evidence
 
 ## Submission Status
-**Not ready.** Gate 0 (documentation) only, now including this corrected submission-mechanics rewrite. Awaiting CEO approval to begin Gate 1's remaining build work, and awaiting the track decision (`RULES.md` §1a) before this file's Q3/track answers can be finalized.
+**Corrected 2026-09-13 — the previous "Gate 0 only, awaiting Gate 1" wording was stale.** Actual current state: **Gate 1, in progress.** Concretely, as of this update: `docs/SOURCES.md` has 5 Reviewed sources (SRC-001–SRC-005); the reviewed-source-retrieval design (`Architecture.md` §29) is documented and its `UDID_Reviewed_Sources` n8n Data Table is fully populated (5 rows, matching the canonical corpus); in the Product Owner's n8n workflow, a Telegram Trigger and an unconfigured `If` node are placed, and a `Data table → Get row(s)` node (renamed "Node 4.5 — Reviewed-Source Retrieval") is placed but unconnected and unconfigured. **Nothing is published, activated, connected, executed, or tested live** — no credential has been entered anywhere. Still awaiting the track decision (`RULES.md` §1a, Pending CEO Decision #2) before this file's Q3/track answers can be finalized, and awaiting the remaining Gate 1 build (Nodes 1b/5/5b/6/6b/6.5/7/8/9/10) before any test or submission content can be completed.
