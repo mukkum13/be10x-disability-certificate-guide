@@ -1,0 +1,89 @@
+{
+  "_status": "CURATED CORPUS — reviewed sources only. Hand-authored by CTO from docs/SOURCES.md. Never written to by any live workflow node; contains zero applicant/session data.",
+  "_last_synced_with_SOURCES_md": "2026-09-12 19:50:48 Asia/Calcutta (docs/SOURCES.md SRC-001 through SRC-005, all Review status = Reviewed)",
+  "_maintenance_rule": "This file must be manually re-synced whenever docs/SOURCES.md changes (a source added, superseded, or its extracted facts edited). It is not auto-generated and does not auto-update.",
+  "sources": [
+    {
+      "source_id": "SRC-001",
+      "issuing_authority": "National Institute for Empowerment of Persons with Intellectual Disabilities (NIEPID), Dept. of Empowerment of Persons with Disabilities, Govt. of India",
+      "official_url": "https://niepid.nic.in/en/unique-disability-id-udid/",
+      "review_status": "Reviewed",
+      "retrieval_date": "2026-09-12 13:48:00 Asia/Calcutta",
+      "geography": "National",
+      "allowed_claims": [
+        "Registration/application portal is https://www.swavlambancard.gov.in/",
+        "Steps: (1) online registration on the portal, (2) submit application for Disability Certificate/UDID, (3) CMO Office/Medical Authority verifies and refers to designated Specialist/Medical Board for assessment, (4) certificate/card issued electronically upon completion",
+        "Applicant can track status, request renewal, and download/print the certificate/card via the portal",
+        "Aadhaar number is stated as mandatory for both children and adult applicants"
+      ],
+      "excerpt_text": "Registration/application portal is https://www.swavlambancard.gov.in/. Steps: (1) online registration on the portal, (2) submit application for Disability Certificate/UDID, (3) CMO Office/Medical Authority verifies and refers to designated Specialist/Medical Board for assessment, (4) certificate/card issued electronically upon completion. Applicant can track status, request renewal, and download/print the certificate/card via the portal. Aadhaar number is stated as mandatory for both children and adult applicants.",
+      "limitations": "No state-specific hospital/medical-board assignment, exact document checklist, or fees. District-level specifics NOT covered.",
+      "match_tags": ["national", "udid", "registration", "process-overview"]
+    },
+    {
+      "source_id": "SRC-002",
+      "issuing_authority": "Dept. of Social Justice & Special Assistance, Govt. of Maharashtra (cross-confirmed against ccpd.nic.in)",
+      "official_url": "https://depwd.maharashtra.gov.in/en/organization/commissionerate-for-persons-with-disabilities-maharashtra-state-pune/",
+      "review_status": "Reviewed",
+      "retrieval_date": "2026-09-12 13:49:00 Asia/Calcutta",
+      "geography": "Maharashtra (state-level)",
+      "allowed_claims": [
+        "Office: Commissionerate for Persons with Disabilities, Maharashtra State",
+        "Address: 3, Church Road, Pune - 411001, Maharashtra",
+        "Phone: 020-2612 2061 / 020-2613 6845 / 020-2612 6471",
+        "Email: commissioner.disability@maharashtra.gov.in"
+      ],
+      "excerpt_text": "State-level escalation authority: Commissionerate for Persons with Disabilities, Maharashtra State, 3 Church Road, Pune 411001, Maharashtra. Phone: 020-2612 2061 / 020-2613 6845 / 020-2612 6471. Email: commissioner.disability@maharashtra.gov.in. Present this as 'State Commissioner for Persons with Disabilities, Maharashtra - contact per depwd.maharashtra.gov.in,' not as a permanently fixed detail.",
+      "limitations": "Officeholder name/direct contact subject to change; re-verify before each production release. Not confirmed as the exact step reached after the district social welfare office (district-level tier, SRC not yet Reviewed).",
+      "match_tags": ["maharashtra", "escalation", "state-commissioner", "stuck"]
+    },
+    {
+      "source_id": "SRC-003",
+      "issuing_authority": "Government of India, Ministry of Social Justice and Empowerment, Department of Empowerment of Persons with Disabilities",
+      "official_url": "https://swavlambancard.gov.in/uploads/news/17398614454320241023621746570.pdf",
+      "review_status": "Reviewed",
+      "retrieval_date": "2026-09-12 19:50:48 Asia/Calcutta",
+      "geography": "National, including Maharashtra",
+      "allowed_claims": [
+        "An applicant may submit the disability-certificate/UDID application through the UDID portal to the medical authority in their district of residence, or to the medical authority at a hospital where they are receiving or have received treatment related to the disability.",
+        "The application is accompanied by proof of identity, a recent photograph (not older than six months), proof of residence, and Aadhaar number or Aadhaar-enrolment number; when Aadhaar is used as identity proof and has the same residential address, separate address proof is not required.",
+        "The medical authority or other notified competent authority verifies the application information, assesses disability under applicable Central Government guidelines, and issues the certificate/UDID card where the requirements are met."
+      ],
+      "excerpt_text": "Rights of Persons with Disabilities (Amendment) Rules, 2024: application submitted through the UDID portal to the medical authority in the applicant's district of residence, or to the medical authority at a treating hospital. Required documents: identity proof, a recent photograph (<=6 months old), proof of residence, and Aadhaar number/Aadhaar-enrolment number (separate address proof not required if Aadhaar address matches). The medical authority verifies and assesses disability under Central Government guidelines, then issues the certificate/UDID card.",
+      "limitations": "National rule, not a Maharashtra district hospital list. Does not identify a particular medical authority, appointment availability, fees, local forms, or district welfare office. Must never be used to justify collecting these documents or Aadhaar data from the user.",
+      "match_tags": ["national", "application-documents", "rpwd-rules-2024", "medical-authority"]
+    },
+    {
+      "source_id": "SRC-004",
+      "issuing_authority": "Department of Empowerment of Persons with Disabilities, Government of Maharashtra",
+      "official_url": "https://depwd.maharashtra.gov.in/en/service/disability-identity-card-to-person-with-disability/",
+      "review_status": "Reviewed",
+      "retrieval_date": "2026-09-12 19:50:48 Asia/Calcutta",
+      "geography": "Maharashtra",
+      "allowed_claims": [
+        "The page describes the UDID project as an avenue to obtain a UDID card or disability certificate and links users to the official UDID portal.",
+        "It identifies new UDID application, renewal of an existing certificate/card, and lost-card/certificate handling as portal services.",
+        "It states that the UDID card is valid pan-India."
+      ],
+      "excerpt_text": "Maharashtra DEPwD's UDID service page directs users to the official UDID portal for new applications, renewals, and lost-card/certificate handling, and states the UDID card is valid pan-India.",
+      "limitations": "Maharashtra government service entry point only, not a state-specific procedural circular. Does not identify a district medical authority, hospital, medical board, local appointment process, or district welfare office.",
+      "match_tags": ["maharashtra", "portal-direction", "pan-india-validity"]
+    },
+    {
+      "source_id": "SRC-005",
+      "issuing_authority": "Department of Empowerment of Persons with Disabilities, Ministry of Social Justice and Empowerment, Government of India",
+      "official_url": "https://swavlambancard.gov.in/",
+      "review_status": "Reviewed",
+      "retrieval_date": "2026-09-12 19:50:48 Asia/Calcutta",
+      "geography": "National, including Maharashtra",
+      "allowed_claims": [
+        "The portal provides UDID application and application-tracking paths.",
+        "The portal states that application procedures/guidelines can be through online, camp, and CMO-office routes.",
+        "Its \"Know your Medical Authority\" feature requires the user to select state/UT and district to find the relevant medical authority."
+      ],
+      "excerpt_text": "Official UDID portal (swavlambancard.gov.in) provides application and tracking; procedures available via online, camp, or CMO-office routes. Its 'Know your Medical Authority' feature requires selecting state/UT and district to find the relevant medical authority for that location.",
+      "limitations": "Lookup output is dynamic and was not recorded for any specific pilot district. Must direct the user to use the official lookup themselves; must not name a hospital or authority until independently verified and registered as a new Reviewed source.",
+      "match_tags": ["national", "official-portal", "medical-authority-lookup", "tracking"]
+    }
+  ]
+}

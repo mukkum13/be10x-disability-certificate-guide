@@ -72,12 +72,24 @@ Each node entry below states: purpose, input/output contract, approved data fiel
 - **Source-grounding rule:** this node must reference `docs/SOURCES.md`'s current Reviewed-source list at build/run time, not a hardcoded snapshot.
 - **Unpublished/disabled state requirement:** same as Node 1.
 
+## Node 4.5 — Reviewed-Source Retrieval (new — CEO-approved minimal retrieval layer, 2026-09-13)
+*Added per CEO Decision "Minimal RAG layer approved," 2026-09-13. See `Architecture.md` §29 for the full design and the environment finding that made this deterministic (not embeddings-based).*
+- **Purpose:** Given a `grounded` signal from Node 4, select only the specific Reviewed-source entries relevant to the user's question (rather than sending all 5 to Gemini on every call).
+- **Input:** User's state/district/disability-type/question-intent; the static corpus file `docs/automation/rag-corpus/sources.json`.
+- **Output:** A small list of matched entries (each with `source_id`, `excerpt_text`, `official_url`) to pass to Node 5; or an explicit empty-match signal.
+- **Approved data fields:** the corpus file's own fields (all already public/non-secret); the user's state/district/disability-type/question-intent (used only to select entries, not stored here).
+- **Prohibited data fields:** this node must never write to `sources.json` — read-only access only. No applicant free text, chat ID, or session key is ever added to the corpus or any index.
+- **Branch conditions:** if one or more entries match → proceed to Node 5 with only those entries. If **zero** entries match → route directly to Node 6 (fixed fail-safe), bypassing Node 5 entirely — Gemini must never be invoked with an empty context and asked to "do its best."
+- **Failure behaviour:** if the corpus file cannot be read (e.g., file error), treat as a zero-match result and route to Node 6 — never fall back to sending the full unfiltered corpus as a "safe default," since that would reintroduce the token-cost/precision problem this node exists to solve, and never fall back to letting Gemini answer without any excerpts.
+- **Source-grounding rule:** this **is** the grounding-enforcement point for retrieval; matching logic is a plain tag/field filter (see `Architecture.md` §29.3), not similarity search — deliberate, given this n8n instance has no embeddings node installed (verified 2026-09-13) and the corpus is only 5 entries.
+- **Unpublished/disabled state requirement:** same as Node 1. **This node has not been created in n8n yet** — it exists in this manifest only, pending the CEO's design-review acceptance (`Phases.md` D1.3a-RAG) before any live node work resumes.
+
 ## Node 5 — Gemini Grounded-Response Branch
 *Revised in this revision — resolves REVIEW-FINDINGS.md item 2 (Codex #2 / Antigravity §1.2): the "what/where/carry/next" schema is no longer mandatory-for-all-four when a source doesn't cover one part.*
-- **Purpose:** Produce numbered guidance using only the text of SRC-001–SRC-005.
-- **Input:** User's five answers; the relevant Reviewed-source excerpts.
-- **Output:** FR-9 disclosure sentence, then numbered guidance text (only the what/where/carry/next parts actually supported by the excerpts — omitting a part rather than inventing it), ending with the mandatory closing line.
-- **Approved data fields:** the five answers; the Reviewed-source extracted-facts text.
+- **Purpose:** Produce numbered guidance using only the matched excerpt text Node 4.5 retrieved.
+- **Input:** User's five answers; the specific matched-entry `excerpt_text`/`source_id` list from Node 4.5 (not the full SRC-001–SRC-005 corpus on every call — only the entries Node 4.5 selected as relevant).
+- **Output:** FR-9 disclosure sentence, then numbered guidance text (only the what/where/carry/next parts actually supported by the matched excerpts — omitting a part rather than inventing it), then the source_id(s) actually used (for internal traceability/Node 5b verification, not shown to the end user as raw IDs), ending with the mandatory closing line.
+- **Approved data fields:** the five answers; the matched excerpts' text and source_ids (already public/non-secret).
 - **Prohibited data fields:** no free-text user input reaches this node at all in this revision (Node 3 no longer accepts free text), which also reduces prompt-injection surface.
 - **Branch conditions:** N/A (terminal content-generation branch, but see Node 5b immediately after).
 - **Failure behaviour:** if the Gemini call errors or times out, fall back to the fixed fail-safe text (Node 6), never a raw error message.

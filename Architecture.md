@@ -205,3 +205,24 @@ The Project 14 template specifies Telegram as the primary Trigger, while the Pro
 
 ### 28.4 Source gaps
 No Maharashtra-specific procedure, pilot certifying-hospital/medical-board list, or pilot district welfare-office source is Reviewed yet. Until sufficient official sources are reviewed, the factual guidance step must use the fixed fail-safe.
+
+## 29. Minimal Retrieval Layer ("RAG-adjacent") — Reviewed-Source-Only (CEO Decision, 2026-09-13; environment check same date)
+
+### 29.1 Purpose and scope
+Make the Gemini response retrieve only the relevant, human-reviewed excerpts from `docs/SOURCES.md` (SRC-001–SRC-005) instead of sending the full 5-source corpus on every call. **This is not autonomous learning, web crawling, self-training, a broad AI agent, or applicant-data storage** — it is a narrow retrieval-before-generation step over a small, static, human-curated corpus.
+
+### 29.2 Environment finding (checked 2026-09-13, this session, read-only inspection of the Product Owner's n8n instance)
+- **`Simple Vector Store` node: available** (4 actions — "Get ranked documents from vector store," "Add documents to vector store," "Retrieve documents for Chain/Tool as Vector Store," "Retrieve documents for AI Agent as Tool").
+- **No embeddings node of any kind is installed** — searches for "Embeddings Google Gemini" and the bare term "Embeddings" both returned zero results ("We didn't make that... yet").
+- **Consequence:** a true embeddings → vector-store → similarity-search RAG pipeline **cannot be built natively in this n8n instance** without adding a new external embeddings API call (e.g., via an HTTP Request node), which the CEO's own boundary (§29.3 below) restricts. Even if `Simple Vector Store` were used with, say, a manually-computed embedding, that node is in-memory only and does **not** persist across a workflow restart — it would not be production-grade persistent RAG regardless.
+
+### 29.3 Adopted design: deterministic rule-based retrieval (the "smallest no-cost compliant alternative")
+Because true vector RAG is not buildable here, and because the entire corpus is 5 short, static, curated excerpts (not a large or growing document set), retrieval is implemented **deterministically**, not via embeddings similarity:
+1. **Ingestion path:** `docs/automation/rag-corpus/sources.json` — a hand-authored, version-controlled JSON file containing, per source: `source_id`, `issuing_authority`, `official_url`, `review_status`, `retrieval_date`, `geography`, `allowed_claims`, `excerpt_text`, `limitations`, `match_tags`. This file is manually re-synced whenever `docs/SOURCES.md` changes — it is not auto-generated, and no automated crawler or ingestion job writes to it.
+2. **Retrieval path (n8n):** a new node — `n8n-build-manifest.md` "Node 4.5 — Reviewed-Source Retrieval" — reads `sources.json` (via a Read Binary File / HTTP Request-to-local-file or an inline Code node holding the same JSON, depending on what's simplest to wire in n8n) and deterministically filters entries whose `match_tags`/`geography` match the user's stated state/district/disability-type and the kind of question being asked (state-level portal guidance vs. escalation vs. national process). This is a plain filter/lookup, not a similarity search — for 5 entries, that is both sufficient and far more auditable than embedding-based retrieval would be.
+3. **What reaches Gemini:** only the matched entries' `excerpt_text` (plus their `source_id` for internal traceability) — never the full corpus, never unmatched entries, never raw `docs/SOURCES.md` prose beyond what's already mirrored into the curated JSON.
+4. **Fallback behaviour:** if the filter step matches zero entries, or the user's question requires a district-specific hospital/medical-board/welfare-office fact that no `match_tags` entry supports, the retrieval node routes directly to the existing fixed fail-safe (`D1.3a-workflow-spec.md` §5) — Gemini is never invoked with an empty or forced-guess context. This reuses the branch structure already in `n8n-build-manifest.md` Node 4/5/6, with Node 4.5 sitting between Node 4 and Node 5.
+5. **Privacy boundary:** `sources.json` is a static, CTO-authored file. No node in this design ever **writes** to it. Applicant messages, Telegram chat IDs, Google Sheet rows, reminders, or any free text are never ingested into this file or any retrieval index — there is no ingestion pipeline for user data at all, only a one-time manual authoring step by the CTO from already-Reviewed sources.
+
+### 29.4 Explicit non-goals (per CEO boundary)
+No new paid vector database, new SaaS account, web scraper, autonomous agent, or new credential. No embeddings API call added (which would itself require a new outbound HTTP call under a not-yet-approved usage pattern) — this design deliberately avoids needing one. Not self-learning: the corpus only changes when a human edits `docs/SOURCES.md` and then manually re-syncs `rag-corpus/sources.json`.
