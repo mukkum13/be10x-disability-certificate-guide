@@ -88,25 +88,28 @@ File ownership is split so Agent A and Agent B never edit the same file concurre
 ## 15–19 September 2026 — Validation & Rehearsal
 - Real-user or NGO consultation attempt (addresses Pending CEO Decision #1 in `RULES.md`) — if one occurs, capture evidence honestly in `docs/SUBMISSION.md`; if not, disclose the gap honestly rather than fabricate it.
 - Fix issues found during validation.
-- Rehearse the 3-minute pitch against the exact timing structure (0:20/0:40/2:20/2:45/3:00).
-- Prepare backup demonstration video.
-- Draft the one-page submission report.
+- Rehearse the demo video against the actual source-document structure (intro → problem → live walkthrough → where AI does the heavy lifting → impact line), 5–10 minutes, per `docs/SUBMISSION.md` (corrected 2026-09-13 — the previously recorded "0:20/0:40/2:20/2:45/3:00" 3-minute breakdown did not match `Project_details.docx` and was removed).
+- Prepare the Problem & Solution Explainer (1–3 pages) for the Google Drive folder.
+- Draft the Google Form's 3 answers (Q1/Q2/Q3) per `docs/SUBMISSION.md`.
 
 ## 20 September 2026 — Submission Day Checklist
-- [ ] Working URL confirmed live
-- [ ] Backup video recorded and stored
-- [ ] One-page report finalized (`docs/SUBMISSION.md`)
+**Corrected 2026-09-13 to match the actual two-piece mechanism in `Project_details.docx` (Google Drive folder + Google Form) — see `docs/SUBMISSION.md`.**
+- [ ] Working Telegram and/or website link confirmed live (in Drive folder's Project Files)
+- [ ] Demo video recorded (5–10 min per source document) and placed in the Drive folder
+- [ ] Problem & Solution Explainer (1–3 pages) finalized and placed in the Drive folder
+- [ ] Drive folder shared "Anyone with link → Viewer," tested in incognito
+- [ ] Google Form submitted: email/phone, project title/track, Q1/Q2/Q3, Drive link, confirmation checkbox
 - [ ] Three required Hathcon tests re-run same-day with fresh evidence
 - [ ] Known failures honestly disclosed
 - [ ] Non-technical operator instructions confirmed workable
 - [ ] `MEMORY.MD` reflects exact final state
-- [ ] CEO final acceptance recorded
+- [ ] CEO final acceptance recorded, including the track declared on the Google Form (`RULES.md` §1a)
 
 ## Risks & Rollback
 | Risk | Rollback / Recovery |
 |---|---|
 | Official source documents cannot be found/reviewed in time | Fall back to the single most-documented state (e.g., Maharashtra, per hackathon example); disclose limited coverage honestly; never fabricate coverage |
-| Custom website build slips past Day 3 | Fall back to Hathcon "Route B" Claude Project submission (RULES.md row 26) as a documented, honest fallback — not a silent scope cut |
+| Custom website build slips past Day 3 | **Corrected 2026-09-13:** no "Route B Claude Project" fallback exists in the verified source document (removed, `RULES.md` row 26). The real fallback is simply submitting an honestly-documented partial build through the same Google Drive + Google Form mechanism, disclosing what does not work in the Problem & Solution Explainer and the video. |
 | Reminder channel cannot be verified to deliver | Ship draft-only reminder text; disclose as a known limitation (does not violate FR-7, which explicitly allows draft-only mode) |
 | Real user/NGO consultation not obtained | Disclose honestly in `docs/SUBMISSION.md`; do not claim consultation that did not happen |
 | Two agents collide on a file | File-ownership table above is authoritative; CTO reassigns immediately on detection and logs it in `MEMORY.MD` |

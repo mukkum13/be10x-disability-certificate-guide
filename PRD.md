@@ -118,9 +118,9 @@ User accounts, social/community features, general-purpose chatbot scope, payment
 - Optionally: a reminder-delivery channel (Telegram bot, email, or equivalent) if Gate 2 reminder verification is to be attempted.
 
 ## 20. Known Assumptions
-- No real user or organisation has been interviewed for this build; the "40% real-world usefulness" judging criterion currently rests on the hackathon's own problem framing, not on direct consultation. This is flagged, not hidden.
+- No real user or organisation has been interviewed for this build; the **+5 bonus** for NGO/affected-person involvement (corrected weighting, `RULES.md` §1 row 9, verified against `Project_Disability_certificate_guide/Project_details.docx`) currently rests on the hackathon's own problem framing, not on direct consultation. This is flagged, not hidden.
 - Version 1 will likely cover only one or two states/districts for which official sources can be sourced and reviewed within the 3-day window.
-- The Route B (Claude Project) shortcut described in the hackathon guide is treated as a valid *fallback* submission path if the custom-built website slips, but the CEO's product-scope requirement (Section 4/6 above) sets a higher production-grade bar than Route B alone.
+- **Corrected 2026-09-13:** no "Route B (Claude Project)" fallback mechanism exists in the verified source document; the earlier reference to it here has been removed. See `RULES.md` §1a for a separate, still-unresolved track-vs-domain question this same document review surfaced (the project must declare one of AI Automation / AI Agent / Product Build as its track).
 
 ## 21. Success Metrics
 - Vertical slice deployed and reachable by a public URL (Gate 1).

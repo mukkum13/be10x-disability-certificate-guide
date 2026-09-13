@@ -175,7 +175,7 @@ Transition rule: from state `Qn`, a non-empty `answerText` moves the session to 
 - **Rejected:** user accounts / persistent per-user history — explicit non-goal (privacy + scope).
 - **Rejected:** multi-service microarchitecture — a single backend function is sufficient and easier to secure/operate in 3 days.
 - **Open:** Claude API vs Gemini API vs n8n-orchestrated flow — CEO decision needed (see report).
-- **Open:** custom website vs. hackathon's "Route B" Claude Project shortcut as the primary submission vs. fallback — CEO decision needed.
+- **Retracted 2026-09-13:** no "Route B" Claude Project shortcut exists in the verified source document (`Project_Disability_certificate_guide/Project_details.docx`); this line previously referenced a fallback that cannot be traced to any actual Hathcon rule. See `RULES.md` §1a for the real, still-open question this same document review surfaced: which of the three actual tracks (AI Automation / AI Agent / Product Build) this project declares.
 
 ## 27. Known Limitations
 - No document-upload or dynamic ingestion pipeline; sources are manually reviewed and registered.
