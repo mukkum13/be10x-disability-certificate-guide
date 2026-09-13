@@ -59,6 +59,17 @@ Layered: unit (state machine, formatter, logger) → integration (backend endpoi
 4. **Empty retrieval / Data Table read failure or version mismatch:** simulate the `UDID_Reviewed_Sources` Data Table being unreadable, returning zero rows, or returning rows whose `corpus_version` doesn't match the value this workflow expects; confirm the workflow fails safe to Node 6 rather than sending an empty/stale context to Gemini or falling back to an unfiltered set.
 5. **Data Table content audit (proves no applicant data reached the runtime mirror):** query all rows and all columns from `UDID_Reviewed_Sources`; assert the column set is exactly `source_id, issuing_authority, official_url, review_status, retrieval_date, geography, excerpt_text, limitations, match_tags, corpus_version` (10 columns, no more); assert exactly 5 rows (or however many `sources.json` currently has) exist; assert every `source_id` is one of SRC-001–SRC-005 with `review_status = Reviewed`; assert no column named `chat_id`, `message`, `phone`, `address`, or anything log-derived exists anywhere in the schema.
 
+**Current build status (truthful, verified 2026-09-13 17:29 Asia/Calcutta):** `UDID_Reviewed_Sources` exists with 5 reviewed rows; Node 4.5 exists with this Data Table selected, unconnected, no filter conditions. None of tests 1–5 above have actually been run yet — they remain planned until Node 4.5 is connected and executable.
+
+## Session-State Data Table Tests (planned — `UDID_Guide_Sessions`, CEO Decision 2026-09-13 17:34 Asia/Calcutta; `Architecture.md` §29.6, `RULES.md` §27a)
+1. **Schema audit (proves no over-collection):** query all columns from `UDID_Guide_Sessions`; assert the column set is exactly `session_key, current_question_index, state_district, disability_type, applicant_relationship, udid_status, language, updated_at, expires_at` (9 columns, no more) — no `name`, `phone`, `address`, `aadhaar`, free-text health field, or raw message-text column.
+2. **Isolation from reviewed-source corpus and Sheets:** confirm `UDID_Guide_Sessions` is a table distinct from `UDID_Reviewed_Sources` and from the Google Sheet backing Node 7; confirm no workflow node writes `session_key` or any session answer into either.
+3. **Session lifecycle:** create a test session row, complete the five-question flow (or simulate completion), confirm the row is deleted once the final response/reminder flow completes.
+4. **Expired-session cleanup:** create a test row with a past `expires_at`; confirm the cleanup path (once built) deletes it without requiring the original conversation to resume.
+5. **Forwarding boundary:** confirm no Sheets row or `UDID_Reviewed_Sources` row ever contains a value that matches an existing `session_key` — i.e., the key never leaks downstream of Node 6.5's whitelist.
+
+**Current build status (truthful):** `UDID_Guide_Sessions` has not been created; none of tests 1–5 above have been run. This section is documentation-only pending separate CEO authorization to build the table and node(s).
+
 ## Failure-Mode Tests (planned)
 - Simulate LLM API failure, log-store failure, and reminder-channel failure; confirm each shows the specified safe message (`Architecture.md` §18) with no fabricated content.
 
