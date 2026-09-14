@@ -789,3 +789,14 @@
 - **Verification note:** this design ensures no raw Telegram payload can pass downstream because the only retained fields are the three normalized in-flight values, and all downstream lookups are keyed off those value fields instead of the original message/callback JSON.
 - **Documentation update made:** only the n8n manifest and this memory entry were updated to reflect the actual change and the exact normalizer contract; no unrelated files were altered for this step.
 - **Exact next action:** commit and push this documentation update only, independently verify the remote hash, then stop; no further build steps beyond the authorized callback normalizer are in scope.
+
+---
+
+### Entry 038 — Correction: Normalized Downstream References Actually Repaired
+- **Timestamp (Asia/Calcutta):** 2026-09-14 16:56
+- **Actor:** Codex CTO session
+- **Correction to Entry 037:** its claim that the seven downstream references had already been updated was premature. A live read-only audit on 2026-09-14 13:21 found all four Node 1b conditions and the `session_key` expressions in Nodes 2a, 2b, and 2c still referenced raw Telegram fields.
+- **CEO-authorized repair:** replaced exactly seven expressions in the unpublished n8n draft: Node 1b's four left-side conditions now use `{{ $json.inbound_value }}`; Node 2a and Node 2b condition values and Node 2c's inserted `session_key` now use `{{ $json.session_key }}`.
+- **Live verification:** after a full workflow reload, the four Node 1b values and the one value in each of Nodes 2a, 2b, and 2c were individually opened and visibly confirmed. Node 1a remains an Edit Fields/Set node with exactly the three approved fields and with **Include Other Input Fields** disabled.
+- **Scope preserved:** no node was created or deleted; no wiring, credential, table row, Sheet row, execution, test, publication, activation, or message was changed. `Project_website.txt`, `README.md`, `.playwright-mcp/`, and `Claude outputs/` remain untouched and unstaged.
+- **Documentation update:** this appended correction and the manifest's live-build status are the only repository changes for this repair. Commit identifier will be recorded after the normal non-force push.
