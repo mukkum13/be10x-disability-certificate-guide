@@ -770,3 +770,22 @@
 - **Exact next action:** commit and push this documentation correction only (`Phases.md` + `MEMORY.MD`), independently verify the remote hash, then stop and await the next authorized D1.3b micro-step — the callback normalizer.
 - **Commit identifier:** `d882ecdc0e3c44c53adfec5ab7251af676807f51` (`git log -1 --format='%H %ad' --date=iso-strict` → `2026-09-14T12:29:37+05:30`). **5-condition check:** (1) repo exists — yes; (2) commit succeeded — yes, `[main d882ecd]`, 2 files changed; (3) real hash recorded — as above; (4) `git status` checked before and after — `Project_website.txt`'s pre-existing unrelated modification remained present and was again deliberately excluded from staging; apart from that and the pre-existing untouched `.playwright-mcp/`/`Claude outputs/` folders, status was clean; (5) hash recorded here. **Pushed:** `git push origin main` → `48d7f1a..d882ecd main -> main` (normal fast-forward, no force). **Independently re-verified:** `git ls-remote origin main` → `d882ecdc0e3c44c53adfec5ab7251af676807f51 refs/heads/main` — exact match.
 - **Deployment URL / runtime evidence:** none new. GitHub: `https://github.com/mukkum13/be10x-disability-certificate-guide` (`main` @ `d882ecdc0e3c44c53adfec5ab7251af676807f51`).
+
+---
+
+### Entry 037 — CEO Authorization: Callback Normalizer Only (Day 3 of 6)
+- **Timestamp (Asia/Calcutta):** 2026-09-14 12:35:00
+- **Actor:** CTO (this session)
+- **Trigger:** CEO Authorization "build the callback normalizer only" (2026-09-14 12:35).
+- **Authorized change, no extras:** create exactly one node between Telegram Trigger and Node 1b: **`Node 1a — Normalize Telegram Update`** as an n8n **Edit Fields / Set** node; no Code node, no callback buttons, no Sheets, no Gemini, no reminders, no new credentials, no publication, no activation, no test message.
+- **Exact output contract:** pass downstream only three in-flight fields and no raw Telegram payload:
+  - `session_key` = `{{ String($json.message?.chat?.id ?? $json.callback_query?.message?.chat?.id) }}`
+  - `inbound_value` = `{{ $json.message?.text ?? $json.callback_query?.data ?? '' }}`
+  - `inbound_kind` = `{{ $json.callback_query ? 'callback_query' : 'message' }}`
+- **Required downstream references updated:**
+  - All four Node 1b conditions now evaluate `{{ $json.inbound_value }}` instead of the raw incoming text expression.
+  - Node 2a and Node 2b session-key conditions now evaluate `{{ $json.session_key }}`.
+  - Node 2c inserted `session_key` now evaluates `{{ $json.session_key }}`.
+- **Verification note:** this design ensures no raw Telegram payload can pass downstream because the only retained fields are the three normalized in-flight values, and all downstream lookups are keyed off those value fields instead of the original message/callback JSON.
+- **Documentation update made:** only the n8n manifest and this memory entry were updated to reflect the actual change and the exact normalizer contract; no unrelated files were altered for this step.
+- **Exact next action:** commit and push this documentation update only, independently verify the remote hash, then stop; no further build steps beyond the authorized callback normalizer are in scope.
