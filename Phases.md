@@ -10,6 +10,9 @@
 | Hardening | 15–19 Sep 2026 | Validation, real-user testing, corrections, rehearsal, submission prep |
 | Submission | 20 Sep 2026 | Final submission |
 
+## Schedule Correction — Six-Day Build Plan (CEO-Approved Extension, 2026-09-14 12:28 Asia/Calcutta)
+**The original 3-day build plan above has an approved 3-day extension.** The Master Schedule table above is preserved as-written (not rewritten) since it records what was planned as of 2026-09-12; it is now superseded by this correction for active status-reporting purposes. **The six-day plan is the active plan.** Today, 2026-09-14, is **Day 3 of 6**, not Day 3 of 3. Every CTO report's commercial-status block must state the schedule position as "Six-day plan status: Day X of 6 — <on-schedule/at-risk/blocked>", replacing the prior "Three-day plan" wording, effective immediately and for every future report. **Current truthful schedule statement: Day 3 of 6 — at risk**, because commercial completion is still 0% / 100% (no working end-user flow exists yet; only unconnected/partially-connected draft nodes). This correction does not retroactively rewrite any historical report already sent — per the CEO's explicit instruction, only this document and `MEMORY.MD` are updated to make the six-day schedule the active plan going forward.
+
 ## Available CLI Agents (enumerated, not invented) — UPDATED 2026-09-12 13:56:00 Asia/Calcutta per CEO Multi-AI Mandate
 **Standing instruction, to be issued before every coding task, delegation, review, or test assignment (CEO decision 2026-09-12 13:46:24 Asia/Calcutta):** *"Use /multi-ai-framework and use as less Claude Code as possible. Use Codex and Antigravity to their fullest capabilities under the already selected models."*
 
