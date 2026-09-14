@@ -68,7 +68,7 @@ Layered: unit (state machine, formatter, logger) → integration (backend endpoi
 4. **Expired-session cleanup:** create a test row with a past `expires_at`; confirm the cleanup path (once built) deletes it without requiring the original conversation to resume.
 5. **Forwarding boundary:** confirm no Sheets row or `UDID_Reviewed_Sources` row ever contains a value that matches an existing `session_key` — i.e., the key never leaks downstream of Node 6.5's whitelist.
 
-**Current build status (truthful):** `UDID_Guide_Sessions` has not been created; none of tests 1–5 above have been run. This section is documentation-only pending separate CEO authorization to build the table and node(s).
+**Current build status (truthful, verified 2026-09-14 11:18 Asia/Calcutta):** `UDID_Guide_Sessions` **exists** (ID `X8Xhx2Qwvs4R0Tx9`) with all 9 approved custom string columns, the expected n8n defaults (`id`, `createdAt`, `updatedAt`), and **zero rows**. No node reads or writes it yet, so none of tests 1–5 above have been run. This section remains documentation-only pending separate CEO authorization to build the table's node(s).
 
 ## Failure-Mode Tests (planned)
 - Simulate LLM API failure, log-store failure, and reminder-channel failure; confirm each shows the specified safe message (`Architecture.md` §18) with no fabricated content.
