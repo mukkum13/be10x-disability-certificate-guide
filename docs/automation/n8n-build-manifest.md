@@ -114,7 +114,8 @@ Each node entry below states: purpose, input/output contract, approved data fiel
 - **Failure behaviour:** on any Data Table read error, empty result, or version mismatch, treat as failure and route to Node 6 — never fall back to sending an unfiltered/full set as a "safe default" (reintroduces the precision problem this node exists to solve), and never let Gemini answer without any excerpts.
 - **Source-grounding rule:** this **is** the grounding-enforcement point for retrieval; matching logic is a plain tag/field filter (comma-split `match_tags` column, per `Architecture.md` §29.5), not similarity search — deliberate, given this n8n instance has no embeddings node installed (verified 2026-09-13) and the corpus is only 5 rows.
 - **Unpublished/disabled state requirement:** same as Node 1.
-- **Current build status (truthful, verified 2026-09-13 17:29 Asia/Calcutta):** the `UDID_Reviewed_Sources` Data Table **exists** and contains all **5** reviewed rows (SRC-001–SRC-005), matching the canonical `sources.json` corpus. This node **exists** on the canvas (renamed "Node 4.5 — Reviewed-Source Retrieval"), has `UDID_Reviewed_Sources` selected as its Data Table, but remains **unconnected** to any other node and has **no filter conditions configured** (a temporary condition was added only to inspect available column types/operators, then removed — confirmed reverted to "Currently no items exist"). No credential entered; nothing executed, published, or activated.
+- **Current build status (truthful, live-verified 2026-09-14 19:08 Asia/Calcutta):** the `UDID_Reviewed_Sources` Data Table **exists** and contains all **5** reviewed rows (SRC-001–SRC-005). This node **exists** on the canvas (renamed "Node 4.5 — Reviewed-Source Retrieval"), has `UDID_Reviewed_Sources` selected as its Data Table, and is **wired directly to Node 5 (Grounded Response Agent) main input** (`[2bb5536f.../outputs/main/0][8dfda112.../inputs/main/0]`), verified via DOM edge inspection and full page reload persistence audit. No credential entered; nothing executed, published, or activated.
+
 
 ## Node 5 — Gemini Grounded-Response Branch
 *Revised in this revision — resolves REVIEW-FINDINGS.md item 2 (Codex #2 / Antigravity §1.2): the "what/where/carry/next" schema is no longer mandatory-for-all-four when a source doesn't cover one part.*
@@ -138,7 +139,8 @@ Each node entry below states: purpose, input/output contract, approved data fiel
 - **Branch conditions:** flag `fail` if the generated text contains a capitalized multi-word noun phrase that does not appear in the supplied excerpts and is not a generic term (e.g., "Sassoon General Hospital" would fail if not present in SRC-001–SRC-005; "the official UDID portal" would pass, since that phrase is itself in the sources).
 - **Failure behaviour:** on `fail`, discard Node 5's output entirely and use Node 6's fixed fail-safe text instead — never show the user a partially-hallucinated answer.
 - **Source-grounding rule:** this node **is** a grounding-enforcement point, not just a rule reference.
-- **Unpublished/disabled state requirement:** same as Node 1. **Build-time note:** the exact matching logic (regex/entity-list check vs. a second constrained LLM call) is left to build time — this manifest specifies the requirement and its position in the flow, not a finished algorithm.
+- **Unpublished/disabled state requirement:** same as Node 1.
+- **Current build status (truthful, live-verified 2026-09-14 19:30 Asia/Calcutta):** this node **exists** on the canvas (ID `bc2a2272-2aac-4490-ba65-3d8247f32657`, type `n8n-nodes-base.code`, Code in JavaScript), connected directly from Node 5 (`Chat Model` / `8dfda112...`) main output handle (`[8dfda112.../outputs/main/0][bc2a2272.../inputs/main/0]`), verified via DOM inspection and full page reload persistence audit.
 
 ## Node 6 — Fixed Fail-Safe Branch
 *Revised in this revision — resolves REVIEW-FINDINGS.md items 4 and 12 (Codex #3 / Antigravity §3.4): the optional translation call is removed, and the exact text is now pointed at a single canonical source instead of being restated with variations.*
@@ -175,6 +177,8 @@ Each node entry below states: purpose, input/output contract, approved data fiel
 - **Failure behaviour:** if a required field is missing, log an empty string for that field rather than omitting the column or blocking the append.
 - **Source-grounding rule:** N/A.
 - **Unpublished/disabled state requirement:** same as Node 1.
+- **Current build status (truthful, live-verified 2026-09-14 19:30 Asia/Calcutta):** this node **exists** on the canvas (ID `363cadee-f58b-4f7a-aaf7-2211c2ace28a`, type `n8n-nodes-base.set`, Edit Fields), connected directly from Node 5b output handle (`[bc2a2272.../outputs/main/0][363cadee.../inputs/main/0]`), verified via DOM inspection and full page reload persistence audit.
+
 
 ## Node 7 — Google Sheets Append-Row (now non-blocking / parallel to Node 8)
 *Revised in this revision — resolves REVIEW-FINDINGS.md item 8 (Codex #8 / Antigravity §3.6): logging no longer sits inline before the user-facing response.*

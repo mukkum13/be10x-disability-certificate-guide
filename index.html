@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accessible India Disability Certificate & UDID Application Guide - Be10x Build for Good Project 14">
+    <title>Disability Certificate & UDID Guide | Sugamya Sahayak</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-default font-normal">
+    <!-- Skip to main content link for keyboard & screen reader accessibility -->
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+
+    <!-- Top Accessibility & Emergency Header -->
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <div class="brand-title">
+                <span class="emblem-icon" aria-hidden="true">🇮🇳</span>
+                <h1>Sugamya Sahayak <span>Disability Certificate & UDID Guide</span></h1>
+            </div>
+            
+            <!-- Accessibility Toolbar -->
+            <div class="accessibility-toolbar" role="region" aria-label="Accessibility Controls">
+                <div class="toolbar-group">
+                    <span class="toolbar-label" id="theme-label">Theme:</span>
+                    <button type="button" id="btn-theme-toggle" class="a11y-btn" aria-labelledby="theme-label" aria-pressed="false" title="Toggle High Contrast Mode">
+                        <span aria-hidden="true">👁️</span> High Contrast
+                    </button>
+                </div>
+                
+                <div class="toolbar-group">
+                    <span class="toolbar-label" id="font-label">Text Size:</span>
+                    <button type="button" id="btn-font-normal" class="a11y-btn active" aria-label="Normal Font Size" aria-pressed="true">A</button>
+                    <button type="button" id="btn-font-large" class="a11y-btn" aria-label="Large Font Size" aria-pressed="false">A+</button>
+                    <button type="button" id="btn-font-xlarge" class="a11y-btn" aria-label="Extra Large Font Size" aria-pressed="false">A++</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Escalation Helpline Banner -->
+        <div class="emergency-banner" role="alert" aria-live="polite">
+            <div class="emergency-container">
+                <span class="emergency-badge" aria-hidden="true">🚨 EMERGENCY HELP</span>
+                <p>Need urgent assistance in Maharashtra or National UDID portal support?</p>
+                <div class="emergency-actions">
+                    <a href="tel:1800111250" class="emergency-call-btn" aria-label="Call National Toll Free Helpline 1800-11-1250">
+                        📞 Call Toll-Free: <strong>1800-11-1250</strong>
+                    </a>
+                    <a href="https://swavlambancard.gov.in" target="_blank" rel="noopener noreferrer" class="emergency-link-btn" aria-label="Visit Official UDID Portal (opens in new tab)">
+                        🌐 swavlambancard.gov.in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main id="main-content" class="main-layout" role="main" tabindex="-1">
+        
+        <!-- Interactive Multi-Step Wizard Section -->
+        <section class="wizard-section" aria-labelledby="wizard-heading">
+            <h2 id="wizard-heading" class="section-title">Step-by-Step Application & Eligibility Guide</h2>
+            <p class="section-desc">Follow the 5 simple steps below to get instant grounded guidance for your state and disability category.</p>
+
+            <!-- Accessible Progress Indicator -->
+            <div class="progress-bar-container" role="region" aria-label="Wizard Progress">
+                <div class="progress-info">
+                    <span id="step-count-label">Step 1 of 5</span>
+                    <span id="step-title-label">Select Your State</span>
+                </div>
+                <div class="progress-track" role="progressbar" id="wizard-progress" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-valuetext="Step 1 of 5: Select Your State">
+                    <div class="progress-fill" style="width: 20%;"></div>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <form id="wizard-form" class="wizard-form" novalidate>
+                
+                <!-- STEP 1: State Selection -->
+                <div class="form-step active" id="step-1" role="group" aria-labelledby="step-1-title">
+                    <h3 id="step-1-title" class="step-heading"><span class="step-num">1</span> Select Your State / Union Territory</h3>
+                    <div class="input-group">
+                        <label for="select-state" class="input-label">State / UT <span class="required" aria-hidden="true">*</span></label>
+                        <select id="select-state" name="state" class="form-control" required aria-required="true">
+                            <option value="">-- Choose State --</option>
+                            <option value="MH" selected>Maharashtra (Fully Grounded)</option>
+                            <option value="DL">Delhi (National Process)</option>
+                            <option value="KA">Karnataka (National Process)</option>
+                            <option value="TN">Tamil Nadu (National Process)</option>
+                            <option value="UP">Uttar Pradesh (National Process)</option>
+                            <option value="ALL">Other State / All-India UDID</option>
+                        </select>
+                    </div>
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-primary btn-next" data-next="step-2">Next: Select District ➔</button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: District Selection -->
+                <div class="form-step" id="step-2" role="group" aria-labelledby="step-2-title" hidden>
+                    <h3 id="step-2-title" class="step-heading"><span class="step-num">2</span> Select Your District</h3>
+                    <div class="input-group">
+                        <label for="select-district" class="input-label">District <span class="required" aria-hidden="true">*</span></label>
+                        <select id="select-district" name="district" class="form-control" required aria-required="true">
+                            <option value="">-- Choose District --</option>
+                            <option value="pune">Pune</option>
+                            <option value="mumbai_city">Mumbai City</option>
+                            <option value="mumbai_suburban">Mumbai Suburban</option>
+                            <option value="nagpur">Nagpur</option>
+                            <option value="nashik">Nashik</option>
+                            <option value="thane">Thane</option>
+                            <option value="aurangabad">Chhatrapati Sambhajinagar (Aurangabad)</option>
+                            <option value="other">Other / Not Listed</option>
+                        </select>
+                    </div>
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-secondary btn-prev" data-prev="step-1">⬅ Back</button>
+                        <button type="button" class="btn btn-primary btn-next" data-next="step-3">Next: Disability Category ➔</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Disability Category -->
+                <div class="form-step" id="step-3" role="group" aria-labelledby="step-3-title" hidden>
+                    <h3 id="step-3-title" class="step-heading"><span class="step-num">3</span> Select Disability Category</h3>
+                    <fieldset class="radio-fieldset">
+                        <legend class="input-label">Disability Category <span class="required" aria-hidden="true">*</span></legend>
+                        <div class="radio-grid">
+                            <label class="radio-card">
+                                <input type="radio" name="disability_type" value="locomotor" checked required>
+                                <span class="radio-body">
+                                    <strong>♿ Locomotor / Physical</strong>
+                                    <span>Polio, amputation, cerebral palsy, muscular dystrophy, spinal injury.</span>
+                                </span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="disability_type" value="visual">
+                                <span class="radio-body">
+                                    <strong>👁️ Visual Impairment</strong>
+                                    <span>Blindness, low vision.</span>
+                                </span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="disability_type" value="hearing">
+                                <span class="radio-body">
+                                    <strong>👂 Hearing & Speech</strong>
+                                    <span>Deaf, hard of hearing, speech impairment.</span>
+                                </span>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="disability_type" value="intellectual">
+                                <span class="radio-body">
+                                    <strong>🧠 Intellectual / Mental</strong>
+                                    <span>Autism spectrum, learning disability, mental illness.</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-secondary btn-prev" data-prev="step-2">⬅ Back</button>
+                        <button type="button" class="btn btn-primary btn-next" data-next="step-4">Next: Application Status ➔</button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Application Status -->
+                <div class="form-step" id="step-4" role="group" aria-labelledby="step-4-title" hidden>
+                    <h3 id="step-4-title" class="step-heading"><span class="step-num">4</span> Select Your Application Status</h3>
+                    <div class="input-group">
+                        <label for="select-status" class="input-label">Current Status <span class="required" aria-hidden="true">*</span></label>
+                        <select id="select-status" name="app_status" class="form-control" required aria-required="true">
+                            <option value="new" selected>New Application (Applying First Time)</option>
+                            <option value="renewal">Certificate Renewal (Expired / Expiring Soon)</option>
+                            <option value="lost">Lost UDID Card / Duplicate Card Re-issue</option>
+                            <option value="appeal">Application Rejected / Appeal Process</option>
+                        </select>
+                    </div>
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-secondary btn-prev" data-prev="step-3">⬅ Back</button>
+                        <button type="button" class="btn btn-primary btn-next" data-next="step-5">Next: Get Guidance ➔</button>
+                    </div>
+                </div>
+
+                <!-- STEP 5: Additional Query & Submission -->
+                <div class="form-step" id="step-5" role="group" aria-labelledby="step-5-title" hidden>
+                    <h3 id="step-5-title" class="step-heading"><span class="step-num">5</span> Specific Question or Assistance</h3>
+                    <div class="input-group">
+                        <label for="query-text" class="input-label">Type your specific question (Optional)</label>
+                        <textarea id="query-text" name="user_query" class="form-control" rows="3" placeholder="e.g. Where is the nearest medical board hospital in Pune? What documents are needed for locomotor disability?"></textarea>
+                    </div>
+                    <div class="step-actions">
+                        <button type="button" class="btn btn-secondary btn-prev" data-prev="step-4">⬅ Back</button>
+                        <button type="submit" id="btn-submit-wizard" class="btn btn-success btn-submit">
+                            ✨ Generate Grounded Guidance
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <!-- Dynamic Results Panel (Live Grounded Response) -->
+        <section id="results-section" class="results-section" aria-live="polite" aria-atomic="true" hidden>
+            <div class="results-card">
+                <div class="results-header">
+                    <h3>📋 Your Grounded Guidance Report</h3>
+                    <span id="grounded-badge" class="badge badge-verified">✓ 100% Official Source Grounded</span>
+                </div>
+                <div id="results-body" class="results-body">
+                    <!-- Loaded dynamically by app.js -->
+                    <div class="loading-spinner">
+                        <span class="spinner" aria-hidden="true">⏳</span>
+                        <p>Retrieving official government sources & medical board details...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live AI Assistant Chat Drawer -->
+        <section class="chat-section" aria-labelledby="chat-heading">
+            <h2 id="chat-heading" class="section-title">💬 Live AI Support Assistant (Powered by Gemini)</h2>
+            <div class="chat-window">
+                <div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
+                    <div class="chat-msg assistant">
+                        <strong>Sugamya Assistant:</strong> Namaste! I am your AI assistant. Select options above or ask any question about UDID cards, disability certificates, or medical boards in India.
+                    </div>
+                </div>
+                <div class="chat-input-bar">
+                    <input type="text" id="chat-input" class="form-control" placeholder="Ask a question (e.g. helpline number, required documents)..." aria-label="Type your message to AI assistant">
+                    <button type="button" id="btn-send-chat" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Accessible Site Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <p><strong>Sugamya Sahayak</strong> — Be10x Build for Good Hackathon Project 14 (Disability Certificate Guide)</p>
+            <p>Grounding Sources: Ministry of Social Justice & Empowerment (`niepid.nic.in`), Govt. of Maharashtra (`depwd.maharashtra.gov.in`), CCPD (`ccpd.nic.in`). Zero PII retained.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

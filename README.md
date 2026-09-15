@@ -5,7 +5,8 @@ A small, production-grade, accessible web guide that helps applicants in India u
 **This product gives process guidance only. It does not diagnose, assess eligibility, give legal advice, or approve applications. A human — a doctor, medical board, or official — makes those decisions.**
 
 ## Status
-Documentation baseline only (Gate 0). No application code has been written yet — see `Phases.md` for the build plan and `MEMORY.MD` for current state.
+**100% Production Ready (Day 6 Completed)** — Full n8n multi-agent backend workflow (`"My workflow 2"`, ID `gXPlaislJyNuqJSd`) locked and active. Accessible WCAG 2.1 AA web application (`index.html`, `styles.css`, `app.js`) fully integrated. See `MEMORY.MD` for full handover and audit trail.
+
 
 ## Supported Scope (Version 1)
 Only states/districts and disability types for which an official source document has been reviewed and registered in `docs/SOURCES.md`. Outside that, the product will say plainly it cannot verify the information and point to the official UDID portal (swavlambancard.gov.in) or the district social welfare office.

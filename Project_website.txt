@@ -4,3 +4,9 @@ https://build-for-good-two.vercel.app/#start
 
 
 Use /multi-ai-framework and use as less claude code as possible. use codex and antigravity to their fullest capabilities under the already selected models.
+
+Permanent multi-AI rule:
+
+For every implementation, review, test, or documentation cycle, first use /multi-ai-framework if it is genuinely available. Use Codex and Antigravity to their fullest safe capability under the already selected models, while keeping direct Claude code minimal.
+
+Never invent availability. If unavailable, report the exact limitation and use the smallest safe alternative. Never use approval, permission, sandbox, or unattended edit-accepting bypass flags. Direct Claude browser work is allowed only when the task requires the authenticated browser session that Codex/Antigravity cannot access.
