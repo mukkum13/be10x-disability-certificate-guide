@@ -9,7 +9,7 @@
   "7": "PRD.md — Product Requirements Document",
   "8": "design.md — UI/UX Source of Truth",
   "9": "design.md — UI/UX Source of Truth",
-  "10": "Registered Sources",
+  "10": "README.md",
   "11": "docs/TESTING.md — Test Strategy & Verification Truth",
   "12": "n8n Node-by-Node Build Manifest — D1.3a Telegram-First Vertical Slice",
   "13": "docs/SUBMISSION.md — Submission Truth",
@@ -18,7 +18,7 @@
   "16": "Phases.md — Execution Plan Source of Truth",
   "17": "Phases.md — Execution Plan Source of Truth",
   "18": "D1.3a — Telegram-First Vertical Slice: Automation Specification (Non-Secret)",
-  "19": "app.js",
+  "19": "29. Reviewed-Source Retrieval — NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
   "20": "Gemini Prompt Artifact — D1.3a Grounded-Response Branch (Node 5)",
   "21": "Google Sheets Field-Mapping Artifact — `UDID_Guide_Logs`",
   "22": "D1.3a Automation Package — Independent Review Findings & Resolution Log"

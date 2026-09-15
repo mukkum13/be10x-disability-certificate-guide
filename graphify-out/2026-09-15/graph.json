@@ -4,114 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "id": "app_announcetoscreenreader",
-      "label": "announceToScreenReader()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "announcetoscreenreader()",
-      "source_file": "app.js",
-      "source_location": "L349"
-    },
-    {
-      "id": "app_appendmessage",
-      "label": "appendMessage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "appendmessage()",
-      "source_file": "app.js",
-      "source_location": "L339"
-    },
-    {
-      "id": "app_applyfontsize",
-      "label": "applyFontSize()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "applyfontsize()",
-      "source_file": "app.js",
-      "source_location": "L43"
-    },
-    {
-      "id": "app_applytheme",
-      "label": "applyTheme()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "applytheme()",
-      "source_file": "app.js",
-      "source_location": "L32"
-    },
-    {
-      "id": "app_generategroundedfallbackresponse",
-      "label": "generateGroundedFallbackResponse()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "generategroundedfallbackresponse()",
-      "source_file": "app.js",
-      "source_location": "L212"
-    },
-    {
-      "id": "app_navigatetostep",
-      "label": "navigateToStep()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "navigatetostep()",
-      "source_file": "app.js",
-      "source_location": "L127"
-    },
-    {
-      "id": "app_renderresults",
-      "label": "renderResults()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "renderresults()",
-      "source_file": "app.js",
-      "source_location": "L247"
-    },
-    {
-      "id": "app_sendchatmessage",
-      "label": "sendChatMessage()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "sendchatmessage()",
-      "source_file": "app.js",
-      "source_location": "L297"
-    },
-    {
-      "id": "app_validatestep",
-      "label": "validateStep()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "validatestep()",
-      "source_file": "app.js",
-      "source_location": "L106"
-    },
-    {
       "id": "memory_entry_001",
       "label": "Entry 001",
       "_origin": "ast",
@@ -566,222 +458,6 @@
       "norm_label": "entry 038 \u2014 correction: normalized downstream references actually repaired",
       "source_file": "MEMORY.MD",
       "source_location": "L795"
-    },
-    {
-      "id": "memory_entry_039_ceo_autonomous_authorization_received_for_task_d1_3b_completion",
-      "label": "Entry 039 \u2014 CEO Autonomous Authorization Received for Task D1.3b Completion",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 039 \u2014 ceo autonomous authorization received for task d1.3b completion",
-      "source_file": "MEMORY.MD",
-      "source_location": "L807"
-    },
-    {
-      "id": "memory_entry_040_task_d1_3b_wire_completion_verified_node_4_5_output_node_5_main_input_edge_live_persisted",
-      "label": "Entry 040 \u2014 Task D1.3b Wire Completion Verified: Node 4.5 Output -> Node 5 Main Input Edge Live & Persisted",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 040 \u2014 task d1.3b wire completion verified: node 4.5 output -> node 5 main input edge live & persisted",
-      "source_file": "MEMORY.MD",
-      "source_location": "L823"
-    },
-    {
-      "id": "memory_entry_041_micro_step_d1_3c_completion_verified_node_5b_node_6_5_created_wired_persisted",
-      "label": "Entry 041 \u2014 Micro-Step D1.3c Completion Verified: Node 5b & Node 6.5 Created, Wired & Persisted",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 041 \u2014 micro-step d1.3c completion verified: node 5b & node 6.5 created, wired & persisted",
-      "source_file": "MEMORY.MD",
-      "source_location": "L839"
-    },
-    {
-      "id": "memory_entry_042_node_1_to_node_4_5_restored_verified_persisted_in_my_workflow",
-      "label": "Entry 042 \u2014 Node 1 to Node 4.5 Restored, Verified & Persisted in \"My Workflow\"",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 042 \u2014 node 1 to node 4.5 restored, verified & persisted in \"my workflow\"",
-      "source_file": "MEMORY.MD",
-      "source_location": "L855"
-    },
-    {
-      "id": "memory_entry_043_synthetic_hathcon_test_1_maharashtra_locomotor_flow_executed_passed",
-      "label": "Entry 043 \u2014 Synthetic Hathcon Test 1 (Maharashtra Locomotor Flow) Executed & PASSED",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 043 \u2014 synthetic hathcon test 1 (maharashtra locomotor flow) executed & passed",
-      "source_file": "MEMORY.MD",
-      "source_location": "L875"
-    },
-    {
-      "id": "memory_entry_044_synthetic_hathcon_test_2_escalation_interrupt_flow_executed_passed",
-      "label": "Entry 044 \u2014 Synthetic Hathcon Test 2 (Escalation Interrupt Flow) Executed & PASSED",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 044 \u2014 synthetic hathcon test 2 (escalation interrupt flow) executed & passed",
-      "source_file": "MEMORY.MD",
-      "source_location": "L892"
-    },
-    {
-      "id": "memory_entry_045_synthetic_hathcon_test_3_2_minute_reminder_offer_flow_executed_passed",
-      "label": "Entry 045 \u2014 Synthetic Hathcon Test 3 (2-Minute Reminder Offer Flow) Executed & PASSED",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 045 \u2014 synthetic hathcon test 3 (2-minute reminder offer flow) executed & passed",
-      "source_file": "MEMORY.MD",
-      "source_location": "L906"
-    },
-    {
-      "id": "memory_entry_046_my_workflow_2_id_gxplaisljynuqjsd_full_audit_node_1_to_node_6_verification_passed",
-      "label": "Entry 046 \u2014 \"My Workflow 2\" (ID gXPlaislJyNuqJSd) Full Audit & Node 1 to Node 6 Verification PASSED",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 046 \u2014 \"my workflow 2\" (id gxplaisljynuqjsd) full audit & node 1 to node 6 verification passed",
-      "source_file": "MEMORY.MD",
-      "source_location": "L920"
-    },
-    {
-      "id": "memory_entry_047_gate_1_day_3_canvas_lock_sign_off_completed_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 047 \u2014 Gate 1 / Day 3 Canvas Lock & Sign-Off Completed (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 047 \u2014 gate 1 / day 3 canvas lock & sign-off completed (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L948"
-    },
-    {
-      "id": "memory_entry_048_data_table_node_icon_resolution_fallback_fixed_to_official_grid_icon",
-      "label": "Entry 048 \u2014 Data Table Node Icon Resolution (\"?\" Fallback Fixed to Official Grid Icon)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 048 \u2014 data table node icon resolution (\"?\" fallback fixed to official grid icon)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L963"
-    },
-    {
-      "id": "memory_entry_049_gemini_chat_model_sub_node_attached_verified_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 049 \u2014 Gemini Chat Model Sub-Node Attached & Verified (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 049 \u2014 gemini chat model sub-node attached & verified (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L979"
-    },
-    {
-      "id": "memory_entry_050_window_buffer_memory_sub_node_attached_to_node_5_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 050 \u2014 Window Buffer Memory Sub-Node Attached to Node 5 (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 050 \u2014 window buffer memory sub-node attached to node 5 (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L998"
-    },
-    {
-      "id": "memory_entry_051_full_workflow_verification_validation_smart_tool_sub_node_upgrade_completed_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 051 \u2014 Full Workflow Verification, Validation & Smart Tool Sub-Node Upgrade Completed (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 051 \u2014 full workflow verification, validation & smart tool sub-node upgrade completed (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1014"
-    },
-    {
-      "id": "memory_entry_052_simultaneous_3_subnode_verification_lock_completed_on_node_5_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 052 \u2014 Simultaneous 3-Subnode Verification & Lock Completed on Node 5 (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 052 \u2014 simultaneous 3-subnode verification & lock completed on node 5 (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1033"
-    },
-    {
-      "id": "memory_entry_053_day_4_step_4_1_web_ui_scaffolding_completed_rendered_k_be10x_disability_certificate_guide",
-      "label": "Entry 053 \u2014 Day 4 Step 4.1 Web UI Scaffolding Completed & Rendered (`k:\\Be10x_Disability_certificate_guide`)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 053 \u2014 day 4 step 4.1 web ui scaffolding completed & rendered (`k:\\be10x_disability_certificate_guide`)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1051"
-    },
-    {
-      "id": "memory_entry_054_day_4_steps_4_2_4_3_web_ui_wizard_api_integration_tests_passed",
-      "label": "Entry 054 \u2014 Day 4 Steps 4.2 & 4.3 Web UI Wizard & API Integration Tests PASSED",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 054 \u2014 day 4 steps 4.2 & 4.3 web ui wizard & api integration tests passed",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1066"
-    },
-    {
-      "id": "memory_entry_055_day_4_step_4_4_google_sheets_telemetry_audit_sub_node_attached_locked_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 055 \u2014 Day 4 Step 4.4 Google Sheets Telemetry Audit Sub-Node Attached & Locked (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 055 \u2014 day 4 step 4.4 google sheets telemetry audit sub-node attached & locked (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1083"
-    },
-    {
-      "id": "memory_entry_056_day_5_cross_channel_audit_pre_deployment_security_check_passed_my_workflow_2_id_gxplaisljynuqjsd",
-      "label": "Entry 056 \u2014 Day 5 Cross-Channel Audit & Pre-Deployment Security Check PASSED (\"My Workflow 2\", ID gXPlaislJyNuqJSd)",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "WORKLOG (append-only; newest entry at the bottom)",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "entry 056 \u2014 day 5 cross-channel audit & pre-deployment security check passed (\"my workflow 2\", id gxplaisljynuqjsd)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1100"
     },
     {
       "id": "memory_worklog_append_only_newest_entry_at_the_bottom",
@@ -1252,11 +928,47 @@
       "source_location": "L1"
     },
     {
+      "id": "architecture",
+      "label": "Architecture.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "architecture.md",
+      "source_file": "Architecture.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "design",
+      "label": "design.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "design.md",
+      "source_file": "design.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_operations",
+      "label": "OPERATIONS.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "operations.md",
+      "source_file": "docs/OPERATIONS.md",
+      "source_location": "L1"
+    },
+    {
       "id": "docs_sources",
       "label": "SOURCES.md",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "page",
       "norm_label": "sources.md",
@@ -1268,7 +980,7 @@
       "label": "docs/SOURCES.md \u2014 Official Knowledge Registry",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "docs/sources.md \u2014 official knowledge registry",
@@ -1280,7 +992,7 @@
       "label": "Entry Schema",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "entry schema",
@@ -1292,7 +1004,7 @@
       "label": "Open Gaps (honestly disclosed \u2014 NOT fabricated, per RULES.md \u00a75)",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "open gaps (honestly disclosed \u2014 not fabricated, per rules.md \u00a75)",
@@ -1304,7 +1016,7 @@
       "label": "Registered Sources",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "registered sources",
@@ -1316,7 +1028,7 @@
       "label": "SRC-001 \u2014 UDID Process Overview (NIEPID)",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "src-001 \u2014 udid process overview (niepid)",
@@ -1328,7 +1040,7 @@
       "label": "SRC-002 \u2014 Maharashtra State Commissioner for Persons with Disabilities (Escalation Contact)",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "src-002 \u2014 maharashtra state commissioner for persons with disabilities (escalation contact)",
@@ -1340,7 +1052,7 @@
       "label": "SRC-003 \u2014 Rights of Persons with Disabilities (Amendment) Rules, 2024",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "src-003 \u2014 rights of persons with disabilities (amendment) rules, 2024",
@@ -1352,7 +1064,7 @@
       "label": "SRC-004 \u2014 Maharashtra DEPwD UDID Service Page",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "src-004 \u2014 maharashtra depwd udid service page",
@@ -1364,12 +1076,108 @@
       "label": "SRC-005 \u2014 Official UDID Portal",
       "_origin": "ast",
       "community": 10,
-      "community_name": "Registered Sources",
+      "community_name": "README.md",
       "file_type": "document",
       "node_kind": "heading",
       "norm_label": "src-005 \u2014 official udid portal",
       "source_file": "docs/SOURCES.md",
       "source_location": "L83"
+    },
+    {
+      "id": "docs_submission",
+      "label": "SUBMISSION.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "submission.md",
+      "source_file": "docs/SUBMISSION.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "docs_testing",
+      "label": "TESTING.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "testing.md",
+      "source_file": "docs/TESTING.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "memory",
+      "label": "MEMORY.MD",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "memory.md",
+      "source_file": "MEMORY.MD",
+      "source_location": "L1"
+    },
+    {
+      "id": "memory_current_state_keep_synchronised_with_the_latest_verified_worklog_entry_below",
+      "label": "CURRENT STATE (keep synchronised with the latest verified worklog entry below)",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "current state (keep synchronised with the latest verified worklog entry below)",
+      "source_file": "MEMORY.MD",
+      "source_location": "L6"
+    },
+    {
+      "id": "memory_memory_md_continuous_project_state_ai_handover_log",
+      "label": "MEMORY.MD \u2014 Continuous Project State & AI Handover Log",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "memory.md \u2014 continuous project state & ai handover log",
+      "source_file": "MEMORY.MD",
+      "source_location": "L1"
+    },
+    {
+      "id": "prd",
+      "label": "PRD.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "prd.md",
+      "source_file": "PRD.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "readme",
+      "label": "README.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "readme.md",
+      "source_file": "README.md",
+      "source_location": "L1"
+    },
+    {
+      "id": "rules",
+      "label": "RULES.md",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "README.md",
+      "file_type": "document",
+      "node_kind": "page",
+      "norm_label": "rules.md",
+      "source_file": "RULES.md",
+      "source_location": "L1"
     },
     {
       "id": "docs_testing_accessibility_tests_planned",
@@ -1645,7 +1453,7 @@
       "node_kind": "heading",
       "norm_label": "cross-cutting requirements (apply to every node above)",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L232"
+      "source_location": "L228"
     },
     {
       "id": "docs_automation_n8n_build_manifest_n8n_node_by_node_build_manifest_d1_3a_telegram_first_vertical_slice",
@@ -1669,7 +1477,7 @@
       "node_kind": "heading",
       "norm_label": "node 10 \u2014 webhook / shared-workflow entrypoint (reserved for the future website)",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L218"
+      "source_location": "L214"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_1_telegram_trigger",
@@ -1765,7 +1573,7 @@
       "node_kind": "heading",
       "norm_label": "node 5 \u2014 gemini grounded-response branch",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L120"
+      "source_location": "L119"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_5b_post_generation_guardrail_check_new_in_this_revision",
@@ -1777,7 +1585,7 @@
       "node_kind": "heading",
       "norm_label": "node 5b \u2014 post-generation guardrail check (new in this revision)",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L132"
+      "source_location": "L131"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_6_5_field_whitelist_set_edit_fields_new_in_this_revision",
@@ -1789,7 +1597,7 @@
       "node_kind": "heading",
       "norm_label": "node 6.5 \u2014 field whitelist (set/edit fields) \u2014 new in this revision",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L169"
+      "source_location": "L167"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_6_fixed_fail_safe_branch",
@@ -1801,7 +1609,7 @@
       "node_kind": "heading",
       "norm_label": "node 6 \u2014 fixed fail-safe branch",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L145"
+      "source_location": "L143"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_6b_escalation_response_new_in_this_revision",
@@ -1813,7 +1621,7 @@
       "node_kind": "heading",
       "norm_label": "node 6b \u2014 escalation response (new in this revision)",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L157"
+      "source_location": "L155"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_7_google_sheets_append_row_now_non_blocking_parallel_to_node_8",
@@ -1825,7 +1633,7 @@
       "node_kind": "heading",
       "norm_label": "node 7 \u2014 google sheets append-row (now non-blocking / parallel to node 8)",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L183"
+      "source_location": "L179"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_8_telegram_response",
@@ -1837,7 +1645,7 @@
       "node_kind": "heading",
       "norm_label": "node 8 \u2014 telegram response",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L195"
+      "source_location": "L191"
     },
     {
       "id": "docs_automation_n8n_build_manifest_node_9_wait_reminder_offer_branch",
@@ -1849,7 +1657,7 @@
       "node_kind": "heading",
       "norm_label": "node 9 \u2014 wait / reminder-offer branch",
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L206"
+      "source_location": "L202"
     },
     {
       "id": "docs_submission_docs_submission_md_submission_truth",
@@ -2068,42 +1876,6 @@
       "source_location": "L53"
     },
     {
-      "id": "architecture",
-      "label": "Architecture.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "architecture.md",
-      "source_file": "Architecture.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "design",
-      "label": "design.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "design.md",
-      "source_file": "design.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_operations",
-      "label": "OPERATIONS.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "operations.md",
-      "source_file": "docs/OPERATIONS.md",
-      "source_location": "L1"
-    },
-    {
       "id": "docs_operations_backup_procedure",
       "label": "Backup Procedure",
       "_origin": "ast",
@@ -2272,102 +2044,6 @@
       "source_location": "L22"
     },
     {
-      "id": "docs_submission",
-      "label": "SUBMISSION.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "submission.md",
-      "source_file": "docs/SUBMISSION.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "docs_testing",
-      "label": "TESTING.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "testing.md",
-      "source_file": "docs/TESTING.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "memory",
-      "label": "MEMORY.MD",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "memory.md",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1"
-    },
-    {
-      "id": "memory_current_state_keep_synchronised_with_the_latest_verified_worklog_entry_below",
-      "label": "CURRENT STATE (keep synchronised with the latest verified worklog entry below)",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "current state (keep synchronised with the latest verified worklog entry below)",
-      "source_file": "MEMORY.MD",
-      "source_location": "L6"
-    },
-    {
-      "id": "memory_memory_md_continuous_project_state_ai_handover_log",
-      "label": "MEMORY.MD \u2014 Continuous Project State & AI Handover Log",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "memory.md \u2014 continuous project state & ai handover log",
-      "source_file": "MEMORY.MD",
-      "source_location": "L1"
-    },
-    {
-      "id": "prd",
-      "label": "PRD.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "prd.md",
-      "source_file": "PRD.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "readme",
-      "label": "README.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "readme.md",
-      "source_file": "README.md",
-      "source_location": "L1"
-    },
-    {
-      "id": "rules",
-      "label": "RULES.md",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "docs/OPERATIONS.md \u2014 Production Operation Runbook",
-      "file_type": "document",
-      "node_kind": "page",
-      "norm_label": "rules.md",
-      "source_file": "RULES.md",
-      "source_location": "L1"
-    },
-    {
       "id": "readme_canonical_documents",
       "label": "Canonical Documents",
       "_origin": "ast",
@@ -2377,7 +2053,7 @@
       "node_kind": "heading",
       "norm_label": "canonical documents",
       "source_file": "README.md",
-      "source_location": "L61"
+      "source_location": "L60"
     },
     {
       "id": "readme_deployment_instructions",
@@ -2389,7 +2065,7 @@
       "node_kind": "heading",
       "norm_label": "deployment instructions",
       "source_file": "README.md",
-      "source_location": "L44"
+      "source_location": "L43"
     },
     {
       "id": "readme_development_command",
@@ -2401,7 +2077,7 @@
       "node_kind": "heading",
       "norm_label": "development command",
       "source_file": "README.md",
-      "source_location": "L35"
+      "source_location": "L34"
     },
     {
       "id": "readme_disability_certificate_udid_guide",
@@ -2425,7 +2101,7 @@
       "node_kind": "heading",
       "norm_label": "environment variables (names only \u2014 no values here or in source control)",
       "source_file": "README.md",
-      "source_location": "L29"
+      "source_location": "L28"
     },
     {
       "id": "readme_known_limitations",
@@ -2437,7 +2113,7 @@
       "node_kind": "heading",
       "norm_label": "known limitations",
       "source_file": "README.md",
-      "source_location": "L56"
+      "source_location": "L55"
     },
     {
       "id": "readme_local_setup_to_be_finalized_at_gate_1",
@@ -2449,7 +2125,7 @@
       "node_kind": "heading",
       "norm_label": "local setup (to be finalized at gate 1)",
       "source_file": "README.md",
-      "source_location": "L20"
+      "source_location": "L19"
     },
     {
       "id": "readme_non_technical_operator_instructions",
@@ -2461,7 +2137,7 @@
       "node_kind": "heading",
       "norm_label": "non-technical operator instructions",
       "source_file": "README.md",
-      "source_location": "L73"
+      "source_location": "L72"
     },
     {
       "id": "readme_prerequisites_planned_gate_1",
@@ -2473,7 +2149,7 @@
       "node_kind": "heading",
       "norm_label": "prerequisites (planned, gate 1)",
       "source_file": "README.md",
-      "source_location": "L14"
+      "source_location": "L13"
     },
     {
       "id": "readme_production_build_command",
@@ -2485,7 +2161,7 @@
       "node_kind": "heading",
       "norm_label": "production build command",
       "source_file": "README.md",
-      "source_location": "L41"
+      "source_location": "L40"
     },
     {
       "id": "readme_project_structure",
@@ -2497,7 +2173,7 @@
       "node_kind": "heading",
       "norm_label": "project structure",
       "source_file": "README.md",
-      "source_location": "L47"
+      "source_location": "L46"
     },
     {
       "id": "readme_status",
@@ -2521,7 +2197,7 @@
       "node_kind": "heading",
       "norm_label": "supported scope (version 1)",
       "source_file": "README.md",
-      "source_location": "L11"
+      "source_location": "L10"
     },
     {
       "id": "readme_test_commands",
@@ -2533,7 +2209,7 @@
       "node_kind": "heading",
       "norm_label": "test commands",
       "source_file": "README.md",
-      "source_location": "L38"
+      "source_location": "L37"
     },
     {
       "id": "phases",
@@ -2932,15 +2608,88 @@
       "source_location": "L1"
     },
     {
-      "id": "app",
-      "label": "app.js",
+      "id": "architecture_29_1_purpose_and_scope",
+      "label": "29.1 Purpose and scope",
       "_origin": "ast",
       "community": 19,
-      "community_name": "app.js",
-      "file_type": "code",
-      "norm_label": "app.js",
-      "source_file": "app.js",
-      "source_location": "L1"
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29.1 purpose and scope",
+      "source_file": "Architecture.md",
+      "source_location": "L211"
+    },
+    {
+      "id": "architecture_29_2_environment_finding_checked_2026_09_13_this_session_read_only_inspection_of_the_product_owner_s_n8n_instance",
+      "label": "29.2 Environment finding (checked 2026-09-13, this session, read-only inspection of the Product Owner's n8n instance)",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29.2 environment finding (checked 2026-09-13, this session, read-only inspection of the product owner's n8n instance)",
+      "source_file": "Architecture.md",
+      "source_location": "L214"
+    },
+    {
+      "id": "architecture_29_3_adopted_design_deterministic_rule_based_retrieval_the_smallest_no_cost_compliant_alternative",
+      "label": "29.3 Adopted design: deterministic rule-based retrieval (the \"smallest no-cost compliant alternative\")",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29.3 adopted design: deterministic rule-based retrieval (the \"smallest no-cost compliant alternative\")",
+      "source_file": "Architecture.md",
+      "source_location": "L219"
+    },
+    {
+      "id": "architecture_29_4_explicit_non_goals_per_ceo_boundary",
+      "label": "29.4 Explicit non-goals (per CEO boundary)",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29.4 explicit non-goals (per ceo boundary)",
+      "source_file": "Architecture.md",
+      "source_location": "L228"
+    },
+    {
+      "id": "architecture_29_5_runtime_mirror_n8n_data_table_udid_reviewed_sources_added_2026_09_13_correcting_the_runtime_file_access_gap",
+      "label": "29.5 Runtime Mirror \u2014 n8n Data Table `UDID_Reviewed_Sources` (added 2026-09-13, correcting the runtime-file-access gap)",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29.5 runtime mirror \u2014 n8n data table `udid_reviewed_sources` (added 2026-09-13, correcting the runtime-file-access gap)",
+      "source_file": "Architecture.md",
+      "source_location": "L231"
+    },
+    {
+      "id": "architecture_29_6_session_state_data_table_udid_guide_sessions_design_specified_2026_09_13_17_34_asia_calcutta_ceo_decision_not_yet_built",
+      "label": "29.6 Session-State Data Table \u2014 `UDID_Guide_Sessions` (design specified 2026-09-13 17:34 Asia/Calcutta, CEO Decision \u2014 not yet built)",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29.6 session-state data table \u2014 `udid_guide_sessions` (design specified 2026-09-13 17:34 asia/calcutta, ceo decision \u2014 not yet built)",
+      "source_file": "Architecture.md",
+      "source_location": "L262"
+    },
+    {
+      "id": "architecture_29_reviewed_source_retrieval_not_production_rag_or_self_learning_ai_ceo_decision_2026_09_13_environment_check_same_date_corrected_2026_09_13_for_runtime_file_access_reality",
+      "label": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "file_type": "document",
+      "node_kind": "heading",
+      "norm_label": "29. reviewed-source retrieval \u2014 not \"production rag\" or self-learning ai (ceo decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
+      "source_file": "Architecture.md",
+      "source_location": "L209"
     },
     {
       "id": "architecture_10_reminder_workflow",
@@ -3265,90 +3014,6 @@
       "norm_label": "28. hybrid channel architecture \u2014 telegram primary entrypoint + website public interface (ceo decision, 2026-09-12 16:05:00 asia/calcutta)",
       "source_file": "Architecture.md",
       "source_location": "L185"
-    },
-    {
-      "id": "architecture_29_1_purpose_and_scope",
-      "label": "29.1 Purpose and scope",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29.1 purpose and scope",
-      "source_file": "Architecture.md",
-      "source_location": "L211"
-    },
-    {
-      "id": "architecture_29_2_environment_finding_checked_2026_09_13_this_session_read_only_inspection_of_the_product_owner_s_n8n_instance",
-      "label": "29.2 Environment finding (checked 2026-09-13, this session, read-only inspection of the Product Owner's n8n instance)",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29.2 environment finding (checked 2026-09-13, this session, read-only inspection of the product owner's n8n instance)",
-      "source_file": "Architecture.md",
-      "source_location": "L214"
-    },
-    {
-      "id": "architecture_29_3_adopted_design_deterministic_rule_based_retrieval_the_smallest_no_cost_compliant_alternative",
-      "label": "29.3 Adopted design: deterministic rule-based retrieval (the \"smallest no-cost compliant alternative\")",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29.3 adopted design: deterministic rule-based retrieval (the \"smallest no-cost compliant alternative\")",
-      "source_file": "Architecture.md",
-      "source_location": "L219"
-    },
-    {
-      "id": "architecture_29_4_explicit_non_goals_per_ceo_boundary",
-      "label": "29.4 Explicit non-goals (per CEO boundary)",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29.4 explicit non-goals (per ceo boundary)",
-      "source_file": "Architecture.md",
-      "source_location": "L228"
-    },
-    {
-      "id": "architecture_29_5_runtime_mirror_n8n_data_table_udid_reviewed_sources_added_2026_09_13_correcting_the_runtime_file_access_gap",
-      "label": "29.5 Runtime Mirror \u2014 n8n Data Table `UDID_Reviewed_Sources` (added 2026-09-13, correcting the runtime-file-access gap)",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29.5 runtime mirror \u2014 n8n data table `udid_reviewed_sources` (added 2026-09-13, correcting the runtime-file-access gap)",
-      "source_file": "Architecture.md",
-      "source_location": "L231"
-    },
-    {
-      "id": "architecture_29_6_session_state_data_table_udid_guide_sessions_design_specified_2026_09_13_17_34_asia_calcutta_ceo_decision_not_yet_built",
-      "label": "29.6 Session-State Data Table \u2014 `UDID_Guide_Sessions` (design specified 2026-09-13 17:34 Asia/Calcutta, CEO Decision \u2014 not yet built)",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29.6 session-state data table \u2014 `udid_guide_sessions` (design specified 2026-09-13 17:34 asia/calcutta, ceo decision \u2014 not yet built)",
-      "source_file": "Architecture.md",
-      "source_location": "L262"
-    },
-    {
-      "id": "architecture_29_reviewed_source_retrieval_not_production_rag_or_self_learning_ai_ceo_decision_2026_09_13_environment_check_same_date_corrected_2026_09_13_for_runtime_file_access_reality",
-      "label": "29. Reviewed-Source Retrieval \u2014 NOT \"production RAG\" or self-learning AI (CEO Decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Architecture.md \u2014 Technical Architecture Source of Truth",
-      "file_type": "document",
-      "node_kind": "heading",
-      "norm_label": "29. reviewed-source retrieval \u2014 not \"production rag\" or self-learning ai (ceo decision, 2026-09-13; environment check same date; corrected 2026-09-13 for runtime file-access reality)",
-      "source_file": "Architecture.md",
-      "source_location": "L209"
     },
     {
       "id": "architecture_2_system_context_updated_to_hybrid_channel_model_2026_09_12_16_05_00_asia_calcutta",
@@ -5788,165 +5453,6 @@
     }
   ],
   "links": [
-    {
-      "source": "app_navigatetostep",
-      "target": "app_announcetoscreenreader",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L152",
-      "weight": 1.0
-    },
-    {
-      "source": "app_renderresults",
-      "target": "app_announcetoscreenreader",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L282",
-      "weight": 1.0
-    },
-    {
-      "source": "app_sendchatmessage",
-      "target": "app_appendmessage",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L302",
-      "weight": 1.0
-    },
-    {
-      "source": "app_sendchatmessage",
-      "target": "app_announcetoscreenreader",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L332",
-      "weight": 1.0
-    },
-    {
-      "source": "app_validatestep",
-      "target": "app_announcetoscreenreader",
-      "relation": "calls",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "call",
-      "source_file": "app.js",
-      "source_location": "L122",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_validatestep",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L106",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_navigatetostep",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L127",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_generategroundedfallbackresponse",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L212",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_renderresults",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L247",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_sendchatmessage",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L297",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_applytheme",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L32",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_appendmessage",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L339",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_announcetoscreenreader",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L349",
-      "weight": 1.0
-    },
-    {
-      "source": "app",
-      "target": "app_applyfontsize",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.js",
-      "source_location": "L43",
-      "weight": 1.0
-    },
     {
       "source": "architecture",
       "target": "architecture_architecture_md_technical_architecture_source_of_truth",
@@ -8430,7 +7936,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L120",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -8441,7 +7947,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L132",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -8452,7 +7958,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L145",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -8463,7 +7969,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L157",
+      "source_location": "L155",
       "weight": 1.0
     },
     {
@@ -8474,7 +7980,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L169",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -8485,7 +7991,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L183",
+      "source_location": "L179",
       "weight": 1.0
     },
     {
@@ -8496,7 +8002,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L195",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -8518,7 +8024,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L206",
+      "source_location": "L202",
       "weight": 1.0
     },
     {
@@ -8529,7 +8035,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L218",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -8540,7 +8046,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "docs/automation/n8n-build-manifest.md",
-      "source_location": "L232",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -9403,28 +8909,6 @@
     },
     {
       "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_051_full_workflow_verification_validation_smart_tool_sub_node_upgrade_completed_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L1014",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_052_simultaneous_3_subnode_verification_lock_completed_on_node_5_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L1033",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
       "target": "memory_entry_004_git_truth_established_partial_cloud_container_only",
       "relation": "contains",
       "_origin": "ast",
@@ -9432,50 +8916,6 @@
       "confidence_score": 1.0,
       "source_file": "MEMORY.MD",
       "source_location": "L105",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_053_day_4_step_4_1_web_ui_scaffolding_completed_rendered_k_be10x_disability_certificate_guide",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L1051",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_054_day_4_steps_4_2_4_3_web_ui_wizard_api_integration_tests_passed",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L1066",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_055_day_4_step_4_4_google_sheets_telemetry_audit_sub_node_attached_locked_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L1083",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_056_day_5_cross_channel_audit_pre_deployment_security_check_passed_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L1100",
       "weight": 1.0
     },
     {
@@ -9876,28 +9316,6 @@
     },
     {
       "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_039_ceo_autonomous_authorization_received_for_task_d1_3b_completion",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L807",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_040_task_d1_3b_wire_completion_verified_node_4_5_output_node_5_main_input_edge_live_persisted",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L823",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
       "target": "memory_entry_003_ceo_decision_received_gate_0_conditional_approval_gate_1_authorisation_new_mandates",
       "relation": "contains",
       "_origin": "ast",
@@ -9905,116 +9323,6 @@
       "confidence_score": 1.0,
       "source_file": "MEMORY.MD",
       "source_location": "L83",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_041_micro_step_d1_3c_completion_verified_node_5b_node_6_5_created_wired_persisted",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L839",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_042_node_1_to_node_4_5_restored_verified_persisted_in_my_workflow",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L855",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_043_synthetic_hathcon_test_1_maharashtra_locomotor_flow_executed_passed",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L875",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_044_synthetic_hathcon_test_2_escalation_interrupt_flow_executed_passed",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L892",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_045_synthetic_hathcon_test_3_2_minute_reminder_offer_flow_executed_passed",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L906",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_046_my_workflow_2_id_gxplaisljynuqjsd_full_audit_node_1_to_node_6_verification_passed",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L920",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_047_gate_1_day_3_canvas_lock_sign_off_completed_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L948",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_048_data_table_node_icon_resolution_fallback_fixed_to_official_grid_icon",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L963",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_049_gemini_chat_model_sub_node_attached_verified_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L979",
-      "weight": 1.0
-    },
-    {
-      "source": "memory_worklog_append_only_newest_entry_at_the_bottom",
-      "target": "memory_entry_050_window_buffer_memory_sub_node_attached_to_node_5_my_workflow_2_id_gxplaisljynuqjsd",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "MEMORY.MD",
-      "source_location": "L998",
       "weight": 1.0
     },
     {
@@ -10432,7 +9740,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -10443,7 +9751,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L14",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -10454,7 +9762,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -10465,7 +9773,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L29",
+      "source_location": "L28",
       "weight": 1.0
     },
     {
@@ -10476,7 +9784,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L35",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -10487,7 +9795,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L38",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -10498,7 +9806,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L41",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -10509,7 +9817,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L44",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -10520,7 +9828,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L47",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -10531,7 +9839,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L56",
+      "source_location": "L55",
       "weight": 1.0
     },
     {
@@ -10542,7 +9850,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L61",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -10564,7 +9872,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L73",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -10905,7 +10213,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L62",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -10916,7 +10224,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L63",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -10927,7 +10235,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L64",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -10938,7 +10246,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L65",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -10949,7 +10257,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L66",
+      "source_location": "L65",
       "weight": 1.0
     },
     {
@@ -10960,7 +10268,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L67",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -10971,7 +10279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L68",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -10982,7 +10290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L69",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -10993,7 +10301,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L70",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -11004,10 +10312,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L71",
+      "source_location": "L70",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "12ddef6d8b852bef541214c08baf9e20adb22a6d"
+  "built_at_commit": "61558a4bd855462accf95a08a84a9613eaa62ded"
 }
