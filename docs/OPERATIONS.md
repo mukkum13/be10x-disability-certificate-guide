@@ -42,8 +42,10 @@ Redeploy the previous known-good commit/version from the git history (once git i
 ## External-Service Limits
 See `Architecture.md` §25 — LLM free-tier daily limits, n8n trial time window (if used), hosting free-tier request caps, Telegram Bot API (unlimited, free) if used.
 
-## GitHub Synchronisation Status (2026-09-12 14:23:20 Asia/Calcutta)
-**Verified locally — GitHub synchronisation blocked.** Authorised remote: `https://github.com/mukkum13/be10x-disability-certificate-guide`. This cloud session's GitHub proxy returns HTTP 403 ("GitHub access to this repository is not enabled for this session"); no in-session tool exists to attach the repo. Local push via the user's own machine is also currently blocked (`device_bash` unavailable). See `MEMORY.MD` Entries 010–011.
+## GitHub Synchronisation Status (updated 2026-09-16 as part of the documentation-wide reconciliation)
+**Superseded — the 2026-09-12 blocker below no longer applies.** Repository-verified: `git log` shows multiple commits already pushed to the authorised remote (`https://github.com/mukkum13/be10x-disability-certificate-guide`), including the 2026-09-15 "Day 6 Final Production Release" commit and two follow-up commits. The original 403/proxy blockage described below was resolved at some point between 2026-09-12 and 2026-09-15 (exact resolution timestamp not found in `MEMORY.MD`); this section is left below for historical record only.
+
+**Original entry (2026-09-12 14:23:20 Asia/Calcutta, now historical):** "Verified locally — GitHub synchronisation blocked." Authorised remote: `https://github.com/mukkum13/be10x-disability-certificate-guide`. This cloud session's GitHub proxy returns HTTP 403 ("GitHub access to this repository is not enabled for this session"); no in-session tool exists to attach the repo. Local push via the user's own machine is also currently blocked (`device_bash` unavailable). See `MEMORY.MD` Entries 010–011.
 
 ## Backup Procedure
 Canonical docs and knowledge sources are backed up via the connected local folder `K:\Be10x_Disability_certificate_guide`; application code should additionally be pushed to a git remote once designated (Gate 1). The log store (e.g., Google Sheet) is itself exportable as a backup.

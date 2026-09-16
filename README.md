@@ -5,7 +5,10 @@ A small, production-grade, accessible web guide that helps applicants in India u
 **This product gives process guidance only. It does not diagnose, assess eligibility, give legal advice, or approve applications. A human — a doctor, medical board, or official — makes those decisions.**
 
 ## Status
-**100% Production Ready (Day 6 Completed)** — Full n8n multi-agent backend workflow (`"My workflow 2"`, ID `gXPlaislJyNuqJSd`) locked and active. Accessible WCAG 2.1 AA web application (`index.html`, `styles.css`, `app.js`) fully integrated. See `MEMORY.MD` for full handover and audit trail.
+**Reconciled 2026-09-16 — deadline now 2026-09-18 (CEO instruction). See `Phases.md` §"Timeline Reconciliation" for the authoritative, source-labeled status.** In short:
+- **Live verified (Telegram backend, tested directly 2026-09-16):** the n8n workflow (`"My workflow 2"`, ID `gXPlaislJyNuqJSd`) runs the full five-question guided flow, gives a grounded/source-cited final answer, routes correctly to the escalation fallback on sensitive input, switches language mid-conversation, and delivers cleanly to Telegram (no cross-session contamination, no formatting/parse errors, no automated-footer noise).
+- **Prior-agent claim, not yet independently verified:** the WCAG 2.1 AA web UI (`index.html`, `styles.css`, `app.js`), the anonymised Google Sheets logging, and the security/accessibility self-audit recorded in `MEMORY.MD`'s Day 4–5 entries. These exist as committed files/claims but have not had an independent reviewer pass per `RULES.md` §14, and `docs/TESTING.md` had not been updated to reflect them as of this reconciliation.
+This replaces the prior "100% Production Ready (Day 6 Completed)" line, which overstated verification status relative to `Phases.md` and `docs/TESTING.md` at the time it was written.
 
 
 ## Supported Scope (Version 1)
@@ -54,9 +57,10 @@ See `docs/OPERATIONS.md` for the full runbook. Summary: deploy the static fronte
 ```
 
 ## Known Limitations
-- Documentation-only at present; no working demo yet.
-- Coverage will be limited to whichever states/districts get reviewed sources within the 3-day window.
-- No real user/NGO consultation has occurred as of this writing (see `RULES.md` §1 row 9).
+- Telegram guided-flow backend is live-verified working (see Status above); the web UI, logging, and security/accessibility audit are prior-agent claims pending independent verification.
+- Coverage is limited to whichever states/districts have reviewed sources registered in `docs/SOURCES.md` (currently Maharashtra-focused; see SRC-001–SRC-005).
+- No real user/NGO consultation has occurred as of this writing (see `RULES.md` §1 row 9); hard internal deadline for this is 2026-09-19.
+- Deadline reconciliation: internal CEO deadline is now 2026-09-18 (updated 2026-09-16); the external Hathcon submission deadline remains 2026-09-20 11:59 PM per `docs/SUBMISSION.md`.
 
 ## Canonical Documents
 - [PRD.md](./PRD.md) — product requirements

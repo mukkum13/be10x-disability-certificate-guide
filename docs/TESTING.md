@@ -1,6 +1,6 @@
 # docs/TESTING.md — Test Strategy & Verification Truth
-**Status:** Draft — Gate 1. No application code exists yet, so no tests have been run. This file defines the strategy the eventual test suite must satisfy.
-**Last updated:** 2026-09-12 13:57:00 Asia/Calcutta.
+**Status:** Draft — Gate 1/2. This file defines the strategy the eventual test suite must satisfy. Live testing of the Telegram backend has since occurred (see 2026-09-16 update below); this file's detailed per-test sections have not yet been backfilled with that evidence — treat `Phases.md` §"Timeline Reconciliation" as authoritative until they are.
+**Last updated:** 2026-09-16 (Asia/Calcutta) — added reconciliation pointer; per-test-case sections below still reflect 2026-09-12 planning state and are pending backfill from live Telegram testing (execution #4 through #21 in the n8n instance, 2026-09-16).
 
 **Mandatory timestamp rule (CEO decision, 2026-09-12 13:46:24 Asia/Calcutta):** every test run recorded in this file must include, in `YYYY-MM-DD HH:mm:ss Asia/Calcutta`: Started at, Last updated at, Completed or blocked at, Actual duration, Current status, Next deadline, and Evidence location. No test may be logged with vague timing ("today," "just now").
 

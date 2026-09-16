@@ -1,4 +1,6 @@
 # MEMORY.MD — Continuous Project State & AI Handover Log
+**SUPERSEDED COPY (marked 2026-09-16 as part of the timeline reconciliation) — this file stopped receiving entries at an earlier point in the project and is retained here only as a historical snapshot from an earlier cloud-bridge delivery mechanism. The canonical, actively-maintained `MEMORY.MD` is at the repository root (`K:\Be10x_Disability_certificate_guide\MEMORY.MD`), currently 1,147+ lines vs. this file's 504. Read the root copy for current project state; do not append further entries here.**
+
 **This is the canonical, append-only project memory. Never rewrite history to hide a failure — add a correction entry instead.**
 
 ---
