@@ -231,37 +231,47 @@ document.addEventListener('DOMContentLoaded', () => {
         renderResults(data, payload, isLive);
     });
 
+    // ------------------------------------------------------------------
+    // Offline reference content -- SOURCE-COMPLIANCE NOTICE (2026-09-17)
+    // Every factual claim below must be traceable to a Reviewed source in
+    // docs/SOURCES.md (SRC-001 to SRC-005). Do NOT add district hospital
+    // names, disability-specific medical document lists, eligibility
+    // percentages, fee amounts, or helpline numbers that are not
+    // registered there -- a 2026-09-17 source-coverage review found and
+    // removed several such unsupported claims that existed previously.
+    // Each field below is commented with its exact source reference.
+    // ------------------------------------------------------------------
     function generateGroundedFallbackResponse(p) {
-        const districtNames = {
-            'pune': 'Pune District Social Welfare Office & Civil Hospital Board',
-            'mumbai_city': 'Mumbai City Medical Board (JJ Hospital Campus)',
-            'mumbai_suburban': 'Mumbai Suburban Welfare Board (Cooper Hospital)',
-            'nagpur': 'Nagpur District Medical Board & Civil Hospital',
-            'nashik': 'Nashik District Civil Hospital',
-            'thane': 'Thane District Hospital Welfare Board'
-        };
-
-        const disabilityDocs = {
-            'locomotor': 'X-Ray reports, orthopaedic surgeon evaluation, clinical photographs, Aadhaar Card, 2 Passport photos.',
-            'visual': 'Ophthalmologist visual acuity test report, fundus examination, Aadhaar Card, 2 Passport photos.',
-            'hearing': 'Audiogram test report by ENT specialist, BERA test report (if applicable), Aadhaar Card, 2 Passport photos.',
-            'intellectual': 'IQ assessment report by certified Clinical Psychologist, developmental history, Aadhaar Card, 2 Passport photos.'
-        };
+        const isMaharashtra = p.state === 'MH';
 
         return {
             status: 'success',
-            grounded_source: 'SRC-001 (NIEPID National UDID) & SRC-002 (Govt. of Maharashtra Disability Commissioner)',
-            authority: districtNames[p.district] || 'District Social Welfare Office / Civil Surgeon Medical Board',
-            disability_category: p.disability_type.toUpperCase(),
-            eligibility_benchmark: '40% or higher certified disability benchmark required for UDID card benefits.',
-            required_documents: disabilityDocs[p.disability_type] || 'Aadhaar Card, Medical assessment reports, 2 Passport photos.',
-            application_fee: 'Free of Cost (Govt. of India / Govt. of Maharashtra Mandate)',
-            helpline: '1800-11-1250 (Toll-Free National UDID Helpline)',
+            // SRC-005: user must be directed to the official lookup; the
+            // product must not name a hospital or authority itself.
+            authority: 'Your district\'s designated Medical Authority. Please use the official "Know your Medical Authority" lookup on swavlambancard.gov.in, selecting your state and district, to find the specific authority for your area.',
+            // SRC-003: generic document categories only (no disability-
+            // specific medical tests are named in any reviewed source).
+            required_documents: 'Proof of identity, a recent photograph (not older than 6 months), proof of residence, and your Aadhaar number or Aadhaar enrolment number. If your Aadhaar reflects your current address, separate address proof is not required.',
+            // SRC-003 states assessment happens under Central Government
+            // guidelines; no reviewed source states a percentage benchmark.
+            eligibility_benchmark: 'Eligibility is assessed by the medical authority under applicable Central Government guidelines. Please check the official portal or your State/District authority for current requirements.',
+            // No reviewed source states a fee amount or "free" status.
+            application_fee: 'Fee details are not confirmed in our reviewed sources. Please check the official UDID portal or your State/District authority for current fee information.',
+            // SRC-002 (Maharashtra state-level escalation contact only,
+            // presented with its required non-fixed caveat); no reviewed
+            // source exists for other states.
+            helpline: isMaharashtra
+                ? 'State Commissioner for Persons with Disabilities, Maharashtra -- contact per depwd.maharashtra.gov.in (verify current details before use): Phone 020-2612 2061 / 020-2613 6845 / 020-2612 6471, Email commissioner.disability@maharashtra.gov.in'
+                : 'Please check the official UDID portal (swavlambancard.gov.in) or your State/District authority for escalation contacts.',
+            // SRC-001, SRC-005
             official_portal: 'https://swavlambancard.gov.in',
             next_steps: [
-                '1. Register online at swavlambancard.gov.in with your Aadhaar card and photo.',
-                '2. Select your designated District Civil Hospital / Medical Board for physical assessment.',
-                '3. Attend assessment date; medical board will issue digital UDID card upon evaluation.'
+                // SRC-001, SRC-003
+                '1. Register online at swavlambancard.gov.in with your Aadhaar number/enrolment ID, proof of identity, proof of residence, and a recent photograph.',
+                // SRC-003, SRC-005
+                '2. Your application is referred to the medical authority in your district of residence, or the medical authority at a hospital where you are being treated -- find yours using the official "Know your Medical Authority" lookup.',
+                // SRC-001, SRC-003, SRC-004
+                '3. The medical authority assesses your disability under Central Government guidelines; once approved, your certificate/UDID card is issued electronically and can be tracked, renewed, or downloaded via the portal.'
             ]
         };
     }
@@ -309,8 +319,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <div class="result-box emergency-box">
-                    <h4>🚨 Need Emergency Helpline Support?</h4>
-                    <p>Contact State Commissioner for Persons with Disabilities Helpline: <strong>${escapeHtml(data.helpline)}</strong></p>
+                    <h4>🚨 Need Escalation or Support?</h4>
+                    <p><strong>${escapeHtml(data.helpline)}</strong></p>
                     <a href="${escapeHtml(data.official_portal)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Official UDID Portal ↗</a>
                 </div>
             </div>
@@ -347,7 +357,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // NOTE: same live/offline distinction as the wizard submit handler
         // above -- this endpoint is not currently connected (verified
         // 2026-09-16/17: HTTP 404). isLive reflects the actual fetch result.
-        let botReply = 'Emergency Helpline: For urgent assistance in Maharashtra, contact District Social Welfare Office or State Commissioner for Persons with Disabilities Helpline: 1800-11-1250 / https://swavlambancard.gov.in';
+        // SRC-001, SRC-005: only sourced default fallback text below --
+        // no invented helpline number or fee/eligibility claim.
+        let botReply = 'Please check the official UDID portal (swavlambancard.gov.in) or your State/District authority for further assistance.';
         let isLive = false;
 
         try {
@@ -366,9 +378,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 isLive = true;
             } else {
                 if (text.toLowerCase().includes('help') || text.toLowerCase().includes('stuck') || text.toLowerCase().includes('emergency')) {
-                    botReply = '🚨 Emergency Help: Call Toll-Free 1800-11-1250 (State Commissioner for Persons with Disabilities) or visit swavlambancard.gov.in.';
+                    // SRC-002 (Maharashtra state-level contact, with its
+                    // required non-fixed caveat) + SRC-001/SRC-005 portal.
+                    botReply = 'If you need urgent assistance, please check the official UDID portal (swavlambancard.gov.in) or contact your State/District authority. For Maharashtra, the State Commissioner for Persons with Disabilities can be reached via contact details listed on depwd.maharashtra.gov.in (verify current details before use).';
                 } else {
-                    botReply = `Regarding your query "${text}": Official UDID applications are 100% free at swavlambancard.gov.in. Minimum 40% certified disability required for government benefits.`;
+                    // SRC-001, SRC-003, SRC-005 -- no fee/eligibility
+                    // percentage claim, since none is sourced.
+                    botReply = `Regarding your query "${text}": please check the official UDID portal (swavlambancard.gov.in) for current application steps, required documents, and eligibility assessment details, or contact your State/District authority.`;
                 }
             }
         } catch (e) {
