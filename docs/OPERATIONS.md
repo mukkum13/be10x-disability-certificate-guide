@@ -47,6 +47,9 @@ See `Architecture.md` §25 — LLM free-tier daily limits, n8n trial time window
 
 **Original entry (2026-09-12 14:23:20 Asia/Calcutta, now historical):** "Verified locally — GitHub synchronisation blocked." Authorised remote: `https://github.com/mukkum13/be10x-disability-certificate-guide`. This cloud session's GitHub proxy returns HTTP 403 ("GitHub access to this repository is not enabled for this session"); no in-session tool exists to attach the repo. Local push via the user's own machine is also currently blocked (`device_bash` unavailable). See `MEMORY.MD` Entries 010–011.
 
+## Clean-Environment Reproducibility (proven 2026-09-17)
+A clean-checkout reproducibility test was performed: `git archive HEAD` was extracted to an isolated temporary directory (not the working repository), then `node --test tests/webui-regression.test.mjs` was run from that copy (18/18 passed) and the web UI was served via `python -m http.server` from that same copy (`index.html`/`app.js`/`styles.css` all returned HTTP 200). This confirms `README.md`'s "Local Setup — Offline Web UI" instructions work from a fresh copy, not just the existing development workspace. The isolated copy was deleted afterward; the working repository was not touched by this test. This covers the web UI only — the n8n workflow/backend has no analogous "clean clone" step, since it is managed directly in the n8n UI, not as versioned application code in this repository.
+
 ## Backup Procedure
 Canonical docs and knowledge sources are backed up via the connected local folder `K:\Be10x_Disability_certificate_guide`; application code should additionally be pushed to a git remote once designated (Gate 1). The log store (e.g., Google Sheet) is itself exportable as a backup.
 

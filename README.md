@@ -22,14 +22,18 @@ Only states/districts and disability types for which an official source document
 - A free-tier hosting account (frontend + backend function).
 - Optional: a Telegram bot token, if real reminder delivery is enabled (`Architecture.md` §10).
 
-## Local Setup (to be finalized at Gate 1)
+## Local Setup — Offline Web UI (proven 2026-09-17 via a clean-checkout reproducibility test)
+The web UI (`index.html`/`app.js`/`styles.css`) has no build step and no npm dependencies. Serve it with any static file server (not `file://` — browsers block some features on the file protocol) and open it:
 ```
 git clone <repo-url>
 cd <repo>
-cp .env.example .env   # fill in your own keys locally — never commit .env
-npm install             # or the chosen runtime's equivalent
-npm run dev              # starts local dev server
+python -m http.server 8000   # or any other static file server
+# open http://127.0.0.1:8000/index.html in a browser
 ```
+This exact path (git-archive of the tracked files → `python -m http.server` → `curl` 200 on `index.html`/`app.js`/`styles.css`) was verified from a clean, isolated copy on 2026-09-17 — see `MEMORY.MD` for the entry.
+
+## Local Setup — Backend/n8n Workflow (not applicable to a local clone)
+The grounded-response backend runs on the Product Owner's n8n instance (`n8n.mukkubuilds.com`), not as local application code — there is no `npm install`/`npm run dev` step for it. See `docs/OPERATIONS.md` for the operational runbook.
 
 ## Environment Variables (names only — no values here or in source control)
 - `LLM_API_KEY`
@@ -38,13 +42,13 @@ npm run dev              # starts local dev server
 - `REMINDER_CHANNEL_TOKEN` (optional — only if a real reminder channel is enabled)
 
 ## Development Command
-`npm run dev` (placeholder — to be confirmed once the Gate 1 stack is implemented)
+No build/dev-server step exists or is needed for the static web UI — edit `index.html`/`app.js`/`styles.css` directly and reload via the static server above. There is no separate backend application code in this repository (the backend is the Product Owner's n8n workflow).
 
 ## Test Commands
-`npm test` (unit/integration — see `docs/TESTING.md` for the full strategy and the 3 mandatory Hathcon test cases)
+`node --test tests/webui-regression.test.mjs` — the zero-dependency web UI regression suite (18/18 passing as of 2026-09-17; see `tests/README.md`). This covers the offline web UI only. See `docs/TESTING.md` for the full test strategy, the 3 mandatory Hathcon test cases, and the live-verified Telegram backend results (not run via this command — verified directly against the live n8n workflow).
 
 ## Production Build Command
-`npm run build` (placeholder — to be confirmed at Gate 1)
+None — the web UI is static HTML/CSS/JS with no build step. The n8n workflow is managed directly in the n8n UI, not built from this repository.
 
 ## Deployment Instructions
 See `docs/OPERATIONS.md` for the full runbook. Summary: deploy the static frontend and the backend function to the chosen free-tier host; set environment variables in the host's dashboard, never in code.
