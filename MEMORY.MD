@@ -5,6 +5,8 @@
 
 ## CURRENT STATE (keep synchronised with the latest verified worklog entry below)
 
+**Note:** the block immediately below (as originally written 2026-09-12) is preserved for history per this file's append-only/never-rewrite-history rule. See Entry 060 onward, and the "Current State — Updated 2026-09-17" summary further below, for the actual current state.
+
 - **Project objective:** Production-grade, accessible, responsive web guide for Disability Certificate & UDID applications in India (Be10x Build for Good, Project 14).
 - **Current date/timezone:** 2026-09-12, Asia/Calcutta.
 - **Current phase:** Gate 1 — conditionally authorised by CEO at 2026-09-12 13:46:24 Asia/Calcutta. Approved stack: responsive website + Gemini + n8n + Telegram + Google Sheets (custom Claude-API architecture rejected by CEO).
@@ -23,6 +25,13 @@
   5. No real user/NGO consultation has occurred. CEO has set a hard deadline: secure genuine consultation evidence before **2026-09-19 18:00:00 Asia/Calcutta** (tracked as Task CONSULT-1 in `Phases.md`).
 - **Pending CEO decisions:** (1) how to proceed given Codex/Antigravity/`/multi-ai-framework` are unavailable in this environment — approve a stated fallback (e.g., Claude implements D1.2/D1.3 directly as a disclosed exception) or provide access to those tools another way; (2) whether/how to establish git on the user's local machine given `device_bash` is currently down, or accept the cloud-container repository as canonical for now.
 - **Immediate next action:** Report the multi-AI framework unavailability and the corrected git status to the CEO (this update); await CEO direction on D1.2/D1.3 before writing any application code.
+
+### Current State — Updated 2026-09-17 (see Entries 060–063)
+- **Current date/timezone:** 2026-09-17, Asia/Calcutta. Internal deadline 2026-09-18; external Hathcon deadline 2026-09-20 11:59 PM; CONSULT-1 hard deadline 2026-09-19 18:00.
+- **Telegram bot (primary verified channel):** live-verified working end-to-end (2026-09-16); one real informal trial by a social-worker contact completed 2026-09-17 (execution #22, positive feedback, see Entry 062). Workflow `gXPlaislJyNuqJSd` is **unpublished** (live-verified via fresh reload immediately after the trial).
+- **Web UI:** offline reference content, honestly labeled throughout; locally re-tested 2026-09-17 for accessibility labels, offline disclosure, XSS-safety, and source-honest fallback content — all passed, no defects found (see Entry 063).
+- **Submission material:** `docs/SUBMISSION.md` Q1–Q3 finalized, evidence-based; `docs/submission_evidence.md` and `docs/live_demo_runbook.md` created (see Entry 063).
+- **Still open:** independent review checklist unfilled; Google Sheets logging and reminder module (D2.4) deferred by CEO decision; district-level source coverage remains a gap; no automated test suite exists; demo video/Drive folder/Google Form submission not yet started.
 
 ---
 
@@ -1168,3 +1177,73 @@
 - **Why this matters:** the web UI's guidance is currently NOT source-grounded via SRC-001–SRC-005 through the live pipeline — it is static content written directly into `app.js`, which is a different (weaker) claim than "grounded." The Telegram bot path (Live verified separately, Entries 057) IS genuinely grounded live. The two channels are not at parity.
 - **Fix required (not yet done, scoped for CTO — no credentials needed):** either (a) add a generic Webhook-trigger node to the n8n workflow at path `disability-guide` that mirrors Node 1a→1b→5→6's logic for HTTP input instead of Telegram input, or (b) update `app.js` to point at a correct/working endpoint if one already exists elsewhere, or (c) explicitly relabel the web UI's guidance as "offline reference content" rather than "grounded" until wired up. No credential is required to add the Webhook node itself; the existing Gemini/Memory sub-nodes could potentially be shared or duplicated.
 - **Exact Next Action:** Awaiting CEO input on which of the three options above to pursue, given proximity to the 2026-09-18 deadline; flagged alongside the D2.3 decision in the next CTO report.
+
+---
+
+### Entry 060 — Web UI Content Fixes, XSS Escaping, Independent Review Checklist & Reviewer Handoff Package (2026-09-17)
+- **Timestamp (Asia/Calcutta):** 2026-09-17, approx. 10:00–10:45
+- **Actor:** CTO (this session)
+- **Trigger:** CEO instructions to (a) fix unsupported factual claims and unescaped dynamic content in the web UI, (b) verify the pan-India UDID validity claim's sourcing, (c) create an independent-reviewer checklist without self-performing the review, (d) prepare a reviewer handoff package from already-committed documents only.
+- **Work performed:**
+  1. Added `escapeHtml()` helper to `app.js` and applied it to every dynamic/backend-controlled value inserted via `innerHTML` (wizard results, chat replies) — commit `a1d4e47`.
+  2. Removed unsupported factual claims (invented helpline numbers, eligibility percentages, fee amounts, document lists not traceable to a Reviewed source) from `app.js`'s offline fallback content — commit `ff3ff2c`.
+  3. Verified SRC-004 in `docs/SOURCES.md` directly (not inferred) states pan-India UDID validity; confirmed no such claim currently exists in `app.js`/`index.html`, so no removal was needed there.
+  4. Created `docs/independent_review_checklist.md` (18-point checklist, unfilled, explicitly not self-certified) — commit `47df507`.
+  5. Created `docs/reviewer_handoff_package.md` (index of already-committed documents only, no new claims) — commit `e703f9d`.
+  6. Live-verified workflow `gXPlaislJyNuqJSd` publish state via fresh Playwright page navigation at each check point — remained unpublished throughout.
+- **Files changed:** `app.js`, `docs/independent_review_checklist.md`, `docs/reviewer_handoff_package.md`.
+- **Commit identifiers:** `a1d4e47`, `ff3ff2c`, `47df507`, `e703f9d` — all local only, not pushed.
+- **Exact next action:** Await CEO direction on CONSULT-1 outreach priority (see Entry 061).
+
+---
+
+### Entry 061 — CONSULT-1 Outreach Sent to Social-Worker Contact (2026-09-17)
+- **Timestamp (Asia/Calcutta):** 2026-09-17, approx. 15:00–15:30
+- **Actor:** CTO (this session); outreach action itself performed by CEO/Product Owner, not by this session
+- **Trigger:** CEO priority correction making CONSULT-1 outreach the immediate priority ahead of the 2026-09-19 18:00 deadline; CEO decision to contact a social worker.
+- **Work performed:**
+  1. Adjusted wording in `docs/consult1_prep/outreach_draft.md` and `docs/consult1_prep/consultation_script.md` (question 1) to speak to a social worker's professional vantage point (clients/families supported) rather than personal lived experience — commit `043647b`.
+  2. Recorded, at CEO's factual instruction, that a consultation request was sent via WhatsApp to a social-worker contact on 2026-09-17 at 3:28 PM IST, status "awaiting response," no name/phone recorded — commit `ff97223`.
+- **Files changed:** `docs/consult1_prep/outreach_draft.md`, `docs/consult1_prep/consultation_script.md`, `docs/SUBMISSION.md`.
+- **Commit identifiers:** `043647b`, `ff97223` — local only, not pushed.
+- **Important:** no outreach was performed by this session — only documentation of the CEO's own action, per explicit instruction ("Do not perform outreach yourself").
+- **Exact next action:** Await a real reply or conversation before recording any consultation outcome (see Entry 062 for what followed the same day).
+
+---
+
+### Entry 062 — Controlled Social-Worker Trial: Publish, Live Test, Unpublish (2026-09-17)
+- **Timestamp (Asia/Calcutta):** 2026-09-17, approx. 15:40–16:00
+- **Actor:** CTO (this session), under explicit CEO authorization for a controlled, temporary publish
+- **Trigger:** CEO authorization: "publish workflow `gXPlaislJyNuqJSd` for a controlled social-worker trial," followed later by CEO confirmation that the contact tried the bot and gave written feedback through it.
+- **Work performed:**
+  1. Live-verified pre-publish state (unpublished, 8 nodes unchanged) via fresh Playwright navigation.
+  2. Published the workflow (no node/credential/prompt/source change) and live-verified "Published" state via a fresh page reload.
+  3. Confirmed Node 1's production webhook URL: `https://n8n.mukkubuilds.com/webhook/c7b826d2-9e1e-4639-97c9-1e32c8e68058/webhook`.
+  4. Did not run any test message myself, per instruction.
+  5. After CEO reported the trial (~3:53 PM IST, positive written feedback via the bot), inspected n8n execution #22 (2026-09-17 15:53:26, Succeeded in 4.037s) read-only — confirmed Node 1 received 1 item and Node 6 (Output Delivery) sent 1 item, without opening node data panels (to avoid viewing chat ID/phone/message content).
+  6. Unpublished the workflow immediately after inspection and live-verified the unpublished state via a fresh page reload.
+  7. Recorded the trial feedback in `docs/SUBMISSION.md`, privacy-preserving (no name/phone/chat ID), explicitly distinguished from a completed independent review — commit `5bcb728`.
+- **Files changed:** `docs/SUBMISSION.md` only; no nodes, credentials, prompts, or sources changed at any point.
+- **Commit identifier:** `5bcb728` — local only, not pushed.
+- **Exact next action:** Autonomous submission-readiness pass (see Entry 063).
+
+---
+
+### Entry 063 — Autonomous Submission-Readiness Pass (2026-09-17, CEO-Authorized)
+- **Timestamp (Asia/Calcutta):** 2026-09-17, approx. 16:05–17:00
+- **Actor:** CTO (this session)
+- **Trigger:** CEO authorization to enter autonomous submission-readiness mode: finalize truthful submission material, create an evidence package and a live-demo runbook, complete local quality/readiness checks, update project truth records, commit locally in small logical commits — pausing only for scope/credential/publishing/source-policy decisions, real blockers, or unsafe user-facing claims.
+- **Work performed:**
+  1. Finalized `docs/SUBMISSION.md` Q1–Q3, "What Was Built," "Known Failures," "Next Step," and "Submission Status," using only proven evidence (Telegram live tests, n8n execution IDs, `docs/SOURCES.md`, web UI offline labeling, the social-worker trial record); explicitly disclosed deferred/unproven features rather than inflating completion — commit `035f1de`.
+  2. Created `docs/submission_evidence.md` — a claim-to-evidence map (23 claims mapped to exact evidence) plus a "Do Not Claim" boundary section and the public bot link `https://t.me/MUKKUM13_BOT` — commit `0281a18`.
+  3. Created `docs/live_demo_runbook.md` — a procedure-only runbook (temporary publish authorization, one normal-path test, one escalation test, proof capture, immediate unpublish, hard rule against revealing tokens/chat IDs/phone numbers/private messages); not executed, no workflow touched — commit `0281a18`.
+  4. **Quality/readiness checks performed:**
+     - Secret scan: `git ls-files` grep for `.env`/`.pem`/`.key`/credential/secret patterns → only `.env.example` tracked (placeholders only); pattern scan for API-key-shaped strings (Google, GitHub, Slack, PEM, OpenAI-style) → no matches.
+     - Doc-link resolution: every Markdown link and backtick file reference across `README.md`, `Phases.md`, `docs/SUBMISSION.md`, `docs/submission_evidence.md`, `docs/live_demo_runbook.md` resolves to a real file (two intentional "package.json does not exist" references excepted — those are honest-absence statements, not broken links).
+     - No automated test suite exists in this repository (no `package.json`, no `/tests` directory) — disclosed honestly in `docs/SUBMISSION.md` rather than fabricating a test run.
+     - Web UI re-tested locally (served via a temporary local HTTP server, not `file://`, which Playwright blocks): 5-step wizard fully keyboard/button-navigable with correct ARIA live announcements and progress updates; XSS payloads (`<img src=x onerror=alert(1)><script>alert(2)</script>` in the wizard free-text field, `<script>alert('xss')</script>` in the chat box) rendered as inert escaped text with no script execution; "Offline Reference Content" badge and offline-notice banner correctly appear on every response; `prefers-reduced-motion` override confirmed present in `styles.css`. **No defects found** — prior fixes (commits `a1d4e47`, `ff3ff2c`, `ae9fba9`, `1da7bfb`) were already effective; no further code changes were made to `app.js`/`index.html`/`styles.css` this pass.
+  5. Updated this file's CURRENT STATE block (see "Current State — Updated 2026-09-17" above) and is updating `Phases.md`/`README.md` in the same pass to align status with the verified evidence above (see those files' own change history for exact diffs).
+- **Files changed:** `docs/SUBMISSION.md`, `docs/submission_evidence.md` (new), `docs/live_demo_runbook.md` (new), `MEMORY.MD`, `Phases.md`, `README.md`.
+- **Commit identifiers:** `035f1de`, `0281a18`, plus further commits for `MEMORY.MD`/`Phases.md`/`README.md` (see next commits in `git log`) — all local only, not pushed.
+- **What was deliberately not done (autonomous-scope boundary respected):** no outreach performed; no web backend rebuilt; no Google Sheets logging or reminder module added; no n8n node, credential, prompt, or source changed; workflow `gXPlaislJyNuqJSd` left unpublished throughout; nothing pushed to any remote.
+- **Exact next action:** Deliver a CTO Report to CEO Office covering this entire autonomous pass, with a final submission-readiness verdict and three next-action options.
