@@ -119,3 +119,18 @@ _(no application tests yet — no application code exists)_
 | Lovable "Publish" → live `*.lovable.app` URL | NOT OBTAINED — dialog did not visibly open after 3 attempts |
 
 Overall: strong compliance with `RULES.md` §24 scope and the approved brief; no scope violations found; one cosmetic label mismatch and several outstanding verification/integration steps remain before this can be marked Gate-1-complete.
+
+**Telegram backend live end-to-end testing (2026-09-16, Asia/Calcutta):** Tester: CTO (this session, direct browser-driven n8n execution inspection — reads actual node input/output JSON per execution, not self-reported). Target: live workflow `gXPlaislJyNuqJSd` ("My workflow 2") via Telegram, chat ID 8986033209.
+
+| Test | Input | Result | Evidence |
+|---|---|---|---|
+| Hathcon Test 1 (Maharashtra, locomotor, unregistered) | State/district: "Maharashtra, Pune"; disability: "Locomotor disability"; applicant: "For myself"; UDID status: "No"; language: "English" | **PASS** — numbered, source-grounded 3-step answer citing SRC-001–SRC-005, correct closing disclosure line | n8n execution #18 (17:21:33), full text in CTO report same session |
+| Full 5-question round trip | Same session as above | **PASS** — Q1→Q2→Q3→Q4→Q5→final answer, no repeats, no skips | n8n executions #12–#18 |
+| Escalation flow (Hathcon Test 2 equivalent) | "kya mai kisi aur disable person ko apka detail de sakta hu? kya app bhi help karenge?" (asking to share another person's details) | **PASS** — Node 1b escalation-keyword interrupt fired true, routed to Node 6b fixed fallback text instead of the LLM path | n8n execution #21 (17:33:12, 802ms — fast path confirms no LLM call made) |
+| Named-language output (FR-3/FR-4) | "Can we Use 'Hinglish' in place of 'English'" | **PASS** — bot correctly switched to Hinglish for the next reply, continued the conversation | n8n execution #20 (17:32:24) |
+| Session isolation (regression fix verification) | Fresh `_v2`-salted session vs. prior contaminated session | **PASS** — no cross-test bleed-through after the sessionKey fix | n8n executions #12–#21, no repeats observed |
+| Telegram delivery reliability (regression fix verification) | Long grounded answer containing Markdown bold syntax | **PASS after fix** — Markdown-strip expression on Node 6/6b prevents "can't parse entities" Telegram API errors; attribution footer ("This message was sent automatically with n8n") also removed per CEO instruction | n8n execution #17 (FAIL, pre-fix) → #18/#19 (PASS, post-fix) |
+| Web UI / n8n webhook integration | `POST https://n8n.mukkubuilds.com/webhook/disability-guide` (as called by `app.js`) | **FAIL** — endpoint returns HTTP 404; no generic Webhook-trigger node exists at that path in the live workflow (Telegram Trigger only) | Direct `curl` probe, 2026-09-16; see `Phases.md` D1.2 and `MEMORY.MD` Entry 059 |
+| Google Sheets anonymised logging (FR-8) | N/A — node inspection | **FAIL — node absent** | Live workflow canvas inspection confirms 8 nodes total, no Google Sheets node; contradicts `MEMORY.MD` Entry 055's claim; see `Phases.md` D2.3 and `MEMORY.MD` Entry 058 |
+
+**Note on scope:** these results cover the Telegram channel and the web UI's backend wiring only. Keyboard-only navigation, screen-reader labeling, and an independent (non-builder) reviewer pass (`RULES.md` §14) remain outstanding for both channels, as does the reminder-delivery test (Hathcon Test 3) and the automated test suite (D3.4).
