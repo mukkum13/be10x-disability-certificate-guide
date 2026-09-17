@@ -13,7 +13,7 @@ State plainly: "This is a student/hackathon project, not an official government 
 
 ## The five questions
 
-**1. Walk me through what actually happened the last time you (or someone you know) applied for a Disability Certificate or UDID card — where did the process get confusing or slow?**
+**1. Walk me through what actually happened the last time you helped a client or family apply for a Disability Certificate or UDID card — where did the process get confusing or slow?**
 *(Goal: find the real pain point, not a guessed one.)*
 
 **2. If you'd had a tool that only answers using verified official-government information — and clearly says "I don't know, check the official portal" instead of guessing when it isn't sure — would that have changed anything for you? How?**

@@ -16,8 +16,8 @@ I'm building a small, free tool called **Sugamya Sahayak** to help people in Ind
 
 Right now it works as a Telegram bot that asks five short questions (state/district, disability type, who it's for, UDID registration status, preferred language) and gives a step-by-step answer grounded only in official government sources (NIEPID, the national UDID portal, and Maharashtra's Department of Empowerment of Persons with Disabilities).
 
-I'd really value 10–15 minutes of your time — either as someone who has been through this process, or works with people who have — to hear:
-- Whether this would have been useful to you/your community
+I'd really value 10–15 minutes of your time, drawing on your experience supporting clients or families through this process, to hear:
+- Whether this would have been useful to the people/community you support
 - What's missing or confusing
 - Whether the tone and level of detail feel right
 
