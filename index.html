@@ -60,7 +60,7 @@
         <!-- Interactive Multi-Step Wizard Section -->
         <section class="wizard-section" aria-labelledby="wizard-heading">
             <h2 id="wizard-heading" class="section-title">Step-by-Step Application & Eligibility Guide</h2>
-            <p class="section-desc">Follow the 5 simple steps below to get instant grounded guidance for your state and disability category.</p>
+            <p class="section-desc">Follow the 5 simple steps below to get reference guidance for your state and disability category.</p>
 
             <!-- Accessible Progress Indicator -->
             <div class="progress-bar-container" role="region" aria-label="Wizard Progress">
@@ -83,7 +83,7 @@
                         <label for="select-state" class="input-label">State / UT <span class="required" aria-hidden="true">*</span></label>
                         <select id="select-state" name="state" class="form-control" required aria-required="true">
                             <option value="">-- Choose State --</option>
-                            <option value="MH" selected>Maharashtra (Fully Grounded)</option>
+                            <option value="MH" selected>Maharashtra (Reference Content Available)</option>
                             <option value="DL">Delhi (National Process)</option>
                             <option value="KA">Karnataka (National Process)</option>
                             <option value="TN">Tamil Nadu (National Process)</option>
@@ -189,7 +189,7 @@
                     <div class="step-actions">
                         <button type="button" class="btn btn-secondary btn-prev" data-prev="step-4">⬅ Back</button>
                         <button type="submit" id="btn-submit-wizard" class="btn btn-success btn-submit">
-                            ✨ Generate Grounded Guidance
+                            ✨ Get Guidance
                         </button>
                     </div>
                 </div>
@@ -200,14 +200,14 @@
         <section id="results-section" class="results-section" aria-live="polite" aria-atomic="true" hidden>
             <div class="results-card">
                 <div class="results-header">
-                    <h3>📋 Your Grounded Guidance Report</h3>
-                    <span id="grounded-badge" class="badge badge-verified">✓ 100% Official Source Grounded</span>
+                    <h3>📋 Your Guidance Report</h3>
+                    <span id="grounded-badge" class="badge badge-offline">Offline Reference Content</span>
                 </div>
                 <div id="results-body" class="results-body">
                     <!-- Loaded dynamically by app.js -->
                     <div class="loading-spinner">
                         <span class="spinner" aria-hidden="true">⏳</span>
-                        <p>Retrieving official government sources & medical board details...</p>
+                        <p>Preparing your reference guidance...</p>
                     </div>
                 </div>
             </div>
@@ -215,11 +215,12 @@
 
         <!-- Live AI Assistant Chat Drawer -->
         <section class="chat-section" aria-labelledby="chat-heading">
-            <h2 id="chat-heading" class="section-title">💬 Live AI Support Assistant (Powered by Gemini)</h2>
+            <h2 id="chat-heading" class="section-title">💬 Support Assistant (Offline Reference Content)</h2>
+            <p class="section-desc">This assistant is not currently connected to a live AI backend. Replies below are pre-written official reference information, not real-time AI-generated answers.</p>
             <div class="chat-window">
                 <div id="chat-messages" class="chat-messages" role="log" aria-live="polite">
                     <div class="chat-msg assistant">
-                        <strong>Sugamya Assistant:</strong> Namaste! I am your AI assistant. Select options above or ask any question about UDID cards, disability certificates, or medical boards in India.
+                        <strong>Sugamya Assistant (Offline Reference):</strong> Namaste! I can share pre-written official reference information about UDID cards, disability certificates, or medical boards in India. This is not a live AI conversation.
                     </div>
                 </div>
                 <div class="chat-input-bar">
@@ -235,7 +236,7 @@
     <footer class="site-footer" role="contentinfo">
         <div class="footer-container">
             <p><strong>Sugamya Sahayak</strong> — Be10x Build for Good Hackathon Project 14 (Disability Certificate Guide)</p>
-            <p>Grounding Sources: Ministry of Social Justice & Empowerment (`niepid.nic.in`), Govt. of Maharashtra (`depwd.maharashtra.gov.in`), CCPD (`ccpd.nic.in`). Zero PII retained.</p>
+            <p>Reference sources for offline content: Ministry of Social Justice & Empowerment (`niepid.nic.in`), Govt. of Maharashtra (`depwd.maharashtra.gov.in`), CCPD (`ccpd.nic.in`). This web page's answers are not currently generated by a live AI/grounding backend. Zero PII retained.</p>
         </div>
     </footer>
 

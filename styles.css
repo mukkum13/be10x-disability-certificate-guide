@@ -514,6 +514,31 @@ body.theme-high-contrast .badge-verified {
     color: #000000;
 }
 
+.badge-offline {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+body.theme-high-contrast .badge-offline {
+    background: #ffff00;
+    color: #000000;
+}
+
+.offline-notice {
+    background: #fef3c7;
+    color: #92400e;
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 0.9rem 1.1rem;
+}
+
+body.theme-high-contrast .offline-notice {
+    background: #000000;
+    color: #ffff00;
+    border-color: #ffff00;
+}
+
 .loading-spinner {
     display: flex;
     align-items: center;

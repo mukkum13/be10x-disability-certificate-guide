@@ -179,34 +179,39 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsBody.innerHTML = `
             <div class="loading-spinner" role="status" aria-live="polite">
                 <span class="spinner" aria-hidden="true">⏳</span>
-                <p>Retrieving official government sources & medical board guidelines for <strong>${payload.state} (${payload.district})</strong>...</p>
+                <p>Preparing reference guidance for <strong>${payload.state} (${payload.district})</strong>...</p>
             </div>
         `;
 
-        announceToScreenReader('Processing your request. Retrieving grounded official guidelines...');
+        announceToScreenReader('Preparing your reference guidance...');
+
+        // NOTE: this backend endpoint is not currently connected to any live
+        // n8n workflow (verified 2026-09-16/17: returns HTTP 404). Do not
+        // assume a successful response means live AI/grounding is working
+        // without re-verifying the endpoint first. isLive is set based on
+        // whether this fetch actually succeeded, and controls the "live" vs
+        // "offline reference" labeling shown to the user in renderResults().
+        let data;
+        let isLive = false;
 
         try {
-            // Attempt live fetch to n8n webhook backend
             const response = await fetch('https://n8n.mukkubuilds.com/webhook/disability-guide', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
             }).catch(() => null);
 
-            let data;
             if (response && response.ok) {
                 data = await response.json();
+                isLive = true;
             } else {
-                // Fallback to grounded local official knowledge base
                 data = generateGroundedFallbackResponse(payload);
             }
-
-            renderResults(data, payload);
-
         } catch (err) {
-            const fallbackData = generateGroundedFallbackResponse(payload);
-            renderResults(fallbackData, payload);
+            data = generateGroundedFallbackResponse(payload);
         }
+
+        renderResults(data, payload, isLive);
     });
 
     function generateGroundedFallbackResponse(p) {
@@ -244,9 +249,23 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    function renderResults(data, payload) {
+    function renderResults(data, payload, isLive) {
+        const groundedBadge = document.getElementById('grounded-badge');
+        if (isLive) {
+            groundedBadge.textContent = 'Live Grounded Response';
+            groundedBadge.className = 'badge badge-verified';
+        } else {
+            groundedBadge.textContent = 'Offline Reference Content';
+            groundedBadge.className = 'badge badge-offline';
+        }
+
+        const sourceNotice = isLive
+            ? ''
+            : `<div class="result-box offline-notice"><p><strong>⚠️ Offline reference content:</strong> this response was generated from pre-written local reference data, not a live AI/grounding backend. The live backend connection is not currently available.</p></div>`;
+
         resultsBody.innerHTML = `
             <div class="results-content">
+                ${sourceNotice}
                 <div class="result-box">
                     <h4>🏛️ Designated Authority & Medical Board</h4>
                     <p><strong>${data.authority}</strong></p>
@@ -279,7 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        announceToScreenReader('Grounded Guidance Report generated successfully. Review the designated medical board and document checklist below.');
+        announceToScreenReader(isLive
+            ? 'Live grounded guidance report generated. Review the designated medical board and document checklist below.'
+            : 'Offline reference guidance report generated. This is pre-written reference content, not a live AI response. Review the designated medical board and document checklist below.');
     }
 
     // ------------------------------------------------------------------
@@ -303,7 +324,13 @@ document.addEventListener('DOMContentLoaded', () => {
         chatInput.value = '';
 
         // Show bot typing
-        const typingEl = appendMessage('assistant', 'Thinking (Gemini AI)...');
+        const typingEl = appendMessage('assistant', 'Looking up reference information...');
+
+        // NOTE: same live/offline distinction as the wizard submit handler
+        // above -- this endpoint is not currently connected (verified
+        // 2026-09-16/17: HTTP 404). isLive reflects the actual fetch result.
+        let botReply = 'Emergency Helpline: For urgent assistance in Maharashtra, contact District Social Welfare Office or State Commissioner for Persons with Disabilities Helpline: 1800-11-1250 / https://swavlambancard.gov.in';
+        let isLive = false;
 
         try {
             const res = await fetch('https://n8n.mukkubuilds.com/webhook/disability-guide', {
@@ -315,11 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
             }).catch(() => null);
 
-            let botReply = 'Emergency Helpline: For urgent assistance in Maharashtra, contact District Social Welfare Office or State Commissioner for Persons with Disabilities Helpline: 1800-11-1250 / https://swavlambancard.gov.in';
-
             if (res && res.ok) {
                 const data = await res.json();
                 botReply = data.output || data.message || botReply;
+                isLive = true;
             } else {
                 if (text.toLowerCase().includes('help') || text.toLowerCase().includes('stuck') || text.toLowerCase().includes('emergency')) {
                     botReply = '🚨 Emergency Help: Call Toll-Free 1800-11-1250 (State Commissioner for Persons with Disabilities) or visit swavlambancard.gov.in.';
@@ -327,13 +353,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     botReply = `Regarding your query "${text}": Official UDID applications are 100% free at swavlambancard.gov.in. Minimum 40% certified disability required for government benefits.`;
                 }
             }
-
-            typingEl.innerHTML = `<strong>Sugamya Assistant:</strong> ${botReply}`;
-            announceToScreenReader(`Assistant replied: ${botReply}`);
-
         } catch (e) {
-            typingEl.innerHTML = `<strong>Sugamya Assistant:</strong> Emergency Helpline: 1800-11-1250 / swavlambancard.gov.in`;
+            isLive = false;
         }
+
+        const label = isLive ? 'Sugamya Assistant' : 'Sugamya Assistant (Offline Reference — not a live AI response)';
+        typingEl.innerHTML = `<strong>${label}:</strong> ${botReply}`;
+        announceToScreenReader(`Assistant replied: ${botReply}`);
     }
 
     function appendMessage(sender, text) {
