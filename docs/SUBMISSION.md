@@ -55,6 +55,8 @@ Applying for a disability certificate and UDID card in India spans specific hosp
 ## Who Was Consulted
 **None yet, as of 2026-09-13.** This is disclosed honestly rather than fabricated — that requirement comes from this project's own root instructions/`RULES.md`, **not from the handbook**. **Correction (2026-09-13):** the earlier version of this line falsely attributed a "10-point penalty ... for fabricated evidence" to the source document's FAQ. The handbook's actual −10 penalties are for (a) real personal data in the demo and (b) an unapproved final health/money/legal decision — it does **not** separately state a penalty for fabricated consultation evidence. That prohibition is this project's own discipline, not a quoted Hathcon rule, and must not be presented as one. See `RULES.md` §1 row 9 and `MEMORY.MD` Pending CEO Decision #1 for the plan to close or knowingly accept the consultation gap before 19 Sep 2026.
 
+**Outreach status update (2026-09-17):** A consultation request was sent by the CEO/Product Owner to a social-worker contact via WhatsApp on 2026-09-17 at 3:28 PM IST. No name or phone number is recorded here, per privacy preference. **Status: awaiting response.** No consultation has occurred yet, and no feedback, approval, or independent review has been received. This entry will be updated once (and only once) a reply or conversation actually occurs.
+
 ## What Was Built
 _To be completed at Gate 4 once the vertical slice exists._
 
