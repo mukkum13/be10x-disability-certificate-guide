@@ -9,6 +9,9 @@ dist/
 build/
 .next/
 
+# n8n workflow export backups (contain credential ID/name references; not secret values, but kept local-only)
+backups/
+
 # Local logs and editor files
 *.log
 .DS_Store
