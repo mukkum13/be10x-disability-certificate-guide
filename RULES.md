@@ -45,6 +45,7 @@ Source: https://build-for-good-two.vercel.app/#start (sections: "How to use thes
   (b) declare **Product Build** as the single track and treat the Telegram/n8n path as a supporting implementation detail of that product, not a separately-scored track element;
   (c) accept the risk of presenting a hybrid and clearly pick one track for the Google Form's "track" field while still building both channels, disclosing the choice honestly in Q3 of the submission form.
   No implementation decision has been changed as a result of this finding — it is reported, not silently resolved.
+- **RESOLVED — CEO decision, 2026-09-17:** Option **(a)**. The Google Form track is **AI Agent**. Reason given: the Telegram/Gemini guided-flow agent is the only fully live-verified product channel; the offline web UI is supporting reference content only, de-emphasized in the submission narrative rather than presented as a separately-scored Product Build.
 - **One positive confirmation from the same source:** the "One Skeleton, Many Projects" section explicitly groups Project 14 with the "scheme finder" skeleton (04, 08, 10, 14, 17, 19) described as *"documents in, five questions, answers only from the documents"* — this independently confirms the five-question, source-grounded design already built into `PRD.md`/`Architecture.md` is the officially intended shape for this project, regardless of how the track question above is resolved.
 
 ## 2. Instruction Priority & Conflict-Handling Rules

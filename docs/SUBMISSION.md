@@ -10,7 +10,7 @@
 
 **Deadline (verified against source document):** 20 September 2026, 11:59 PM — firm. "Extremely unlikely" to be extended.
 
-**Track (unresolved — see `RULES.md` §1a, Pending CEO Decision #2):** the Google Form requires selecting exactly one of **AI Automation / AI Agent / Product Build**. Not yet declared for this project. "Those Who Served & Access" is the project's *domain* (theme), not the track field on the form.
+**Track (decided — CEO decision, 2026-09-17, see `RULES.md` §1a):** **AI Agent.** The Telegram/Gemini guided-flow agent is the only fully live-verified product channel; the offline web UI is supporting reference content only, not presented as a separately-scored Product Build. "Those Who Served & Access" remains the project's *domain* (theme), not the track field on the form.
 
 ## The Actual Submission Mechanism (per `Project_details.docx`, verified 2026-09-13)
 **Unresolved source inconsistency (flagged 2026-09-13, not silently resolved):** the source document's own section heading reads *"The Submission Has Three Pieces"* ("Miss any one of them and your submission is incomplete"), but the body under that heading names only **two** items — "A Google Drive folder with a simple structure" and "A submitted Google Form" — before moving on ("Let's go through each."). No third piece is named anywhere in the section. This is recorded as a genuine inconsistency in the source document itself, not resolved by assuming a missing third item or silently treating it as "two pieces." Both described pieces are detailed below; if a third, unnamed piece exists, it has not been identified from this source.
