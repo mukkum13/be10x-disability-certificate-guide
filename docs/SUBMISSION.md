@@ -57,6 +57,8 @@ Applying for a disability certificate and UDID card in India spans specific hosp
 
 **Outreach status update (2026-09-17):** A consultation request was sent by the CEO/Product Owner to a social-worker contact via WhatsApp on 2026-09-17 at 3:28 PM IST. No name or phone number is recorded here, per privacy preference. **Status: awaiting response.** No consultation has occurred yet, and no feedback, approval, or independent review has been received. This entry will be updated once (and only once) a reply or conversation actually occurs.
 
+**Controlled trial feedback (2026-09-17):** The social-worker contact tried the Telegram bot directly and provided written feedback through the bot itself at approximately 3:53 PM IST on 2026-09-17, during a controlled, CEO-authorized temporary publish of workflow `gXPlaislJyNuqJSd` (published and unpublished the same day; live-verified unpublished immediately after the trial). Feedback summary: the contact stated the bot worked and expressed satisfaction/appreciation. No name, phone number, chat ID, or other identifying detail is recorded here. **This is informal written trial feedback exchanged through the bot, not a completed independent-review checklist** — `docs/independent_review_checklist.md` remains unfilled and still requires a genuinely independent reviewer separate from this contact.
+
 ## What Was Built
 _To be completed at Gate 4 once the vertical slice exists._
 
