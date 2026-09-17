@@ -29,7 +29,7 @@
 | 17 | `.env.example` contains only placeholders | Source file | `.env.example` — every value reads `your_production_..._here` or a non-secret config name |
 | 18 | Every factual claim in the web UI's offline fallback content traces to a Reviewed source | Source file cross-reference | `app.js` `generateGroundedFallbackResponse()` — each field inline-commented with its exact `docs/SOURCES.md` source ID (SRC-001/SRC-002/SRC-003/SRC-005); no SRC-004 pan-India claim is present in the UI (verified absent, 2026-09-17) |
 | 19 | Google Sheets anonymised logging does not exist in the live workflow | Live workflow inspection | `MEMORY.MD` Entry 058 (2026-09-16) — 8-node canvas inspection, no Google Sheets node present |
-| 20 | Reminder module (D2.4) has not been built | Repository/workflow search | `Phases.md` D2.4 row — "Not started, no evidence found in repo or MEMORY.MD" |
+| 20 | Reminder module (D2.4) is built and live-verified | n8n execution record (read-only inspection) | Execution #23, 2026-09-17 20:23:26, Succeeded in 778ms — real Telegram delivery, `ok: true`, `message_id: 63`, delivered to the originating chat with the exact specified text. See `Phases.md` D2.4 row. |
 | 21 | No automated test suite exists | Repository scan | `Glob` for `package.json`/`tests/**` in this repo, 2026-09-17 — none found |
 | 22 | Independent review checklist exists but is not completed | Source file | `docs/independent_review_checklist.md` — all Pass/Fail/Reviewer/Date fields blank, header states "No review has been performed or self-certified" |
 | 23 | Deadline for CONSULT-1 is 2026-09-19 18:00 IST | CEO decision record | `docs/SUBMISSION.md`, `Phases.md` CONSULT-1 row |
@@ -44,7 +44,7 @@
 
 - **Do not** claim a live, connected web backend. The web UI is offline reference content only (`/webhook/disability-guide` returns 404).
 - **Do not** claim Google Sheets logging, anonymised or otherwise. The node does not exist in the live workflow.
-- **Do not** claim a working reminder feature (draft or real). Nothing has been built for D2.4.
+- **Do not** claim the reminder feature works beyond what execution #23 shows: a single controlled test, exact-match "remind me" trigger, 2-minute delay, one recipient. Do not claim broader load-testing, multi-user testing, or production-traffic reliability for it.
 - **Do not** claim an "independent review" occurred. Exactly one informal trial contact (a social worker) gave positive feedback through the bot; this is not `docs/independent_review_checklist.md` being completed by a genuine outside reviewer.
 - **Do not** claim broad state/district coverage. Only the national UDID process and Maharashtra state-level escalation are Reviewed (`docs/SOURCES.md`); district-level hospital/medical-board detail is an open gap.
 - **Do not** claim a quantified time-savings figure (e.g., "X hours become Y minutes"). No before/after timing study has been run.

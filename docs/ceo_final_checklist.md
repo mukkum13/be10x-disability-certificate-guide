@@ -29,7 +29,7 @@
 - [ ] If no, the gap remains honestly disclosed in `docs/SUBMISSION.md`/`docs/final_readiness_report.md` — no action needed beyond that disclosure already being in place.
 
 ## 5. Unresolved Technical Items (for awareness, not required before submission)
-- [ ] D2.4 reminder feature: currently incomplete (3 nodes added but disconnected/inert — see latest CTO report). Decide whether to authorize a follow-up closely-supervised session to finish it, or leave it as a disclosed limitation.
+- [x] D2.4 reminder feature: **completed and live-verified 2026-09-17** (n8n execution #23, real Telegram delivery confirmed). No further action needed.
 - [ ] D2.3 Google Sheets logging: accepted as blocked for this deadline — no action needed unless you change that decision.
 
 ---
