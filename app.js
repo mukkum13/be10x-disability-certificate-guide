@@ -5,6 +5,23 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // ------------------------------------------------------------------
+    // 0. Safe text-escaping helper for all dynamic/user/backend-controlled
+    //    content inserted via innerHTML. Never interpolate unescaped
+    //    dynamic values into HTML strings -- always pass them through
+    //    escapeHtml() first. Hardcoded, trusted structural HTML (the
+    //    surrounding template markup itself) does not need escaping.
+    // ------------------------------------------------------------------
+    function escapeHtml(value) {
+        if (value === null || value === undefined) return '';
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    // ------------------------------------------------------------------
     // 1. Accessibility State & Theme Controllers
     // ------------------------------------------------------------------
     const btnThemeToggle = document.getElementById('btn-theme-toggle');
@@ -179,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsBody.innerHTML = `
             <div class="loading-spinner" role="status" aria-live="polite">
                 <span class="spinner" aria-hidden="true">⏳</span>
-                <p>Preparing reference guidance for <strong>${payload.state} (${payload.district})</strong>...</p>
+                <p>Preparing reference guidance for <strong>${escapeHtml(payload.state)} (${escapeHtml(payload.district)})</strong>...</p>
             </div>
         `;
 
@@ -263,37 +280,38 @@ document.addEventListener('DOMContentLoaded', () => {
             ? ''
             : `<div class="result-box offline-notice"><p><strong>⚠️ Offline reference content:</strong> this response was generated from pre-written local reference data, not a live AI/grounding backend. The live backend connection is not currently available.</p></div>`;
 
+        const stateLabel = payload.state === 'MH' ? 'Maharashtra' : payload.state;
         resultsBody.innerHTML = `
             <div class="results-content">
                 ${sourceNotice}
                 <div class="result-box">
                     <h4>🏛️ Designated Authority & Medical Board</h4>
-                    <p><strong>${data.authority}</strong></p>
-                    <p>State: <strong>${payload.state === 'MH' ? 'Maharashtra' : payload.state}</strong> | District: <strong>${payload.district.toUpperCase()}</strong></p>
+                    <p><strong>${escapeHtml(data.authority)}</strong></p>
+                    <p>State: <strong>${escapeHtml(stateLabel)}</strong> | District: <strong>${escapeHtml(payload.district.toUpperCase())}</strong></p>
                 </div>
 
                 <div class="result-box">
                     <h4>📜 Mandatory Required Documents</h4>
-                    <p>${data.required_documents}</p>
+                    <p>${escapeHtml(data.required_documents)}</p>
                 </div>
 
                 <div class="result-box">
                     <h4>⚖️ Eligibility Benchmark & Fee</h4>
-                    <p><strong>Benchmark:</strong> ${data.eligibility_benchmark}</p>
-                    <p><strong>Application Fee:</strong> ${data.application_fee}</p>
+                    <p><strong>Benchmark:</strong> ${escapeHtml(data.eligibility_benchmark)}</p>
+                    <p><strong>Application Fee:</strong> ${escapeHtml(data.application_fee)}</p>
                 </div>
 
                 <div class="result-box">
                     <h4>📌 Next Steps to Apply</h4>
                     <ol class="next-steps-list">
-                        ${data.next_steps.map(step => `<li>${step}</li>`).join('')}
+                        ${data.next_steps.map(step => `<li>${escapeHtml(step)}</li>`).join('')}
                     </ol>
                 </div>
 
                 <div class="result-box emergency-box">
                     <h4>🚨 Need Emergency Helpline Support?</h4>
-                    <p>Contact State Commissioner for Persons with Disabilities Helpline: <strong>${data.helpline}</strong></p>
-                    <a href="${data.official_portal}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Official UDID Portal ↗</a>
+                    <p>Contact State Commissioner for Persons with Disabilities Helpline: <strong>${escapeHtml(data.helpline)}</strong></p>
+                    <a href="${escapeHtml(data.official_portal)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Official UDID Portal ↗</a>
                 </div>
             </div>
         `;
@@ -358,14 +376,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const label = isLive ? 'Sugamya Assistant' : 'Sugamya Assistant (Offline Reference — not a live AI response)';
-        typingEl.innerHTML = `<strong>${label}:</strong> ${botReply}`;
+        typingEl.innerHTML = `<strong>${escapeHtml(label)}:</strong> ${escapeHtml(botReply)}`;
         announceToScreenReader(`Assistant replied: ${botReply}`);
     }
 
     function appendMessage(sender, text) {
         const msgDiv = document.createElement('div');
         msgDiv.className = `chat-msg ${sender}`;
-        msgDiv.innerHTML = sender === 'user' ? `<strong>You:</strong> ${text}` : `<strong>Sugamya Assistant:</strong> ${text}`;
+        msgDiv.innerHTML = sender === 'user' ? `<strong>You:</strong> ${escapeHtml(text)}` : `<strong>Sugamya Assistant:</strong> ${escapeHtml(text)}`;
         chatMessages.appendChild(msgDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
         return msgDiv;
