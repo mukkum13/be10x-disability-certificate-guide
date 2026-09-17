@@ -24,8 +24,8 @@
 
 | Area | Status | Reason |
 |---|---|---|
-| Google Sheets anonymised logging (D2.3) | Not built | Blocked — credential-list check denied by this session's own tool-permission boundary ("Credential Exploration"); CEO action needed |
-| Telegram reminder feature (D2.4) | Not built | Stopped by design — judged to carry real regression risk to the only fully live-verified capability if built/tested unsupervised in a single pass |
+| Google Sheets anonymised logging (D2.3) | Not built | **Accepted as blocked for this deadline — CEO decision, 2026-09-17.** No further credential exploration to be attempted. |
+| Telegram reminder feature (D2.4) | Not built, attempted and stopped safely | CEO-authorized closely-supervised build attempted 2026-09-17: 3 new nodes added, workflow backed up first, core flow re-verified unregressed. Stopped mid-wiring after a mis-targeted canvas edit was caught, per the explicit safety rule. Reminder branch currently inert/disconnected; never published, no test sent. See latest CTO report and `Phases.md` D2.4 for full detail. |
 | Web UI live backend | Not built | Deliberate, disclosed scope decision (CEO instruction) — web UI remains offline reference content |
 | District-level source coverage | Not built | No Reviewed source found beyond national + Maharashtra state-level (`docs/SOURCES.md` Open Gaps) |
 | Independent review (`docs/independent_review_checklist.md`) | Not done | Requires a genuinely independent, non-build-team reviewer — not this session, not the trial contact |
@@ -48,15 +48,15 @@ Full coverage list and honest limits: `tests/README.md`.
 - `docs/submission_evidence.md` — **complete**, 23 claims mapped to exact evidence, "Do Not Claim" boundary included.
 - `docs/live_demo_runbook.md` — **complete**, not executed.
 - `docs/submission_assets/` — Drive folder plan, explainer draft, video script/checklist, track decision note: **complete as drafts**; nothing recorded, uploaded, or submitted.
-- Google Form track field — **undecided**, `docs/submission_assets/track_decision_note.md` lays out the three already-recorded options without guessing.
+- Google Form track field — **decided: AI Agent** (CEO decision, 2026-09-17; `RULES.md` §1a, `docs/SUBMISSION.md`).
+- `docs/ceo_final_checklist.md` — **new**, a simple checklist of the remaining external/judgment-call actions only the CEO can take.
 
 ## 5. Remaining CEO-Only Actions
 
-1. Decide the Google Form track field (`docs/submission_assets/track_decision_note.md`, `RULES.md` §1a).
-2. Decide whether to connect a Google Sheets credential for D2.3, or accept the gap.
-3. Decide whether/when to authorize a closely-supervised session to build and test the D2.4 reminder feature.
-4. Decide whether to pursue a genuinely independent reviewer for `docs/independent_review_checklist.md`.
-5. Authorize (or not) a demo-video recording session under `docs/live_demo_runbook.md`.
+See `docs/ceo_final_checklist.md` for the full checklist. Summary:
+1. Video recording, Drive folder creation, Google Form submission — all external actions outside this session's authority.
+2. Decide whether to pursue a genuinely independent reviewer for `docs/independent_review_checklist.md`.
+3. Decide whether to authorize a follow-up closely-supervised session to finish the D2.4 reminder feature (currently disconnected/inert, core flow unaffected), or accept the current state and clean up the orphaned nodes.
 6. Ultimately: create the real Drive folder, submit the Google Form — both explicitly out of this session's scope (external actions, publishing).
 
 ## 6. Evidence-Based Commercial Completion Percentage
