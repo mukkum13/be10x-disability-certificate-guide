@@ -9,7 +9,7 @@
 | Area | Status | Evidence |
 |---|---|---|
 | Telegram five-question guided flow | **Working** | n8n executions #12–#18, 2026-09-16 |
-| Telegram reminder feature (D2.4) | **Working, live-verified** | n8n execution #23, 2026-09-17 20:23:26 — real Telegram delivery, `ok: true`, `message_id: 63` |
+| Telegram reminder feature (D2.4) | **Working, live-verified** | n8n execution #23, 2026-09-17 20:23:26 — real Telegram delivery, `ok: true`, `message_id: 63`; **plus Product Owner confirmation, 2026-09-17, that the reminder was visibly received in the Telegram app** |
 | Source-grounded final answer (Hathcon Test 1) | **PASS** | Execution #18, 2026-09-16 17:21:33 |
 | Escalation routing (Hathcon Test 2 equivalent) | **PASS** | Execution #21, 2026-09-16 17:33:12 |
 | Mid-conversation language switch | **Working** | Execution #20, 2026-09-16 17:32:24 |

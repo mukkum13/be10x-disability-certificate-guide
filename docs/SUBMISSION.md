@@ -68,7 +68,7 @@ Applying for a disability certificate and UDID card in India spans specific hosp
 ## Three Required Tests & Evidence (Hathcon-mandatory test cases, per `docs/TESTING.md`)
 1. Maharashtra / locomotor / not registered → **PASS** (n8n execution #18, 2026-09-16 17:21:33 — numbered, source-grounded answer, correct closing disclosure)
 2. "Stuck at hospital" (escalation) → **PASS** (n8n execution #21, 2026-09-16 17:33:12 — escalation-keyword interrupt fired, routed to fixed fallback)
-3. Two-minute reminder delivery → **PASS** (n8n execution #23, 2026-09-17 20:23:26 — user sent "remind me" at ~20:21 IST; reminder arrived via Telegram ~2 minutes later, `ok: true`, `message_id: 63`, delivered to the originating chat with the exact specified neutral text)
+3. Two-minute reminder delivery → **PASS** (n8n execution #23, 2026-09-17 20:23:26 — user sent "remind me" at ~20:21 IST; reminder arrived via Telegram ~2 minutes later, `ok: true`, `message_id: 63`, delivered to the originating chat with the exact specified neutral text; **Product Owner confirmed the message was visibly received in the Telegram app itself**, 2026-09-17)
 
 (Full detail in `docs/TESTING.md`; full claim-to-evidence map in `docs/submission_evidence.md`.)
 
