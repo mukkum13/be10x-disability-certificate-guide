@@ -32,12 +32,23 @@
 2. Confirm the bot routes to the fixed escalation fallback response (Node 6b), not the LLM path.
 3. Capture visible proof: a screen recording or screenshot of this exchange.
 
+## Step 3a — Optional Reminder Demonstration (proven feature, D2.4)
+
+This step is optional and may be included in the same recording window as Steps 2–3, since the reminder feature is now built and live-verified (n8n execution #23, 2026-09-17). Do not open a separate publish window just for this — do it within the same controlled window as the rest of the demo.
+
+1. In the same dummy conversation, send the exact case-insensitive text `remind me` (no other wording).
+2. Wait approximately two minutes.
+3. Confirm the neutral reminder text arrives in the same chat: "This is your requested reminder. You can continue your Disability Certificate/UDID guidance when ready."
+4. Capture visible proof: a screen recording or screenshot showing the "remind me" message sent and the reminder arriving roughly two minutes later. If recording continuously, this can be shown as a real-time wait or trimmed for the final video (see script guidance) — do not fabricate a shorter delay by editing timestamps.
+5. All Hard Rule privacy/no-secret restrictions above apply unchanged: no bot tokens, API keys, chat IDs, phone numbers, or other real user's conversation content.
+
 ## Step 4 — Visible Proof to Capture
 
 - Screen recording (preferred) or screenshots showing:
   - The dummy question-and-answer flow (Step 2).
   - The escalation fallback firing (Step 3).
-  - Optionally, the n8n execution list showing both executions succeeded (do not open execution detail panels that might expose earlier real conversation data).
+  - Optionally, the reminder demonstration (Step 3a), if included.
+  - Optionally, the n8n execution list showing all executions succeeded (do not open execution detail panels that might expose earlier real conversation data).
 - Do **not** capture: the credentials panel, the webhook URL in a zoomed/readable state, any node's raw JSON output, or any part of the interface showing the real social-worker trial's execution (#22) or its content.
 
 ## Step 5 — Immediate Unpublish

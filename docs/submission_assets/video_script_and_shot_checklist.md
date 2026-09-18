@@ -22,6 +22,7 @@
 - Answer the five questions with **dummy data only** (e.g., "Maharashtra", "Pune", "Locomotor disability", "For myself", "No").
 - Show the grounded, numbered final answer and its closing disclosure line.
 - Optionally, show one escalation example (a generic "I'm stuck" message) routing to the safe fallback.
+- Optionally, demonstrate the reminder feature (now built and live-verified, D2.4): send the exact message `remind me`, then show the neutral reminder arriving after approximately two minutes. This can be shown as a real-time wait or trimmed in editing to stay within the length target — do not alter or fake the on-screen timestamps.
 - **Do not** show or narrate: bot tokens, API keys, chat IDs, phone numbers, or the real social-worker trial conversation.
 
 **4. Where AI does the heavy lifting (~45–60s)**
@@ -34,6 +35,7 @@
 
 ## Shot Checklist (tick before recording)
 - [ ] Dummy data prepared in advance (no real names/phone numbers/health details).
+- [ ] If demonstrating the reminder, plan the exact message `remind me` and account for the ~2-minute wait in the recording schedule.
 - [ ] `docs/live_demo_runbook.md` Step 1 authorization obtained and workflow live-verified published, if the live bot will be shown.
 - [ ] Screen recording software tested (audio + video sync) before the real take.
 - [ ] One rehearsal run completed (per the source document's own advice: "not rehearsing once before recording" is a listed common mistake).
