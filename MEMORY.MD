@@ -1310,3 +1310,26 @@
 - **Commit identifier:** see next commit in `git log` immediately following this entry.
 - **What was deliberately not done:** no changes to any node's prompt, credentials, model, memory configuration, escalation logic, or the pre-existing normal-flow behavior — verified by the fact that only the 3 specified edges changed and all other 7 original edges remained byte-identical throughout. The workflow was not left published — unpublished immediately after execution inspection, per the CEO's explicit instruction.
 - **Follow-up, same day:** the CEO gave direct Product Owner confirmation that the reminder was visibly received in the Telegram app itself — a real end-user observation corroborating the execution #23 backend/API evidence, not just a log inspection. This was recorded into the existing D2.4 evidence in `Phases.md`, `docs/final_readiness_report.md`, `docs/SUBMISSION.md`, and `docs/submission_evidence.md` (no new workflow change, no publish/unpublish, no test message — documentation only).
+
+### Entry 067 — CEO Standing Instruction — Multi AI Agent Framework / Multi CLI Mandate for All Future Tasks (2026-09-19, 04:30 Asia/Calcutta)
+
+- **Trigger:** The CEO issued a standing instruction that, from this point forward, every task must be executed through the Multi AI Agent Framework or a Multi CLI fork (e.g. Codex, Hermes Agent, Antigravity CLI per `CLAUDE.md` section 8), not a direct single-agent workflow. Before any action, the acting session must state which Multi AI agent or CLI fork is being used. All existing safety boundaries (read-only-first, backup-before-edit, one-edge-at-a-time wiring, stop-on-uncertainty, unpublish-by-default) remain in force and are not superseded by this instruction. Every CTO Report going forward must include exactly these sections: (1) Multi AI agent/CLI fork used, (2) Actions performed, (3) Evidence verified, (4) Files or workflow changes, (5) Current safety state, (6) exactly three Section 7 next-action options labeled Recommended / Alternative / Hold-Defer. The CEO also reiterated that committing, pushing, publishing, sending messages, inspecting credentials, or making external changes all still require explicit per-action authorization and are never implied by this standing instruction.
+- **Work performed:** This `MEMORY.MD` entry was logged (via Codex CLI, per the new mandate itself) to make the instruction durable across future sessions; no workflow, code, or credential changes were made.
+- **Outcome:** Standing instruction now recorded in project memory for continuity.
+- **Files changed:** `MEMORY.MD` only (this entry).
+- **Context note:** The Gemini 503 retry-on-fail fix (Option A) was applied to the Google Gemini Chat Model sub-node, live-verified via execution #30, and the workflow was returned to unpublished state — documented separately in `docs/cto_report_gemini_503_retry_fix_2026-09-19.md`.
+
+### Entry 068 — Demo Recording Completed — Six-Message Flow Verified Clean (2026-09-19)
+
+- **Trigger:** Completed demo recording session required a privacy-preserving evidence update documenting the final live run, without recording chat IDs, phone numbers, applicant message content, or screenshot filenames.
+- **Work performed:**
+  1. Six dummy Telegram messages sent by the CEO for the demo recording all produced successful n8n executions (#31-#36) on 2026-09-19, approx. 04:43-04:45 IST.
+  2. The Google Gemini Chat Model retry-on-fail fix applied earlier this session held through the full run: zero Gemini 503 errors and zero other execution errors across all six executions.
+  3. Spot-checked executions confirmed the normal flow path fired correctly: `Node 1 -> 1a -> 1b(false) -> 1c(false) -> Node 5 -> Node 6` on executions #31 and #36.
+  4. No escalation branch and no reminder branch fired during the six-message recording run.
+  5. The final grounded answer was delivered via Telegram at approximately 04:45 IST in execution #36 through Node 6 (Output Delivery).
+  6. The workflow `gXPlaislJyNuqJSd` was unpublished immediately after recording and independently reload-verified as unpublished ("Publish" button visible, not "Published").
+- **Outcome:** Demo recording flow is now documented as completed successfully end-to-end for the six-message dummy-data run, backed by n8n execution records #31-#36 and the fresh unpublished-state verification.
+- **Files changed:** `docs/submission_evidence.md`, `Phases.md`, `MEMORY.MD`.
+- **Privacy note:** No chat ID, phone number, applicant message content, or screenshot filename is recorded in this entry, consistent with the project's privacy rules.
+- **Exact next action:** Use `docs/submission_evidence.md` claim #24 as the evidence source when drafting final submission wording; do not claim any screenshot artifact unless one is separately provided and verified.

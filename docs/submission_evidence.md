@@ -33,6 +33,7 @@
 | 21 | No automated test suite exists | Repository scan | `Glob` for `package.json`/`tests/**` in this repo, 2026-09-17 — none found |
 | 22 | Independent review checklist exists but is not completed | Source file | `docs/independent_review_checklist.md` — all Pass/Fail/Reviewer/Date fields blank, header states "No review has been performed or self-certified" |
 | 23 | Deadline for CONSULT-1 is 2026-09-19 18:00 IST | CEO decision record | `docs/SUBMISSION.md`, `Phases.md` CONSULT-1 row |
+| 24 | Retry-on-fail fix for the Gemini 503 transient error is live-verified, and a full six-message demo recording completed successfully end-to-end. | n8n execution record (read-only inspection) | Executions #31-#36 (2026-09-19, approx 04:43-04:45 IST), all Succeeded; normal flow path (Node 1 -> 1a -> 1b(false) -> 1c(false) -> Node 5 -> Node 6) confirmed on spot-checked executions #31 and #36; no Gemini 503 or any other error occurred across all six; final grounded answer delivered via Telegram (Node 6 Output Delivery) at approximately 04:45 IST in execution #36; workflow gXPlaislJyNuqJSd was unpublished immediately after recording, confirmed via fresh page reload ("Publish" button, not "Published"). |
 
 ## 2. Screenshot / Video Needs (not yet captured — for the eventual demo video and Drive folder)
 
