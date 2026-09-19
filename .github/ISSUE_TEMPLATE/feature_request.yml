@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest a focused improvement to the project.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please keep proposals within the project's documented scope. Do not include personal or sensitive applicant information.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or need
+      description: What user need or project limitation would this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the change and how it would work.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Supporting sources or constraints
+      description: Link to relevant official sources or project documentation, if applicable.
+    validations:
+      required: false

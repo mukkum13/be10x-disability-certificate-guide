@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible problem in the repository.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please use fictional data only. Do not include names, phone numbers, addresses, Aadhaar numbers, medical details, credentials, tokens, or other sensitive information.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and the behavior you expected.
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Affected file or page
+      placeholder: "For example: app.js or the results screen"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Safe reproduction steps
+      description: List the smallest set of steps using fictional data.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include relevant browser, operating system, or Node.js version.
+    validations:
+      required: false
