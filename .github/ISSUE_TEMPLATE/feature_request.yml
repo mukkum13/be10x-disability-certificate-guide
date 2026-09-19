@@ -1,0 +1,29 @@
+name: Feature request
+description: Suggest a focused improvement to the static web UI or repository documentation.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep proposals within the project's disclosed scope. Do not include real applicant data or request unsupported claims.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What user need would this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the behavior or documentation change you are proposing.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What other approaches did you consider?
