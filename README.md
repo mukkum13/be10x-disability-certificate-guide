@@ -1,4 +1,123 @@
-# Disability Certificate & UDID Guide
+<div align="center">
+
+# 🦽 Be10X Disability Certificate Guide
+
+[![Stars](https://img.shields.io/github/stars/mukkum13/be10x-disability-certificate-guide?style=social)](https://github.com/mukkum13/be10x-disability-certificate-guide/stargazers)
+[![Forks](https://img.shields.io/github/forks/mukkum13/be10x-disability-certificate-guide?style=social)](https://github.com/mukkum13/be10x-disability-certificate-guide/network/members)
+[![Watchers](https://img.shields.io/github/watchers/mukkum13/be10x-disability-certificate-guide?style=social)](https://github.com/mukkum13/be10x-disability-certificate-guide/watchers)
+[![License](https://img.shields.io/github/license/mukkum13/be10x-disability-certificate-guide)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/mukkum13/be10x-disability-certificate-guide)](https://github.com/mukkum13/be10x-disability-certificate-guide/issues)
+
+**AI-powered step-by-step guide to get your Disability Certificate in India 🇮🇳**  
+*Helping Divyangjan access UDID, government benefits & welfare schemes through technology*
+
+---
+
+### ⭐ If this helped you or someone you know, please **Star this repo** — it helps more people find it!
+
+[![Star on GitHub](https://img.shields.io/badge/⭐_Star_this_repo-yellow?style=for-the-badge&logo=github)](https://github.com/mukkum13/be10x-disability-certificate-guide)
+[![Share on LinkedIn](https://img.shields.io/badge/Share_on_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/mukkum13/be10x-disability-certificate-guide)
+[![Share on Twitter](https://img.shields.io/badge/Share_on_Twitter-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/intent/tweet?text=This%20AI-powered%20guide%20helps%20disabled%20people%20get%20their%20UDID%20Disability%20Certificate%20in%20India%20%F0%9F%87%AE%F0%9F%87%B3%20Check%20it%20out!&url=https://github.com/mukkum13/be10x-disability-certificate-guide&hashtags=DisabilityRights,UDID,India,AI,Accessibility)
+
+</div>
+
+---
+
+## 🎯 What This Project Does
+
+This project provides an **AI-powered Telegram bot + n8n automation workflow** that guides Divyangjan (persons with disabilities) through the entire process of obtaining their **Unique Disability ID (UDID) certificate** in India — step by step, in simple language.
+
+### 🌟 Key Features
+
+- 🤖 **AI Telegram Bot** — 24/7 guidance in simple Hindi/English
+- 📋 **Step-by-step UDID Application Guide** — from registration to certificate
+- 🏥 **Hospital & Assessment Center Locator** — find nearest government hospitals
+- 📄 **Document Checklist** — never miss a required document
+- ♿ **WCAG 2.1 Accessible** — screen reader friendly design
+- 🔔 **Status Tracking** — get notified when your certificate is ready
+- 🆓 **100% Free** — no charges, no middlemen
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repo
+git clone https://github.com/mukkum13/be10x-disability-certificate-guide.git
+cd be10x-disability-certificate-guide
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment variables
+cp .env.example .env
+# Add your Telegram Bot Token and Gemini API key
+
+# Run the bot
+python bot.py
+```
+
+---
+
+## 📋 Who This Helps
+
+| Category | Benefit |
+|----------|---------|
+| 👤 Persons with Disabilities | Get UDID certificate easily |
+| 👨‍👩‍👧 Family Members | Help their loved ones navigate the process |
+| 🏛️ NGOs & Social Workers | Guide multiple beneficiaries |
+| 🏥 Hospital Staff | Assist patients with documentation |
+
+---
+
+## 🛠️ Tech Stack
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram_Bot-2CA5E0?style=flat&logo=telegram&logoColor=white)
+![n8n](https://img.shields.io/badge/n8n-EA4B71?style=flat&logo=n8n&logoColor=white)
+![Gemini AI](https://img.shields.io/badge/Gemini_AI-4285F4?style=flat&logo=google&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat&logo=github-actions&logoColor=white)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+1. Fork this repo
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📣 Spread the Word
+
+This project exists to help people — help us reach more Divyangjan:
+
+- ⭐ **Star this repo** on GitHub
+- 🔗 **Share on LinkedIn** — [Click to share](https://www.linkedin.com/sharing/share-offsite/?url=https://github.com/mukkum13/be10x-disability-certificate-guide)
+- 🐦 **Tweet about it** — [Click to tweet](https://twitter.com/intent/tweet?text=AI-powered%20guide%20to%20get%20Disability%20Certificate%20in%20India%20🇮🇳%20Free%20Telegram%20bot%20%2B%20step-by-step%20guide!&url=https://github.com/mukkum13/be10x-disability-certificate-guide&hashtags=DisabilityRights,UDID,Divyangjan,AI)
+- 📱 **WhatsApp** it to someone who needs it
+
+---
+
+## 📜 License
+
+MIT License — Free for personal and commercial use. See [LICENSE](LICENSE).
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Mukesh Saxena](https://github.com/mukkum13) | AI Automation Builder
+
+*"Technology should be accessible to everyone"*
+
+[![GitHub followers](https://img.shields.io/github/followers/mukkum13?style=social)](https://github.com/mukkum13)
+
+</div># Disability Certificate & UDID Guide
 
 A small, production-grade, accessible web guide that helps applicants in India understand the process for obtaining a disability certificate and a UDID (Unique Disability ID) card — built for the Be10x "Build for Good" hackathon, Project 14 ("Those Who Served & Access" track).
 
