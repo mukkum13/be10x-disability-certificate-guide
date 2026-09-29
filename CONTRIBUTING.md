@@ -10,3 +10,4 @@
 6. Open a pull request against `main` with a concise description of the change and validation performed.
 
 The project has no package manifest or build step. The tracked UI is plain HTML, CSS, and JavaScript; edit those files directly and use a static file server for manual browser checks.
+<!-- Updated: 2026-09-27 -->
